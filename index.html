@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trade With Sensei - Professional Forex Masterclass</title>
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    
     <style>
         /* Base */
         * {
@@ -2303,6 +2311,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Registration Modal -->
     <div class="modal-overlay" id="registrationModal">
         <div class="modal-content" style="max-width: 500px; width: 90vw;">
             <button class="modal-close" onclick="closeRegistrationModal()">&times;</button>
@@ -2994,6 +3004,10 @@
                 closeGlobalMarketHoursModal();
             }
         };
+
+        // =========================
+        // Registration Functions
+        // =========================
         let currentStep = 0, registeredUserId=null, userEmail=null, userPhone=null, otpTimer=null, otpTimeLeft=0;
         const steps=document.querySelectorAll(".reg-form-step"),
               progressLine=document.getElementById("regProgressLine"),
@@ -3308,6 +3322,7 @@
                     const data=await res.json();
                     if(data.success){ 
                         analytics.trackEvent('registration_completed');
+                        markUserAsRegistered();
                         document.getElementById("regFormContainer").style.display="none"; 
                         document.getElementById("regFinalScreen").style.display="block";
                     } else {
