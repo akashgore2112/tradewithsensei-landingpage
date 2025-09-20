@@ -424,7 +424,143 @@
             transform:translateY(-2px) scale(1.05); 
         }
 
-        /* Aurora Planet Hero Theme */
+        /* Mobile Responsive Design */
+        @media screen and (max-width: 768px) {
+            /* Navbar Mobile Styles */
+            .navbar {
+                padding: 12px 20px !important;
+                flex-wrap: wrap;
+            }
+
+            .navbar-logo {
+                gap: 8px;
+            }
+
+            .navbar-logo img {
+                height: 32px !important;
+            }
+
+            .brand-text {
+                font-size: 1.1rem !important;
+            }
+
+            /* Show hamburger on mobile */
+            .hamburger {
+                display: flex !important;
+                order: 3;
+            }
+
+            /* Hide menu items on mobile by default */
+            .navbar-menu {
+                display: none !important;
+                width: 100%;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: rgba(10,15,30,0.98);
+                backdrop-filter: blur(15px);
+                border-top: 1px solid rgba(255,255,255,0.1);
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            }
+
+            /* Show menu when active */
+            .navbar-menu.active {
+                display: flex !important;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Stack menu items vertically on mobile */
+            .navbar-menu .toggle-btn,
+            .navbar-menu .nav-btn {
+                width: 100% !important;
+                text-align: center;
+                margin: 0 !important;
+                padding: 12px 16px;
+                font-size: 1rem;
+                margin-left: 0 !important;
+            }
+
+            /* Mobile Hero Optimization */
+            .hero {
+                margin-top: 60px !important;
+                min-height: 100vh;
+            }
+            
+            .hero::before {
+                background-position: center center !important;
+                background-size: cover !important;
+                transform: scale(1.1) !important;
+            }
+            
+            .hero-inner {
+                padding: 80px 15px 60px !important;
+                max-width: 100%;
+            }
+            
+            .hero-title {
+                font-size: clamp(2.2rem, 10vw, 3.8rem) !important;
+                line-height: 1.1 !important;
+                margin-bottom: 16px !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem !important;
+                margin-bottom: 24px !important;
+                padding: 0 10px;
+            }
+            
+            /* Aurora effect on mobile */
+            .aurora {
+                filter: blur(15px) !important;
+                opacity: 0.8 !important;
+            }
+
+            /* Market ticker hidden on mobile */
+            .market-ticker { 
+                display: none !important; 
+            }
+        }
+
+        /* Very small screens */
+        @media screen and (max-width: 480px) {
+            .hero-inner {
+                padding: 60px 10px 40px !important;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.8rem, 12vw, 3.2rem) !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem !important;
+            }
+
+            .navbar {
+                padding: 10px 15px !important;
+            }
+
+            .brand-text {
+                font-size: 1rem !important;
+            }
+
+            .navbar-logo img {
+                height: 28px !important;
+            }
+        }
         .hero {
             position: relative;
             min-height: 100vh;
@@ -493,6 +629,58 @@
             font-size: 1.2rem;
             font-family: Inter, system-ui, sans-serif;
             font-weight: 600; /* Bold */
+        }
+
+        /* Mobile Hero Optimizations */
+        @media (max-width: 768px) {
+            .hero {
+                margin-top: 60px; /* Reduced for mobile navbar */
+                min-height: 100vh;
+            }
+            
+            .hero::before {
+                background-position: center center;
+                background-size: cover;
+                transform: scale(1.1); /* Better mobile coverage */
+            }
+            
+            .hero-inner {
+                padding: 80px 15px 60px;
+                max-width: 100%;
+            }
+            
+            .hero-title {
+                font-size: clamp(2.2rem, 10vw, 3.8rem);
+                line-height: 1.1;
+                margin-bottom: 16px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 24px;
+                padding: 0 10px;
+            }
+            
+            /* Aurora effect on mobile */
+            .aurora {
+                filter: blur(15px);
+                opacity: 0.8;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            .hero-inner {
+                padding: 60px 10px 40px;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.8rem, 12vw, 3.2rem);
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
         }
 
         /* Free Resources Section */
@@ -1760,7 +1948,16 @@
             <img src="logo.png" alt="Trade With Sensei Logo">
             <span class="brand-text">Trade With Sensei</span>
         </div>
-        <div>
+        
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Navigation Menu -->
+        <div class="navbar-menu" id="navbarMenu">
             <button class="toggle-btn" id="toggleTheme">Toggle Mode</button>
             <a href="#" class="nav-btn" onclick="openRegistrationModal()">Register</a>
         </div>
@@ -3888,6 +4085,50 @@ Complete course with 55+ lessons designed for practical trading success.`);
                     icon.style.transform = 'rotate(0deg)';
                 }
             });
+        });
+
+        // =========================
+        // Mobile Hamburger Menu Functionality
+        // =========================
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navbarMenu = document.getElementById('navbarMenu');
+            
+            if (hamburger && navbarMenu) {
+                hamburger.addEventListener('click', function() {
+                    // Toggle hamburger animation
+                    hamburger.classList.toggle('active');
+                    
+                    // Toggle menu visibility
+                    navbarMenu.classList.toggle('active');
+                    
+                    // Prevent body scroll when menu is open
+                    if (navbarMenu.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+                
+                // Close menu when clicking on menu items
+                const menuItems = navbarMenu.querySelectorAll('.nav-btn, .toggle-btn');
+                menuItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navbarMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+                
+                // Close menu when screen becomes larger than 768px
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        hamburger.classList.remove('active');
+                        navbarMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
         });
     </script>
 </body>
