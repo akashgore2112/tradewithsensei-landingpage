@@ -425,6 +425,700 @@
             z-index: 10;
         }
 
+        /* Daily Checklist Modal Styles */
+        .checklist-container {
+            max-height: 85vh;
+            overflow-y: auto;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+        }
+
+        .checklist-header {
+            background: linear-gradient(135deg, #0072ff, #8e2de2);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .checklist-header h1 {
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        .checklist-header .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .checklist-intro-section {
+            padding: 25px 30px;
+            background: rgba(0, 114, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 114, 255, 0.1);
+        }
+
+        .checklist-intro-text {
+            text-align: center;
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .checklist-usage-instructions {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .checklist-content {
+            padding: 30px;
+        }
+
+        .checklist-section {
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+
+        .checklist-section-header {
+            background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(142, 45, 226, 0.1));
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0, 114, 255, 0.2);
+        }
+
+        .checklist-section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0072ff;
+            margin: 0 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist-section-icon {
+            font-size: 1.3rem;
+        }
+
+        .checklist-section-description {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        .checklist-items {
+            padding: 20px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item:hover {
+            background: rgba(255,255,255,0.02);
+            border-radius: 6px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .item-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #0072ff;
+            border-radius: 3px;
+            margin-top: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .item-checkbox:hover {
+            background: rgba(0, 114, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .item-checkbox.checked {
+            background: #0072ff;
+            border-color: #0072ff;
+        }
+
+        .item-checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .item-description {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .progress-section {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .progress-title {
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 12px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #059669);
+            border-radius: 8px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+        }
+
+        .checklist-action-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .checklist-action-btn {
+            background: linear-gradient(135deg, #0072ff, #8e2de2);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .checklist-action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 114, 255, 0.4);
+        }
+
+        .checklist-action-btn.secondary {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .checklist-action-btn.secondary:hover {
+            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .checklist-reset-btn {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .checklist-reset-btn:hover {
+            box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .checklist-footer {
+            background: rgba(0,0,0,0.6);
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 114, 255, 0.2);
+        }
+
+        .checklist-footer-text {
+            color: #94a3b8;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .checklist-footer-note {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Risk Calculator Modal Styles */
+        .risk-calculator-container {
+            max-height: 85vh;
+            overflow-y: auto;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+        }
+
+        .risk-calculator-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            padding: 25px 30px;
+        }
+
+        .risk-input-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 25px;
+        }
+
+        .risk-results-section {
+            background: rgba(0, 114, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 114, 255, 0.2);
+            padding: 25px;
+        }
+
+        .risk-input-group {
+            margin-bottom: 20px;
+        }
+
+        .risk-input-label {
+            display: block;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .risk-tooltip-icon {
+            background: rgba(0, 114, 255, 0.2);
+            color: #0072ff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 6px;
+            cursor: help;
+            position: relative;
+        }
+
+        .risk-tooltip-icon:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            z-index: 1000;
+            border: 1px solid rgba(0, 114, 255, 0.3);
+            max-width: 200px;
+            white-space: normal;
+        }
+
+        .risk-input-field, .risk-select-field {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            color: white;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .risk-input-field:focus, .risk-select-field:focus {
+            outline: none;
+            border-color: #0072ff;
+            background: rgba(255,255,255,0.12);
+            box-shadow: 0 0 0 2px rgba(0, 114, 255, 0.1);
+        }
+
+        .risk-select-field option {
+            background: #1a1f3e;
+            color: white;
+        }
+
+        .risk-calculation-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .risk-calculation-card:hover {
+            border-color: rgba(0, 114, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .risk-calc-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        .risk-calc-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0072ff;
+        }
+
+        .risk-calc-unit {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            margin-left: 4px;
+        }
+
+        .risk-level {
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .risk-low {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .risk-medium {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .risk-high {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .risk-warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 30px;
+        }
+
+        .risk-warning-title {
+            color: #f59e0b;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .risk-warning-text {
+            font-size: 0.85rem;
+            color: #fbbf24;
+            line-height: 1.4;
+        }
+
+        .risk-educational-section {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 30px;
+        }
+
+        .risk-educational-title {
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .risk-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .risk-tip-card {
+            background: rgba(255,255,255,0.03);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid #10b981;
+        }
+
+        .risk-tip-title {
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .risk-tip-description {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            line-height: 1.3;
+        }
+
+        /* Global Market Hours Modal Styles */
+        .market-hours-container {
+            max-height: 85vh;
+            overflow-y: auto;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+        }
+
+        .market-current-time-section {
+            padding: 25px 30px;
+            background: rgba(0, 114, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 114, 255, 0.1);
+            text-align: center;
+        }
+
+        .market-current-time-display {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0072ff;
+            margin-bottom: 8px;
+        }
+
+        .market-current-date {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .market-timezone-info {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        .market-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            padding: 25px 30px;
+        }
+
+        .market-sessions-section, .market-overlaps-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 25px;
+        }
+
+        .market-session-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .market-session-card:hover {
+            border-color: rgba(0, 114, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .market-session-card.active {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .market-session-card.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: #10b981;
+            border-radius: 1px;
+        }
+
+        .market-session-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .market-session-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e2e8f0;
+        }
+
+        .market-session-status {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .market-status-open {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .market-status-closed {
+            background: rgba(107, 114, 128, 0.2);
+            color: #9ca3af;
+            border: 1px solid rgba(107, 114, 128, 0.3);
+        }
+
+        .market-session-times {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .market-time-info {
+            text-align: center;
+        }
+
+        .market-time-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-bottom: 3px;
+        }
+
+        .market-time-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+
+        .market-session-description {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            line-height: 1.3;
+        }
+
+        .market-overlap-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(0, 114, 255, 0.1));
+            border-radius: 10px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 15px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .market-overlap-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .market-overlap-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 6px;
+        }
+
+        .market-overlap-time {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+        }
+
+        .market-overlap-pairs {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .risk-calculator-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 20px 15px;
+            }
+            
+            .risk-input-section, .risk-results-section {
+                padding: 15px;
+            }
+            
+            .risk-tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .market-content-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 20px 15px;
+            }
+            
+            .market-sessions-section, .market-overlaps-section {
+                padding: 15px;
+            }
+            
+            .market-session-times {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .market-current-time-section {
+                padding: 20px 15px;
+            }
+
+            .market-current-time-display {
+                font-size: 1.4rem;
+            }
+        }
+
         /* Registration Modal Styles (Exact from registration page) */
         .reg-particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;}
         .reg-particle{position:absolute;width:6px;height:6px;background:radial-gradient(circle,#8e2de2,#0072ff);border-radius:50%;opacity:0.7;animation:regFloat 12s linear infinite;}
@@ -764,7 +1458,32 @@
                 margin: 40px auto;
             }
         }
-    </style>
+    
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .navbar > div:last-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar .toggle-btn,
+  .navbar .nav-btn {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+}
+
+</style>
 </head>
 <body>
     <div id="progress-bar"></div>
@@ -842,20 +1561,20 @@
         <h2>Free Trading Resources</h2>
         <p style="margin-bottom: 40px;">Professional trading tools and guides to get you started on the right track</p>
         <div class="resources-grid">
-            <div class="resource-card" onclick="openRegistrationModal()">
+            <div class="resource-card" onclick="checkAccessAndOpen('checklist')">
                 <h3>Daily Trading Checklist</h3>
                 <p>Pre-market analysis checklist with 15 essential points that professional traders use every morning</p>
-                <button class="resource-btn primary" onclick="event.stopPropagation(); openRegistrationModal()">Open Checklist</button>
+                <button class="resource-btn primary" onclick="event.stopPropagation(); checkAccessAndOpen('checklist')">Open Checklist</button>
             </div>
-            <div class="resource-card" onclick="openRegistrationModal()">
+            <div class="resource-card" onclick="checkAccessAndOpen('calculator')">
                 <h3>Risk Calculator Tool</h3>
                 <p>Professional position sizing calculator to determine optimal trade sizes based on your account and risk tolerance</p>
-                <button class="resource-btn primary" onclick="event.stopPropagation(); openRegistrationModal()">Open Calculator</button>
+                <button class="resource-btn primary" onclick="event.stopPropagation(); checkAccessAndOpen('calculator')">Open Calculator</button>
             </div>
-            <div class="resource-card" onclick="openRegistrationModal()">
+            <div class="resource-card" onclick="checkAccessAndOpen('markethours')">
                 <h3>Global Market Hours</h3>
                 <p>Complete guide to forex trading sessions, overlaps, and the best times to trade different currency pairs</p>
-                <button class="resource-btn primary" onclick="event.stopPropagation(); openRegistrationModal()">View Guide</button>
+                <button class="resource-btn primary" onclick="event.stopPropagation(); checkAccessAndOpen('markethours')">View Guide</button>
             </div>
             <div class="resource-card curriculum-highlight">
                 <h3>Complete Course Curriculum</h3>
@@ -1019,7 +1738,571 @@
         <p style="margin-top: 20px; opacity: 0.7; font-size: 0.95rem;">Transform your trading in just 8 weeks</p>
     </section>
 
-    <!-- Registration Modal (Complete Registration Page Code) -->
+    <!-- Daily Trading Checklist Modal -->
+    <div class="modal-overlay" id="dailyChecklistModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDailyChecklistModal()">&times;</button>
+            <div class="checklist-container">
+                <!-- Header -->
+                <div class="checklist-header">
+                    <h1>Daily Trading Checklist</h1>
+                    <p class="subtitle">Professional Pre-Market Analysis & Trading Preparation</p>
+                </div>
+
+                <!-- Introduction -->
+                <div class="checklist-intro-section">
+                    <p class="checklist-intro-text">
+                        A comprehensive 15-point checklist used by professional traders to ensure consistent preparation and disciplined trading approach every day.
+                    </p>
+                    <div class="checklist-usage-instructions">
+                        <strong style="color: #10b981;">How to Use:</strong> Go through each item before market open. Check off completed items. Aim for 100% completion before placing any trades.
+                    </div>
+                </div>
+
+                <!-- Progress Section -->
+                <div class="checklist-content">
+                    <div class="progress-section">
+                        <div class="progress-title">Daily Preparation Progress</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="progressText">0 of 15 items completed (0%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Pre-Market Analysis Section -->
+                    <div class="checklist-section">
+                        <div class="checklist-section-header">
+                            <div class="checklist-section-title">
+                                <span class="checklist-section-icon">📊</span>
+                                Pre-Market Analysis
+                            </div>
+                            <div class="checklist-section-description">Essential market research before trading begins</div>
+                        </div>
+                        <div class="checklist-items">
+                            <div class="checklist-item" data-category="pre-market">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Check Major Economic News</div>
+                                    <div class="item-description">Review economic calendar for high-impact news releases scheduled for today</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="pre-market">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Analyze Previous Day's Market Close</div>
+                                    <div class="item-description">Review how major currency pairs closed and identify key levels</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="pre-market">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Check Asian Session Price Action</div>
+                                    <div class="item-description">Analyze overnight price movements and identify any significant breakouts or rejections</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="pre-market">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Review Market Sentiment</div>
+                                    <div class="item-description">Check news headlines, market sentiment indicators, and social media buzz</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Analysis Section -->
+                    <div class="checklist-section">
+                        <div class="checklist-section-header">
+                            <div class="checklist-section-title">
+                                <span class="checklist-section-icon">📈</span>
+                                Technical Analysis Setup
+                            </div>
+                            <div class="checklist-section-description">Chart preparation and technical level identification</div>
+                        </div>
+                        <div class="checklist-items">
+                            <div class="checklist-item" data-category="technical">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Mark Key Support & Resistance Levels</div>
+                                    <div class="item-description">Identify and mark major support/resistance levels on all timeframes</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="technical">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Draw Relevant Trendlines</div>
+                                    <div class="item-description">Update trendlines on daily and 4-hour charts for trending pairs</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="technical">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Check Multiple Timeframe Alignment</div>
+                                    <div class="item-description">Ensure weekly, daily, and 4-hour trends are identified and aligned</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="technical">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Identify High-Probability Setups</div>
+                                    <div class="item-description">Scan charts for potential trade setups matching your strategy criteria</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Management Section -->
+                    <div class="checklist-section">
+                        <div class="checklist-section-header">
+                            <div class="checklist-section-title">
+                                <span class="checklist-section-icon">🛡️</span>
+                                Risk Management
+                            </div>
+                            <div class="checklist-section-description">Capital protection and position sizing verification</div>
+                        </div>
+                        <div class="checklist-items">
+                            <div class="checklist-item" data-category="risk">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Calculate Daily Risk Allowance</div>
+                                    <div class="item-description">Determine maximum amount willing to risk today (1-2% of account)</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="risk">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Set Position Size Limits</div>
+                                    <div class="item-description">Pre-calculate position sizes for potential trades based on stop loss distances</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="risk">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Review Current Open Positions</div>
+                                    <div class="item-description">Check existing trades, adjust stops if needed, assess overall portfolio risk</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Psychology & Discipline Section -->
+                    <div class="checklist-section">
+                        <div class="checklist-section-header">
+                            <div class="checklist-section-title">
+                                <span class="checklist-section-icon">🧠</span>
+                                Psychology & Discipline
+                            </div>
+                            <div class="checklist-section-description">Mental preparation and emotional state check</div>
+                        </div>
+                        <div class="checklist-items">
+                            <div class="checklist-item" data-category="psychology">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Assess Emotional State</div>
+                                    <div class="item-description">Check if feeling calm, focused, and emotionally balanced for trading</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="psychology">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Review Trading Rules</div>
+                                    <div class="item-description">Mentally rehearse your trading plan and key rules to avoid impulsive decisions</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="psychology">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Set Realistic Daily Expectations</div>
+                                    <div class="item-description">Define realistic goals for the day, focusing on process over profits</div>
+                                </div>
+                            </div>
+                            <div class="checklist-item" data-category="psychology">
+                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
+                                <div class="item-content">
+                                    <div class="item-title">Prepare Exit Strategy</div>
+                                    <div class="item-description">Plan when to step away if daily loss limit is reached or emotions become unstable</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="checklist-action-buttons">
+                        <button class="checklist-action-btn secondary" onclick="printChecklist()">Print Checklist</button>
+                        <button class="checklist-action-btn" onclick="saveChecklistProgress()">Save Progress</button>
+                        <button class="checklist-action-btn checklist-reset-btn" onclick="resetDailyChecklist()">Reset All</button>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="checklist-footer">
+                    <p class="checklist-footer-text">
+                        <strong>Remember:</strong> Consistent preparation leads to consistent results. Complete this checklist daily before market open.
+                    </p>
+                    <p class="checklist-footer-note">
+                        © 2025 Trade With Sensei - Professional Trading Education
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Risk Calculator Modal -->
+    <div class="modal-overlay" id="riskCalculatorModal">
+        <div class="modal-content" style="max-width: 95vw; width: 1200px;">
+            <button class="modal-close" onclick="closeRiskCalculatorModal()">&times;</button>
+            <div class="risk-calculator-container">
+                <!-- Header -->
+                <div class="checklist-header">
+                    <h1>Professional Risk Calculator</h1>
+                    <p class="subtitle">Calculate Position Size, Risk & Reward for Optimal Trading</p>
+                </div>
+
+                <!-- Calculator Content -->
+                <div class="risk-calculator-content">
+                    <!-- Input Section -->
+                    <div class="risk-input-section">
+                        <div class="checklist-section-title">
+                            <span class="checklist-section-icon">⚙️</span>
+                            Trading Parameters
+                        </div>
+
+                        <!-- Account Balance -->
+                        <div class="risk-input-group">
+                            <label class="risk-input-label">
+                                Account Balance ($)
+                                <span class="risk-tooltip-icon" data-tooltip="Total amount in your trading account">?</span>
+                            </label>
+                            <input type="number" class="risk-input-field" id="accountBalance" placeholder="10000" min="1" step="0.01">
+                        </div>
+
+                        <!-- Risk Percentage -->
+                        <div class="risk-input-group">
+                            <label class="risk-input-label">
+                                Risk Percentage (%)
+                                <span class="risk-tooltip-icon" data-tooltip="How much of your account you're willing to risk per trade (recommended: 1-2%)">?</span>
+                            </label>
+                            <input type="number" class="risk-input-field" id="riskPercentage" placeholder="2" min="0.1" max="10" step="0.1">
+                        </div>
+
+                        <!-- Currency Pair -->
+                        <div class="risk-input-group">
+                            <label class="risk-input-label">
+                                Currency Pair
+                                <span class="risk-tooltip-icon" data-tooltip="Select the currency pair you want to trade">?</span>
+                            </label>
+                            <select class="risk-select-field" id="currencyPair">
+                                <option value="">Select Currency Pair</option>
+                                <option value="EURUSD">EUR/USD</option>
+                                <option value="GBPUSD">GBP/USD</option>
+                                <option value="USDJPY">USD/JPY</option>
+                                <option value="AUDUSD">AUD/USD</option>
+                                <option value="USDCAD">USD/CAD</option>
+                                <option value="NZDUSD">NZD/USD</option>
+                                <option value="EURGBP">EUR/GBP</option>
+                                <option value="EURJPY">EUR/JPY</option>
+                            </select>
+                        </div>
+
+                        <!-- Entry Price -->
+                        <div class="risk-input-group">
+                            <label class="risk-input-label">
+                                Entry Price
+                                <span class="risk-tooltip-icon" data-tooltip="The price at which you plan to enter the trade">?</span>
+                            </label>
+                            <input type="number" class="risk-input-field" id="entryPrice" placeholder="1.0850" step="0.00001">
+                        </div>
+
+                        <!-- Stop Loss -->
+                        <div class="risk-input-group">
+                            <label class="risk-input-label">
+                                Stop Loss Price
+                                <span class="risk-tooltip-icon" data-tooltip="The price at which you will exit if the trade goes against you">?</span>
+                            </label>
+                            <input type="number" class="risk-input-field" id="stopLossPrice" placeholder="1.0800" step="0.00001">
+                        </div>
+
+                        <!-- Take Profit -->
+                        <div class="risk-input-group">
+                            <label class="risk-input-label">
+                                Take Profit Price (Optional)
+                                <span class="risk-tooltip-icon" data-tooltip="The price at which you will take profits">?</span>
+                            </label>
+                            <input type="number" class="risk-input-field" id="takeProfitPrice" placeholder="1.0950" step="0.00001">
+                        </div>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div class="risk-results-section">
+                        <div class="checklist-section-title">
+                            <span class="checklist-section-icon">📊</span>
+                            Calculation Results
+                        </div>
+
+                        <!-- Risk Amount -->
+                        <div class="risk-calculation-card">
+                            <div class="risk-calc-label">Risk Amount</div>
+                            <div class="risk-calc-value" id="riskAmount">$0.00</div>
+                            <div id="riskLevel" class="risk-level risk-low">Low Risk</div>
+                        </div>
+
+                        <!-- Position Size -->
+                        <div class="risk-calculation-card">
+                            <div class="risk-calc-label">Position Size</div>
+                            <div class="risk-calc-value" id="positionSize">0<span class="risk-calc-unit">units</span></div>
+                        </div>
+
+                        <!-- Lot Size -->
+                        <div class="risk-calculation-card">
+                            <div class="risk-calc-label">Lot Size</div>
+                            <div class="risk-calc-value" id="lotSize">0.00<span class="risk-calc-unit">lots</span></div>
+                        </div>
+
+                        <!-- Pip Value -->
+                        <div class="risk-calculation-card">
+                            <div class="risk-calc-label">Pip Value</div>
+                            <div class="risk-calc-value" id="pipValue">$0.00<span class="risk-calc-unit">per pip</span></div>
+                        </div>
+
+                        <!-- Stop Loss Distance -->
+                        <div class="risk-calculation-card">
+                            <div class="risk-calc-label">Stop Loss Distance</div>
+                            <div class="risk-calc-value" id="stopLossDistance">0<span class="risk-calc-unit">pips</span></div>
+                        </div>
+
+                        <!-- Potential Profit -->
+                        <div class="risk-calculation-card">
+                            <div class="risk-calc-label">Potential Profit</div>
+                            <div class="risk-calc-value" id="potentialProfit">$0.00</div>
+                        </div>
+
+                        <!-- Risk Reward Ratio -->
+                        <div class="risk-calculation-card">
+                            <div class="risk-calc-label">Risk:Reward Ratio</div>
+                            <div class="risk-calc-value" id="riskRewardRatio">1:0.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="checklist-action-buttons">
+                    <button class="checklist-action-btn" onclick="calculateRisk()">Calculate Risk</button>
+                    <button class="checklist-action-btn secondary" onclick="saveRiskCalculation()">Save Calculation</button>
+                    <button class="checklist-action-btn checklist-reset-btn" onclick="resetRiskCalculator()">Reset All</button>
+                </div>
+
+                <!-- Warning Box -->
+                <div class="risk-warning-box">
+                    <div class="risk-warning-title">⚠️ Important Risk Disclaimer</div>
+                    <div class="risk-warning-text">
+                        This calculator provides estimates based on your inputs. Always double-check calculations before placing trades. 
+                        Trading involves substantial risk and is not suitable for all investors.
+                    </div>
+                </div>
+
+                <!-- Educational Section -->
+                <div class="risk-educational-section">
+                    <div class="risk-educational-title">💡 Professional Trading Tips</div>
+                    <p style="color: #cbd5e1; margin-bottom: 20px;">
+                        Master these risk management principles to protect your capital and maximize long-term success
+                    </p>
+                    
+                    <div class="risk-tips-grid">
+                        <div class="risk-tip-card">
+                            <div class="risk-tip-title">1-2% Rule</div>
+                            <div class="risk-tip-description">
+                                Never risk more than 1-2% of your account on a single trade. This protects you from devastating losses.
+                            </div>
+                        </div>
+                        <div class="risk-tip-card">
+                            <div class="risk-tip-title">Position Sizing</div>
+                            <div class="risk-tip-description">
+                                Calculate position size based on your stop loss distance, not your desired profit. Risk comes first.
+                            </div>
+                        </div>
+                        <div class="risk-tip-card">
+                            <div class="risk-tip-title">Risk:Reward Ratio</div>
+                            <div class="risk-tip-description">
+                                Aim for at least 1:2 risk-reward ratio. This means your potential profit should be twice your risk.
+                            </div>
+                        </div>
+                        <div class="risk-tip-card">
+                            <div class="risk-tip-title">Stop Loss Placement</div>
+                            <div class="risk-tip-description">
+                                Place stop losses based on technical levels, not arbitrary percentages. Support/resistance levels work best.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="checklist-footer">
+                    <p class="checklist-footer-text">
+                        <strong>Remember:</strong> Proper risk management is the foundation of successful trading. Use this calculator before every trade.
+                    </p>
+                    <p class="checklist-footer-note">
+                        © 2025 Trade With Sensei - Professional Trading Education
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Market Hours Modal -->
+    <div class="modal-overlay" id="globalMarketHoursModal">
+        <div class="modal-content" style="max-width: 95vw; width: 1200px;">
+            <button class="modal-close" onclick="closeGlobalMarketHoursModal()">&times;</button>
+            <div class="market-hours-container">
+                <!-- Header -->
+                <div class="checklist-header">
+                    <h1>Global Market Hours</h1>
+                    <p class="subtitle">Live Trading Sessions, Overlaps & Best Trading Times</p>
+                </div>
+
+                <!-- Current Time Section -->
+                <div class="market-current-time-section">
+                    <div class="market-current-time-display" id="marketCurrentTime">00:00:00</div>
+                    <div class="market-current-date" id="marketCurrentDate">Loading...</div>
+                    <div class="market-timezone-info">
+                        <strong>Your Timezone:</strong> <span id="marketUserTimezone">UTC</span>
+                    </div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="market-content-grid">
+                    <!-- Trading Sessions -->
+                    <div class="market-sessions-section">
+                        <div class="checklist-section-title">
+                            <span class="checklist-section-icon">🌍</span>
+                            Major Trading Sessions
+                        </div>
+
+                        <!-- Sydney Session -->
+                        <div class="market-session-card" id="marketSydneySession">
+                            <div class="market-session-header">
+                                <div class="market-session-name">Sydney Session</div>
+                                <div class="market-session-status market-status-closed" id="marketSydneyStatus">CLOSED</div>
+                            </div>
+                            <div class="market-session-times">
+                                <div class="market-time-info">
+                                    <div class="market-time-label">Opens</div>
+                                    <div class="market-time-value" id="marketSydneyOpen">22:00</div>
+                                </div>
+                                <div class="market-time-info">
+                                    <div class="market-time-label">Closes</div>
+                                    <div class="market-time-value" id="marketSydneyClose">07:00</div>
+                                </div>
+                            </div>
+                            <div class="market-session-description">
+                                AUD, NZD pairs most active. Lower volatility session with steady trends.
+                            </div>
+                        </div>
+
+                        <!-- Tokyo Session -->
+                        <div class="market-session-card" id="marketTokyoSession">
+                            <div class="market-session-header">
+                                <div class="market-session-name">Tokyo Session</div>
+                                <div class="market-session-status market-status-closed" id="marketTokyoStatus">CLOSED</div>
+                            </div>
+                            <div class="market-session-times">
+                                <div class="market-time-info">
+                                    <div class="market-time-label">Opens</div>
+                                    <div class="market-time-value" id="marketTokyoOpen">00:00</div>
+                                </div>
+                                <div class="market-time-info">
+                                    <div class="market-time-label">Closes</div>
+                                    <div class="market-time-value" id="marketTokyoClose">09:00</div>
+                                </div>
+                            </div>
+                            <div class="market-session-description">
+                                JPY pairs most active. Bank of Japan interventions possible during this session.
+                            </div>
+                        </div>
+
+                        <!-- London Session -->
+                        <div class="market-session-card" id="marketLondonSession">
+                            <div class="market-session-header">
+                                <div class="market-session-name">London Session</div>
+                                <div class="market-session-status market-status-closed" id="marketLondonStatus">CLOSED</div>
+                            </div>
+                            <div class="market-session-times">
+                                <div class="market-time-info">
+                                    <div class="market-time-label">Opens</div>
+                                    <div class="market-time-value" id="marketLondonOpen">08:00</div>
+                                </div>
+                                <div class="market-time-info">
+                                    <div class="market-time-label">Closes</div>
+                                    <div class="market-time-value" id="marketLondonClose">17:00</div>
+                                </div>
+                            </div>
+                            <div class="market-session-description">
+                                Highest volume session. EUR, GBP pairs most active. Major economic news releases.
+                            </div>
+                        </div>
+
+                        <!-- New York Session -->
+                        <div class="market-session-card" id="marketNewyorkSession">
+                            <div class="market-session-header">
+                                <div class="market-session-name">New York Session</div>
+                                <div class="market-session-status market-status-closed" id="marketNewyorkStatus">CLOSED</div>
+                            </div>
+                            <div class="market-session-times">
+                                <div class="market-time-info">
+                                    <div class="market-time-label">Opens</div>
+                                    <div class="market-time-value" id="marketNewyorkOpen">13:00</div>
+                                </div>
+                                <div class="market-time-info">
+                                    <div class="market-time-label">Closes</div>
+                                    <div class="market-time-value" id="marketNewyorkClose">22:00</div>
+                                </div>
+                            </div>
+                            <div class="market-session-description">
+                                USD pairs most active. Major US economic data releases and Fed announcements.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Session Overlaps -->
+                    <div class="market-overlaps-section">
+                        <div class="checklist-section-title">
+                            <span class="checklist-section-icon">⏰</span>
+                            Session Overlaps
+                        </div>
+
+                        <div class="market-overlap-card">
+                            <div class="market-overlap-title">Tokyo + London Overlap</div>
+                            <div class="market-overlap-time">08:00 - 09:00 UTC</div>
+                            <div class="market-overlap-pairs">Best for: EUR/JPY, GBP/JPY, USD/JPY</div>
+                        </div>
+
+                        <div class="market-overlap-card">
+                            <div class="market-overlap-title">London + New York Overlap</div>
+                            <div class="market-overlap-time">13:00 - 17:00 UTC</div>
+                            <div class="market-overlap-pairs">Best for: EUR/USD, GBP/USD, USD/CHF</div>
+                        </div>
+
+                        <div class="market-overlap-card">
+                            <div class="market-overlap-title">Sydney + Tokyo Overlap</div>
+                            <div class="market-overlap-time">00:00 - 07:00 UTC</div>
+                            <div class="market-overlap-pairs">Best for: AUD/JPY, NZD/JPY, AUD/USD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="checklist-footer">
+                    <p class="checklist-footer-text">
+                        <strong>Note:</strong> Times shown in UTC. Session times may vary during daylight saving transitions.
+                    </p>
+                    <p class="checklist-footer-note">
+                        © 2025 Trade With Sensei - Professional Trading Education
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal-overlay" id="registrationModal">
         <div class="modal-content" style="max-width: 500px; width: 90vw;">
             <button class="modal-close" onclick="closeRegistrationModal()">&times;</button>
@@ -1101,8 +2384,616 @@
 
     <script>
         // =========================
-        // Registration Form Variables and Functions (Exact from registration page)
+        // Access Control and Tool Functions
         // =========================
+        
+        // Check if user is registered and has access to tools
+        function checkAccessAndOpen(toolType) {
+            const isRegistered = localStorage.getItem('tws_user_registered') === 'true';
+            
+            if (isRegistered) {
+                // User is registered, open the requested tool
+                switch(toolType) {
+                    case 'checklist':
+                        openDailyChecklistModal();
+                        break;
+                    case 'calculator':
+                        openRiskCalculatorModal();
+                        break;
+                    case 'markethours':
+                        openGlobalMarketHoursModal();
+                        break;
+                    default:
+                        openRegistrationModal();
+                }
+            } else {
+                // User not registered, show registration modal
+                openRegistrationModal();
+            }
+        }
+
+        // Mark user as registered (called after successful registration)
+        function markUserAsRegistered() {
+            localStorage.setItem('tws_user_registered', 'true');
+            localStorage.setItem('tws_registration_date', new Date().toISOString());
+        }
+
+        // =========================
+        // Daily Trading Checklist Functions
+        // =========================
+        let checklistCheckedItems = new Set();
+        const checklistTotalItems = 15;
+
+        function openDailyChecklistModal() {
+            document.getElementById('dailyChecklistModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            loadChecklistProgress();
+        }
+
+        function closeDailyChecklistModal() {
+            document.getElementById('dailyChecklistModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleChecklistItem(checkbox) {
+            const item = checkbox.closest('.checklist-item');
+            const isChecked = checkbox.classList.contains('checked');
+            
+            if (isChecked) {
+                checkbox.classList.remove('checked');
+                checklistCheckedItems.delete(item);
+            } else {
+                checkbox.classList.add('checked');
+                checklistCheckedItems.add(item);
+            }
+            
+            updateChecklistProgress();
+        }
+
+        function updateChecklistProgress() {
+            const completed = checklistCheckedItems.size;
+            const percentage = Math.round((completed / checklistTotalItems) * 100);
+            
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = 
+                `${completed} of ${checklistTotalItems} items completed (${percentage}%)`;
+            
+            // Change color based on completion
+            const progressFill = document.getElementById('progressFill');
+            if (percentage === 100) {
+                progressFill.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+            } else if (percentage >= 80) {
+                progressFill.style.background = 'linear-gradient(90deg, #f59e0b, #d97706)';
+            } else {
+                progressFill.style.background = 'linear-gradient(90deg, #0072ff, #8e2de2)';
+            }
+        }
+
+        function resetDailyChecklist() {
+            if (confirm('Are you sure you want to reset all items? This will clear your progress.')) {
+                document.querySelectorAll('.item-checkbox').forEach(checkbox => {
+                    checkbox.classList.remove('checked');
+                });
+                checklistCheckedItems.clear();
+                updateChecklistProgress();
+                localStorage.removeItem('dailyChecklistProgress');
+            }
+        }
+
+        function saveChecklistProgress() {
+            const progressData = {
+                date: new Date().toDateString(),
+                completedItems: Array.from(checklistCheckedItems).map(item => {
+                    return item.querySelector('.item-title').textContent;
+                })
+            };
+            
+            localStorage.setItem('dailyChecklistProgress', JSON.stringify(progressData));
+            alert('Progress saved! Your checklist will be remembered for today.');
+        }
+
+        function loadChecklistProgress() {
+            const saved = localStorage.getItem('dailyChecklistProgress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                const today = new Date().toDateString();
+                
+                // Only load if it's the same day
+                if (data.date === today) {
+                    data.completedItems.forEach(title => {
+                        const items = document.querySelectorAll('.checklist-item');
+                        items.forEach(item => {
+                            if (item.querySelector('.item-title').textContent === title) {
+                                const checkbox = item.querySelector('.item-checkbox');
+                                checkbox.classList.add('checked');
+                                checklistCheckedItems.add(item);
+                            }
+                        });
+                    });
+                    updateChecklistProgress();
+                }
+            }
+        }
+
+        function printChecklist() {
+            try {
+                const printContent = document.querySelector('.checklist-container').cloneNode(true);
+                
+                printContent.querySelectorAll('.checklist-action-buttons').forEach(el => el.remove());
+                printContent.querySelectorAll('.modal-close').forEach(el => el.remove());
+                printContent.querySelectorAll('.progress-section').forEach(el => el.remove());
+                
+                const checkedItems = document.querySelectorAll('.item-checkbox.checked');
+                checkedItems.forEach((checkbox, index) => {
+                    const printCheckbox = printContent.querySelectorAll('.item-checkbox')[index];
+                    if (printCheckbox) {
+                        printCheckbox.style.background = '#0072ff';
+                        printCheckbox.innerHTML = '✓';
+                        printCheckbox.style.color = 'white';
+                        printCheckbox.style.textAlign = 'center';
+                        printCheckbox.style.fontSize = '12px';
+                        printCheckbox.style.fontWeight = 'bold';
+                    }
+                });
+                
+                const printWindow = window.open('', '_blank');
+                if (!printWindow) {
+                    alert('Popup blocked! Please allow popups for this site to print the checklist.');
+                    return;
+                }
+                
+                printWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Daily Trading Checklist - Trade With Sensei</title>
+                        <style>
+                            body { 
+                                font-family: Arial, sans-serif; 
+                                margin: 20px; 
+                                color: #333;
+                                line-height: 1.6;
+                            }
+                            .checklist-header { 
+                                background: #0072ff; 
+                                color: white; 
+                                padding: 30px; 
+                                text-align: center; 
+                                border-radius: 10px;
+                                margin-bottom: 30px;
+                            }
+                            .checklist-header h1 {
+                                margin: 0 0 10px 0;
+                                font-size: 2rem;
+                            }
+                            .checklist-intro-section {
+                                background: #f8f9fa;
+                                padding: 20px;
+                                border-radius: 8px;
+                                margin-bottom: 25px;
+                                border-left: 4px solid #0072ff;
+                            }
+                            .checklist-section { 
+                                margin: 25px 0; 
+                                border: 1px solid #ddd; 
+                                border-radius: 8px;
+                                page-break-inside: avoid;
+                            }
+                            .checklist-section-header { 
+                                background: #f8f9fa; 
+                                padding: 15px 20px; 
+                                border-bottom: 1px solid #ddd;
+                                border-radius: 8px 8px 0 0;
+                            }
+                            .checklist-section-title {
+                                color: #0072ff;
+                                font-weight: bold;
+                                font-size: 1.1rem;
+                                margin: 0;
+                            }
+                            .checklist-items { 
+                                padding: 20px; 
+                            }
+                            .checklist-item { 
+                                margin: 15px 0; 
+                                display: flex; 
+                                gap: 15px; 
+                                align-items: flex-start;
+                                padding: 10px 0;
+                                border-bottom: 1px solid #eee;
+                            }
+                            .checklist-item:last-child {
+                                border-bottom: none;
+                            }
+                            .item-checkbox { 
+                                width: 18px; 
+                                height: 18px; 
+                                border: 2px solid #333; 
+                                border-radius: 3px;
+                                flex-shrink: 0;
+                                margin-top: 2px;
+                            }
+                            .item-content {
+                                flex: 1;
+                            }
+                            .item-title { 
+                                font-weight: bold; 
+                                margin-bottom: 5px;
+                                color: #333;
+                            }
+                            .item-description { 
+                                color: #666; 
+                                font-size: 0.9rem; 
+                                line-height: 1.4;
+                            }
+                            .checklist-footer {
+                                margin-top: 30px;
+                                padding: 20px;
+                                background: #f8f9fa;
+                                border-radius: 8px;
+                                text-align: center;
+                                border-top: 3px solid #0072ff;
+                            }
+                            @media print {
+                                body { margin: 15px; }
+                                .checklist-section { 
+                                    page-break-inside: avoid; 
+                                }
+                            }
+                        </style>
+                    </head>
+                    <body>${printContent.innerHTML}</body>
+                    </html>
+                `);
+                printWindow.document.close();
+                
+                setTimeout(() => {
+                    printWindow.print();
+                }, 500);
+                
+            } catch (error) {
+                console.error('Error in print function:', error);
+                alert('There was an error preparing the checklist for printing. Please try again.');
+            }
+        }
+
+        // Close checklist modal when clicking outside
+        document.getElementById('dailyChecklistModal').onclick = function(e) {
+            if (e.target === this) {
+                closeDailyChecklistModal();
+            }
+        };
+
+        // =========================
+        // Risk Calculator Functions
+        // =========================
+        let currentRiskCalculation = {};
+
+        function openRiskCalculatorModal() {
+            document.getElementById('riskCalculatorModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRiskCalculatorModal() {
+            document.getElementById('riskCalculatorModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function calculatePipValue(pair, lotSize = 1) {
+            const pipValues = {
+                'EURUSD': 10,
+                'GBPUSD': 10,
+                'AUDUSD': 10,
+                'NZDUSD': 10,
+                'USDJPY': 9.09,
+                'USDCAD': 7.69,
+                'EURGBP': 12.50,
+                'EURJPY': 9.09
+            };
+            
+            return (pipValues[pair] || 10) * lotSize;
+        }
+
+        function calculatePipDistance(entryPrice, exitPrice, currencyPair) {
+            const difference = Math.abs(entryPrice - exitPrice);
+            
+            if (currencyPair.includes('JPY')) {
+                return Math.round(difference * 100);
+            } else {
+                return Math.round(difference * 10000);
+            }
+        }
+
+        function calculateRisk() {
+            try {
+                const accountBalance = parseFloat(document.getElementById('accountBalance').value);
+                const riskPercentage = parseFloat(document.getElementById('riskPercentage').value);
+                const entryPrice = parseFloat(document.getElementById('entryPrice').value);
+                const stopLossPrice = parseFloat(document.getElementById('stopLossPrice').value);
+                const takeProfitPrice = parseFloat(document.getElementById('takeProfitPrice').value) || 0;
+                const currencyPair = document.getElementById('currencyPair').value;
+
+                if (!accountBalance || !riskPercentage || !entryPrice || !stopLossPrice || !currencyPair) {
+                    alert('⚠️ Please fill in all required fields (Account Balance, Risk %, Currency Pair, Entry Price, Stop Loss)');
+                    return;
+                }
+
+                if (accountBalance <= 0) {
+                    alert('⚠️ Account balance must be greater than 0');
+                    return;
+                }
+
+                if (riskPercentage <= 0 || riskPercentage > 10) {
+                    alert('⚠️ Risk percentage should be between 0.1% and 10%');
+                    return;
+                }
+
+                if (entryPrice === stopLossPrice) {
+                    alert('⚠️ Entry price and stop loss price cannot be the same');
+                    return;
+                }
+
+                const riskAmount = (accountBalance * riskPercentage) / 100;
+                const stopLossDistance = calculatePipDistance(entryPrice, stopLossPrice, currencyPair);
+                const pipValuePerLot = calculatePipValue(currencyPair, 1);
+                const positionSize = Math.floor(riskAmount / (stopLossDistance * (pipValuePerLot / 100000)));
+                const lotSize = positionSize / 100000;
+                const actualPipValue = pipValuePerLot * lotSize;
+
+                let potentialProfit = 0;
+                let takeProfitDistance = 0;
+                if (takeProfitPrice > 0) {
+                    takeProfitDistance = calculatePipDistance(entryPrice, takeProfitPrice, currencyPair);
+                    potentialProfit = takeProfitDistance * actualPipValue;
+                }
+
+                const riskRewardRatio = potentialProfit > 0 ? (potentialProfit / riskAmount).toFixed(2) : '0.00';
+
+                currentRiskCalculation = {
+                    accountBalance,
+                    riskPercentage,
+                    riskAmount,
+                    currencyPair,
+                    entryPrice,
+                    stopLossPrice,
+                    takeProfitPrice,
+                    positionSize,
+                    lotSize,
+                    pipValue: actualPipValue,
+                    stopLossDistance,
+                    potentialProfit,
+                    riskRewardRatio,
+                    timestamp: new Date().toISOString()
+                };
+
+                updateRiskResults();
+
+            } catch (error) {
+                console.error('Error in calculation:', error);
+                alert('❌ Error in calculation. Please check your inputs and try again.');
+            }
+        }
+
+        function updateRiskResults() {
+            document.getElementById('riskAmount').textContent = `${currentRiskCalculation.riskAmount.toFixed(2)}`;
+            document.getElementById('positionSize').textContent = `${currentRiskCalculation.positionSize.toLocaleString()}`;
+            document.getElementById('lotSize').textContent = currentRiskCalculation.lotSize.toFixed(2);
+            document.getElementById('pipValue').textContent = `${currentRiskCalculation.pipValue.toFixed(2)}`;
+            document.getElementById('stopLossDistance').textContent = currentRiskCalculation.stopLossDistance;
+            document.getElementById('potentialProfit').textContent = `${currentRiskCalculation.potentialProfit.toFixed(2)}`;
+            document.getElementById('riskRewardRatio').textContent = `1:${currentRiskCalculation.riskRewardRatio}`;
+
+            updateRiskLevelDisplay(currentRiskCalculation.riskPercentage);
+        }
+
+        function updateRiskLevelDisplay(riskPercentage) {
+            const riskLevelElement = document.getElementById('riskLevel');
+            
+            if (riskPercentage <= 1) {
+                riskLevelElement.className = 'risk-level risk-low';
+                riskLevelElement.textContent = 'Low Risk';
+            } else if (riskPercentage <= 3) {
+                riskLevelElement.className = 'risk-level risk-medium';
+                riskLevelElement.textContent = 'Medium Risk';
+            } else {
+                riskLevelElement.className = 'risk-level risk-high';
+                riskLevelElement.textContent = 'High Risk';
+            }
+        }
+
+        function saveRiskCalculation() {
+            if (!currentRiskCalculation.accountBalance) {
+                alert('⚠️ Please calculate risk first before saving');
+                return;
+            }
+
+            try {
+                const savedCalculations = JSON.parse(localStorage.getItem('riskCalculations') || '[]');
+                savedCalculations.push(currentRiskCalculation);
+                
+                if (savedCalculations.length > 10) {
+                    savedCalculations.splice(0, savedCalculations.length - 10);
+                }
+                
+                localStorage.setItem('riskCalculations', JSON.stringify(savedCalculations));
+                
+                alert(`✅ Calculation Saved Successfully!\n\nPair: ${currentRiskCalculation.currencyPair}\nRisk: ${currentRiskCalculation.riskAmount.toFixed(2)}\nLot Size: ${currentRiskCalculation.lotSize.toFixed(2)}\nR:R Ratio: 1:${currentRiskCalculation.riskRewardRatio}\n\nSaved calculations: ${savedCalculations.length}/10`);
+                
+            } catch (error) {
+                console.error('Error saving calculation:', error);
+                alert('❌ Error saving calculation. Please try again.');
+            }
+        }
+
+        function resetRiskCalculator() {
+            const hasData = document.getElementById('accountBalance').value || 
+                           document.getElementById('riskPercentage').value ||
+                           document.getElementById('entryPrice').value ||
+                           document.getElementById('stopLossPrice').value;
+
+            if (!hasData) {
+                alert('ℹ️ Calculator is already empty. No data to reset.');
+                return;
+            }
+
+            const confirmReset = confirm('🔄 Reset Confirmation\n\nThis will clear all input fields and calculations.\n\nAre you sure you want to reset the calculator?');
+            
+            if (confirmReset) {
+                document.getElementById('accountBalance').value = '';
+                document.getElementById('riskPercentage').value = '';
+                document.getElementById('currencyPair').value = '';
+                document.getElementById('entryPrice').value = '';
+                document.getElementById('stopLossPrice').value = '';
+                document.getElementById('takeProfitPrice').value = '';
+
+                document.getElementById('riskAmount').textContent = '$0.00';
+                document.getElementById('positionSize').textContent = '0';
+                document.getElementById('lotSize').textContent = '0.00';
+                document.getElementById('pipValue').textContent = '$0.00';
+                document.getElementById('stopLossDistance').textContent = '0';
+                document.getElementById('potentialProfit').textContent = '$0.00';
+                document.getElementById('riskRewardRatio').textContent = '1:0.00';
+
+                const riskLevelElement = document.getElementById('riskLevel');
+                riskLevelElement.className = 'risk-level risk-low';
+                riskLevelElement.textContent = 'Low Risk';
+
+                currentRiskCalculation = {};
+
+                alert('✅ Calculator Reset Successfully!\n\nAll fields and calculations have been cleared.');
+            }
+        }
+
+        // Close risk calculator modal when clicking outside
+        document.getElementById('riskCalculatorModal').onclick = function(e) {
+            if (e.target === this) {
+                closeRiskCalculatorModal();
+            }
+        };
+
+        // =========================
+        // Global Market Hours Functions
+        // =========================
+        const marketSessions = {
+            sydney: { open: 22, close: 7 },
+            tokyo: { open: 0, close: 9 },
+            london: { open: 8, close: 17 },
+            newyork: { open: 13, close: 22 }
+        };
+
+        function openGlobalMarketHoursModal() {
+            document.getElementById('globalMarketHoursModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            initializeMarketHours();
+        }
+
+        function closeGlobalMarketHoursModal() {
+            document.getElementById('globalMarketHoursModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function initializeMarketHours() {
+            updateMarketCurrentTime();
+            updateMarketSessionStatuses();
+            
+            setInterval(() => {
+                updateMarketCurrentTime();
+                updateMarketSessionStatuses();
+            }, 1000);
+        }
+
+        function updateMarketCurrentTime() {
+            const now = new Date();
+            const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
+            
+            const timeString = utcTime.toLocaleTimeString('en-US', {
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            
+            const dateString = utcTime.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
+            document.getElementById('marketCurrentTime').textContent = timeString + ' UTC';
+            document.getElementById('marketCurrentDate').textContent = dateString;
+            document.getElementById('marketUserTimezone').textContent = userTimezone;
+        }
+
+        function isMarketSessionOpen(session) {
+            const now = new Date();
+            const utcHour = now.getUTCHours();
+            
+            if (session.open < session.close) {
+                return utcHour >= session.open && utcHour < session.close;
+            } else {
+                return utcHour >= session.open || utcHour < session.close;
+            }
+        }
+
+        function updateMarketSessionStatuses() {
+            Object.keys(marketSessions).forEach(sessionName => {
+                const session = marketSessions[sessionName];
+                const isOpen = isMarketSessionOpen(session);
+                
+                const sessionCard = document.getElementById('market' + sessionName.charAt(0).toUpperCase() + sessionName.slice(1) + 'Session');
+                const statusElement = document.getElementById('market' + sessionName.charAt(0).toUpperCase() + sessionName.slice(1) + 'Status');
+                
+                if (sessionCard && statusElement) {
+                    if (isOpen) {
+                        sessionCard.classList.add('active');
+                        statusElement.textContent = 'OPEN';
+                        statusElement.className = 'market-session-status market-status-open';
+                    } else {
+                        sessionCard.classList.remove('active');
+                        statusElement.textContent = 'CLOSED';
+                        statusElement.className = 'market-session-status market-status-closed';
+                    }
+                }
+            });
+
+            updateMarketSessionTimes();
+        }
+
+        function updateMarketSessionTimes() {
+            const now = new Date();
+            const timezoneOffset = now.getTimezoneOffset() / 60;
+            
+            Object.keys(marketSessions).forEach(sessionName => {
+                const session = marketSessions[sessionName];
+                
+                let openHour = session.open - timezoneOffset;
+                let closeHour = session.close - timezoneOffset;
+                
+                if (openHour < 0) openHour += 24;
+                if (openHour >= 24) openHour -= 24;
+                if (closeHour < 0) closeHour += 24;
+                if (closeHour >= 24) closeHour -= 24;
+                
+                const openTime = String(openHour).padStart(2, '0') + ':00';
+                const closeTime = String(closeHour).padStart(2, '0') + ':00';
+                
+                const openElement = document.getElementById('market' + sessionName.charAt(0).toUpperCase() + sessionName.slice(1) + 'Open');
+                const closeElement = document.getElementById('market' + sessionName.charAt(0).toUpperCase() + sessionName.slice(1) + 'Close');
+                
+                if (openElement) openElement.textContent = openTime;
+                if (closeElement) closeElement.textContent = closeTime;
+            });
+        }
+
+        // Close market hours modal when clicking outside
+        document.getElementById('globalMarketHoursModal').onclick = function(e) {
+            if (e.target === this) {
+                closeGlobalMarketHoursModal();
+            }
+        };
         let currentStep = 0, registeredUserId=null, userEmail=null, userPhone=null, otpTimer=null, otpTimeLeft=0;
         const steps=document.querySelectorAll(".reg-form-step"),
               progressLine=document.getElementById("regProgressLine"),
