@@ -425,263 +425,46 @@
             z-index: 10;
         }
 
-        /* Daily Checklist Modal Styles */
-        .checklist-container {
-            max-height: 85vh;
-            overflow-y: auto;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-        }
-
-        .checklist-header {
-            background: linear-gradient(135deg, #0072ff, #8e2de2);
-            padding: 30px;
-            text-align: center;
-            position: relative;
-        }
-
-        .checklist-header h1 {
-            font-size: 2rem;
-            margin: 0 0 10px 0;
-            font-weight: 800;
-        }
-
-        .checklist-header .subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin: 0;
-        }
-
-        .checklist-intro-section {
-            padding: 25px 30px;
-            background: rgba(0, 114, 255, 0.05);
-            border-bottom: 1px solid rgba(0, 114, 255, 0.1);
-        }
-
-        .checklist-intro-text {
-            text-align: center;
-            font-size: 1rem;
-            color: #cbd5e1;
-            margin-bottom: 15px;
-        }
-
-        .checklist-usage-instructions {
-            background: rgba(16, 185, 129, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            margin-top: 15px;
-            font-size: 0.9rem;
-        }
-
-        .checklist-content {
-            padding: 30px;
-        }
-
-        .checklist-section {
-            margin-bottom: 30px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            overflow: hidden;
-        }
-
-        .checklist-section-header {
-            background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(142, 45, 226, 0.1));
-            padding: 15px 20px;
-            border-bottom: 1px solid rgba(0, 114, 255, 0.2);
-        }
-
-        .checklist-section-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #0072ff;
-            margin: 0 0 5px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .checklist-section-icon {
-            font-size: 1.3rem;
-        }
-
-        .checklist-section-description {
-            color: #94a3b8;
-            font-size: 0.85rem;
-        }
-
-        .checklist-items {
-            padding: 20px;
-        }
-
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .checklist-item:last-child {
-            border-bottom: none;
-        }
-
-        .checklist-item:hover {
-            background: rgba(255,255,255,0.02);
-            border-radius: 6px;
-            padding-left: 8px;
-            padding-right: 8px;
-        }
-
-        .item-checkbox {
-            width: 18px;
-            height: 18px;
-            border: 2px solid #0072ff;
-            border-radius: 3px;
-            margin-top: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .item-checkbox:hover {
-            background: rgba(0, 114, 255, 0.2);
-            transform: scale(1.1);
-        }
-
-        .item-checkbox.checked {
-            background: #0072ff;
-            border-color: #0072ff;
-        }
-
-        .item-checkbox.checked::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
-            font-size: 12px;
-        }
-
-        .item-content {
-            flex: 1;
-        }
-
-        .item-title {
-            font-weight: 600;
-            color: #e2e8f0;
-            margin-bottom: 4px;
-            font-size: 0.95rem;
-        }
-
-        .item-description {
-            color: #94a3b8;
-            font-size: 0.8rem;
-            line-height: 1.4;
-        }
-
-        .progress-section {
-            background: rgba(16, 185, 129, 0.1);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            margin-top: 25px;
-            text-align: center;
-        }
-
-        .progress-title {
-            color: #10b981;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 16px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 12px 0;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #10b981, #059669);
-            border-radius: 8px;
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
-        .progress-text {
-            color: #cbd5e1;
-            font-size: 0.85rem;
-        }
-
-        .checklist-action-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .checklist-action-btn {
-            background: linear-gradient(135deg, #0072ff, #8e2de2);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .checklist-action-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 114, 255, 0.4);
-        }
-
-        .checklist-action-btn.secondary {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-
-        .checklist-action-btn.secondary:hover {
-            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
-        }
-
-        .checklist-reset-btn {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-        }
-
-        .checklist-reset-btn:hover {
-            box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
-        }
-
-        .checklist-footer {
-            background: rgba(0,0,0,0.6);
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid rgba(0, 114, 255, 0.2);
-        }
-
-        .checklist-footer-text {
-            color: #94a3b8;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .checklist-footer-note {
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
+        /* Registration Modal Styles (Exact from registration page) */
+        .reg-particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;}
+        .reg-particle{position:absolute;width:6px;height:6px;background:radial-gradient(circle,#8e2de2,#0072ff);border-radius:50%;opacity:0.7;animation:regFloat 12s linear infinite;}
+        @keyframes regFloat{from{transform:translateY(100vh) scale(0.5);opacity:0;}20%{opacity:1;}to{transform:translateY(-10vh) scale(1.2);opacity:0;}}
+        .reg-container{max-width:500px;margin:80px auto;padding:30px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.2);border-radius:15px;backdrop-filter:blur(10px);animation:regFadeIn 1.2s ease;position:relative;}
+        @keyframes regFadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+        .reg-h2{text-align:center;background:linear-gradient(90deg,#0072ff,#8e2de2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
+        .reg-progress{height:6px;width:100%;background:rgba(255,255,255,0.1);border-radius:5px;margin-bottom:30px;overflow:hidden;}
+        .reg-progress-line{height:100%;width:0%;background:linear-gradient(90deg,#0072ff,#8e2de2,#00d4ff);background-size:200% auto;animation:regGradient 2s linear infinite;transition:width 0.5s ease;}
+        @keyframes regGradient{to{background-position:200% 0;}}
+        .reg-form-step{display:none;animation:regSlideIn 0.8s ease;}
+        .reg-form-step.active{display:block;}
+        @keyframes regSlideIn{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
+        .reg-field{margin-bottom:20px;}
+        .reg-field label{display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;}
+        .reg-field input,.reg-field select{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:white;font-size:1rem;outline:none;transition:all 0.3s;}
+        .reg-field input:focus,.reg-field select:focus{border-color:#00d4ff;box-shadow:0 0 12px rgba(0,114,255,0.6);transform:scale(1.02);}
+        .reg-field input[type="tel"]{width:calc(100% - 8px);}
+        .reg-field select{width:120px;}
+        .reg-btn{width:100%;padding:14px;background:linear-gradient(90deg,#0072ff,#8e2de2);border:none;border-radius:8px;font-size:1rem;font-weight:600;color:white;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;}
+        .reg-btn:disabled{opacity:0.5;cursor:not-allowed;}
+        .reg-btn:hover:enabled{transform:scale(1.05);box-shadow:0 6px 18px rgba(0,114,255,0.5);}
+        .reg-otp-field{display:flex;justify-content:center;gap:10px;margin-bottom:15px;}
+        .reg-otp-field input{flex:1;max-width:50px;text-align:center;font-size:1.2rem;font-weight:bold;padding:10px;}
+        .reg-message{text-align:center;margin-top:15px;font-size:0.95rem;}
+        .reg-error{color:#ff6b6b;animation:regShake 0.4s;}
+        .reg-success{color:#00d084;animation:regGlow 1.2s infinite alternate;}
+        @keyframes regShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+        @keyframes regGlow{from{text-shadow:0 0 5px #00d084;}to{text-shadow:0 0 15px #00ffcc;}}
+        .reg-final-screen{text-align:center;display:none;}
+        .reg-final-screen h3{font-size:1.4rem;margin-bottom:10px;}
+        .reg-final-screen p{font-size:1rem;opacity:0.9;}
+        .reg-resend-btn,.reg-prev-btn{display:inline-block;margin-top:10px;padding:10px 18px;font-size:0.8rem;font-weight:600;background:linear-gradient(90deg,#0072ff,#8e2de2);border:none;border-radius:6px;color:white;cursor:pointer;}
+        .reg-resend-btn{opacity:0;pointer-events:none;transition:opacity 0.5s ease;}
+        .reg-resend-btn.show{opacity:1;pointer-events:auto;}
+        .reg-prev-btn{position:absolute;top:10px;left:10px;display:none;}
+        .reg-otp-timer-circle{margin:15px auto;width:70px;height:70px;position:relative;}
+        .reg-otp-timer-circle svg{transform:rotate(-90deg);}
+        .reg-otp-timer-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:0.8rem;font-weight:600;color:#00d4ff;}
+        .reg-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
         /* Enhanced Sections */
         section {
@@ -865,22 +648,6 @@
             box-shadow: 0 8px 20px rgba(0, 114, 255, 0.25);
         }
 
-        /* Enhanced Footer */
-        footer { 
-            text-align:center; padding:30px 20px; 
-            background:rgba(0,0,0,0.9); 
-            border-top:1px solid rgba(255,255,255,0.1); 
-            font-size:0.95rem; opacity:0.9; 
-            position:relative; margin-top: 50px;
-        }
-        footer::before { 
-            content:""; position:absolute; top:0; left:0; 
-            width:100%; height:2px;
-            background:linear-gradient(90deg,#0072ff,#8e2de2,#00d4ff); 
-            background-size:200% auto; 
-            animation:gradientMove 5s linear infinite; 
-        }
-
         /* Enhanced Back to Top */
         #backToTop { 
             position:fixed; bottom:25px; right:25px;
@@ -992,699 +759,9 @@
                 background: rgba(10, 15, 30, 0.95);
                 color: #e2e8f0;
             }
-            .checklist-content, .checklist-intro-section {
+            .reg-container {
                 padding: 20px 15px;
-            }
-            .checklist-header {
-                padding: 25px 20px;
-            }
-        }
-        
-        /* Risk Calculator Modal Styles */
-        .risk-calculator-container {
-            max-height: 85vh;
-            overflow-y: auto;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-        }
-
-        .risk-calculator-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            padding: 25px 30px;
-        }
-
-        .risk-input-section {
-            background: rgba(255,255,255,0.03);
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 25px;
-        }
-
-        .risk-results-section {
-            background: rgba(0, 114, 255, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(0, 114, 255, 0.2);
-            padding: 25px;
-        }
-
-        .risk-input-group {
-            margin-bottom: 20px;
-        }
-
-        .risk-input-label {
-            display: block;
-            font-weight: 600;
-            color: #e2e8f0;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-
-        .risk-tooltip-icon {
-            background: rgba(0, 114, 255, 0.2);
-            color: #0072ff;
-            border-radius: 50%;
-            width: 16px;
-            height: 16px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: bold;
-            margin-left: 6px;
-            cursor: help;
-            position: relative;
-        }
-
-        .risk-tooltip-icon:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.9);
-            color: white;
-            padding: 6px 10px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            white-space: nowrap;
-            z-index: 1000;
-            border: 1px solid rgba(0, 114, 255, 0.3);
-            max-width: 200px;
-            white-space: normal;
-        }
-
-        .risk-input-field, .risk-select-field {
-            width: 100%;
-            padding: 10px 12px;
-            background: rgba(255,255,255,0.08);
-            border: 2px solid rgba(255,255,255,0.1);
-            border-radius: 6px;
-            color: white;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .risk-input-field:focus, .risk-select-field:focus {
-            outline: none;
-            border-color: #0072ff;
-            background: rgba(255,255,255,0.12);
-            box-shadow: 0 0 0 2px rgba(0, 114, 255, 0.1);
-        }
-
-        .risk-select-field option {
-            background: #1a1f3e;
-            color: white;
-        }
-
-        .currency-pair-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .currency-pair-btn {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white;
-            padding: 6px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .currency-pair-btn:hover {
-            background: rgba(0, 114, 255, 0.2);
-            border-color: #0072ff;
-        }
-
-        .currency-pair-btn.active {
-            background: linear-gradient(135deg, #0072ff, #8e2de2);
-            border-color: #0072ff;
-        }
-
-        .risk-calculation-card {
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 15px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .risk-calculation-card:hover {
-            border-color: rgba(0, 114, 255, 0.4);
-            transform: translateY(-1px);
-        }
-
-        .risk-calc-label {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            margin-bottom: 4px;
-        }
-
-        .risk-calc-value {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #0072ff;
-        }
-
-        .risk-calc-unit {
-            font-size: 0.8rem;
-            color: #cbd5e1;
-            margin-left: 4px;
-        }
-
-        .risk-level {
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-align: center;
-            margin-top: 8px;
-        }
-
-        .risk-low {
-            background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-
-        .risk-medium {
-            background: rgba(245, 158, 11, 0.2);
-            color: #f59e0b;
-            border: 1px solid rgba(245, 158, 11, 0.3);
-        }
-
-        .risk-high {
-            background: rgba(239, 68, 68, 0.2);
-            color: #ef4444;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-        }
-
-        .risk-warning-box {
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 30px;
-        }
-
-        .risk-warning-title {
-            color: #f59e0b;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .risk-warning-text {
-            font-size: 0.85rem;
-            color: #fbbf24;
-            line-height: 1.4;
-        }
-
-        .risk-educational-section {
-            background: rgba(16, 185, 129, 0.05);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 30px;
-        }
-
-        .risk-educational-title {
-            color: #10b981;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-
-        .risk-tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .risk-tip-card {
-            background: rgba(255,255,255,0.03);
-            padding: 12px;
-            border-radius: 6px;
-            border-left: 3px solid #10b981;
-        }
-
-        .risk-tip-title {
-            font-weight: 600;
-            color: #10b981;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-
-        .risk-tip-description {
-            font-size: 0.8rem;
-            color: #cbd5e1;
-            line-height: 1.3;
-        }
-
-        @media (max-width: 768px) {
-            .risk-calculator-content {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                padding: 20px 15px;
-            }
-            
-            .risk-input-section, .risk-results-section {
-                padding: 15px;
-            }
-            
-            .currency-pair-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .risk-tips-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .risk-warning-box, .risk-educational-section {
-                margin: 15px;
-                padding: 15px;
-            }
-        }
-
-        /* Global Market Hours Modal Styles */
-        .market-hours-container {
-            max-height: 85vh;
-            overflow-y: auto;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-        }
-
-        .market-current-time-section {
-            padding: 25px 30px;
-            background: rgba(0, 114, 255, 0.05);
-            border-bottom: 1px solid rgba(0, 114, 255, 0.1);
-            text-align: center;
-        }
-
-        .market-current-time-display {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0072ff;
-            margin-bottom: 8px;
-        }
-
-        .market-current-date {
-            font-size: 1rem;
-            color: #cbd5e1;
-            margin-bottom: 15px;
-        }
-
-        .market-timezone-info {
-            background: rgba(255,255,255,0.05);
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-            border: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-        }
-
-        .market-content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            padding: 25px 30px;
-        }
-
-        .market-sessions-section, .market-overlaps-section {
-            background: rgba(255,255,255,0.03);
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 25px;
-        }
-
-        .market-session-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 15px;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .market-session-card:hover {
-            border-color: rgba(0, 114, 255, 0.4);
-            transform: translateY(-1px);
-        }
-
-        .market-session-card.active {
-            border-color: #10b981;
-            background: rgba(16, 185, 129, 0.1);
-        }
-
-        .market-session-card.active::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: #10b981;
-            border-radius: 1px;
-        }
-
-        .market-session-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .market-session-name {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #e2e8f0;
-        }
-
-        .market-session-status {
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .market-status-open {
-            background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-
-        .market-status-closed {
-            background: rgba(107, 114, 128, 0.2);
-            color: #9ca3af;
-            border: 1px solid rgba(107, 114, 128, 0.3);
-        }
-
-        .market-session-times {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .market-time-info {
-            text-align: center;
-        }
-
-        .market-time-label {
-            font-size: 0.75rem;
-            color: #94a3b8;
-            margin-bottom: 3px;
-        }
-
-        .market-time-value {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #cbd5e1;
-        }
-
-        .market-session-description {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            line-height: 1.3;
-        }
-
-        .market-overlap-card {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(0, 114, 255, 0.1));
-            border-radius: 10px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 15px;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .market-overlap-card:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.2);
-        }
-
-        .market-overlap-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #10b981;
-            margin-bottom: 6px;
-        }
-
-        .market-overlap-time {
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            margin-bottom: 8px;
-        }
-
-        .market-overlap-pairs {
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
-
-        .market-visual-timeline {
-            background: rgba(255,255,255,0.03);
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 25px;
-            margin: 20px 30px;
-        }
-
-        .market-timeline-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #0072ff;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .market-timeline-container {
-            position: relative;
-            height: 50px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 25px;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-
-        .market-timeline-hour {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            border-left: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.6rem;
-            color: #94a3b8;
-        }
-
-        .market-session-bar {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 25px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .market-sydney-bar {
-            background: linear-gradient(90deg, #ef4444, #dc2626);
-        }
-
-        .market-tokyo-bar {
-            background: linear-gradient(90deg, #f59e0b, #d97706);
-        }
-
-        .market-london-bar {
-            background: linear-gradient(90deg, #0072ff, #8e2de2);
-        }
-
-        .market-newyork-bar {
-            background: linear-gradient(90deg, #10b981, #059669);
-        }
-
-        .market-timeline-legend {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .market-legend-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .market-legend-color {
-            width: 10px;
-            height: 10px;
-            border-radius: 5px;
-        }
-
-        .market-legend-text {
-            font-size: 0.8rem;
-            color: #cbd5e1;
-        }
-
-        .market-best-pairs-section {
-            background: rgba(16, 185, 129, 0.05);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 30px;
-        }
-
-        .market-best-pairs-title {
-            color: #10b981;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .market-pairs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
-
-        .market-pair-card {
-            background: rgba(255,255,255,0.03);
-            padding: 12px;
-            border-radius: 6px;
-            border-left: 3px solid #10b981;
-        }
-
-        .market-pair-name {
-            font-weight: 600;
-            color: #10b981;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-
-        .market-pair-times {
-            font-size: 0.8rem;
-            color: #cbd5e1;
-            margin-bottom: 5px;
-        }
-
-        .market-pair-description {
-            font-size: 0.75rem;
-            color: #94a3b8;
-            line-height: 1.3;
-        }
-
-        .market-educational-section {
-            background: rgba(245, 158, 11, 0.05);
-            border: 1px solid rgba(245, 158, 11, 0.2);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 30px;
-        }
-
-        .market-educational-title {
-            color: #f59e0b;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-
-        .market-tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .market-tip-card {
-            background: rgba(255,255,255,0.03);
-            padding: 12px;
-            border-radius: 6px;
-            border-left: 3px solid #f59e0b;
-        }
-
-        .market-tip-title {
-            font-weight: 600;
-            color: #f59e0b;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-
-        .market-tip-description {
-            font-size: 0.8rem;
-            color: #cbd5e1;
-            line-height: 1.3;
-        }
-
-        @media (max-width: 768px) {
-            .market-content-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                padding: 20px 15px;
-            }
-            
-            .market-sessions-section, .market-overlaps-section {
-                padding: 15px;
-            }
-            
-            .market-session-times {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-            
-            .market-pairs-grid, .market-tips-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .market-best-pairs-section, .market-visual-timeline, .market-educational-section {
-                margin: 15px;
-                padding: 15px;
-            }
-            
-            .market-timeline-legend {
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-            }
-
-            .market-current-time-section {
-                padding: 20px 15px;
-            }
-
-            .market-current-time-display {
-                font-size: 1.4rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .market-timeline-container {
-                height: 60px;
-            }
-
-            .market-session-bar {
-                height: 18px;
-                font-size: 0.6rem;
-            }
-
-            .market-current-time-display {
-                font-size: 1.2rem;
+                margin: 40px auto;
             }
         }
     </style>
@@ -1692,7 +769,7 @@
 <body>
     <div id="progress-bar"></div>
 
-    <!-- Market Ticker (TradingView Style) -->
+    <!-- Market Ticker -->
     <div class="market-ticker">
         <div class="ticker-content">
             <div class="ticker-item">
@@ -1743,7 +820,7 @@
         <div style="font-size: 1.5rem; font-weight: 800; color: #0072ff;">Trade With Sensei</div>
         <div>
             <button class="toggle-btn" id="toggleTheme">Toggle Mode</button>
-            <a href="register.html" class="nav-btn">Register</a>
+            <a href="#" class="nav-btn" onclick="openRegistrationModal()">Register</a>
         </div>
     </div>
 
@@ -1756,7 +833,7 @@
                 <span class="typing-text" id="typingText"></span>
             </h1>
             <p class="hero-subtitle">Trade smarter with strategies designed for real market conditions.</p>
-            <a href="register.html" class="nav-btn" style="font-size: 1.1rem; padding: 15px 30px;">Register Now</a>
+            <a href="#" class="nav-btn" onclick="openRegistrationModal()" style="font-size: 1.1rem; padding: 15px 30px;">Register Now</a>
         </div>
     </header>
 
@@ -1938,688 +1015,83 @@
     <section>
         <h2>Ready to Trade Smarter?</h2>
         <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.9;">Join thousands of successful traders who started their journey here</p>
-        <a href="register.html" class="nav-btn" style="font-size: 1.2rem; padding: 18px 35px;">Get Started Today</a>
+        <a href="#" class="nav-btn" onclick="openRegistrationModal()" style="font-size: 1.2rem; padding: 18px 35px;">Get Started Today</a>
         <p style="margin-top: 20px; opacity: 0.7; font-size: 0.95rem;">Transform your trading in just 8 weeks</p>
     </section>
 
-    <!-- Daily Trading Checklist Modal -->
-    <div class="modal-overlay" id="dailyChecklistModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeDailyChecklistModal()">&times;</button>
-            <div class="checklist-container">
-                <!-- Header -->
-                <div class="checklist-header">
-                    <h1>Daily Trading Checklist</h1>
-                    <p class="subtitle">Professional Pre-Market Analysis & Trading Preparation</p>
-                </div>
-
-                <!-- Introduction -->
-                <div class="checklist-intro-section">
-                    <p class="checklist-intro-text">
-                        A comprehensive 15-point checklist used by professional traders to ensure consistent preparation and disciplined trading approach every day.
-                    </p>
-                    <div class="checklist-usage-instructions">
-                        <strong style="color: #10b981;">How to Use:</strong> Go through each item before market open. Check off completed items. Aim for 100% completion before placing any trades.
-                    </div>
-                </div>
-
-                <!-- Progress Section -->
-                <div class="checklist-content">
-                    <div class="progress-section">
-                        <div class="progress-title">Daily Preparation Progress</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progressFill"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span id="progressText">0 of 15 items completed (0%)</span>
-                        </div>
-                    </div>
-
-                    <!-- Pre-Market Analysis Section -->
-                    <div class="checklist-section">
-                        <div class="checklist-section-header">
-                            <div class="checklist-section-title">
-                                <span class="checklist-section-icon">📊</span>
-                                Pre-Market Analysis
-                            </div>
-                            <div class="checklist-section-description">Essential market research before trading begins</div>
-                        </div>
-                        <div class="checklist-items">
-                            <div class="checklist-item" data-category="pre-market">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Check Major Economic News</div>
-                                    <div class="item-description">Review economic calendar for high-impact news releases scheduled for today</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="pre-market">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Analyze Previous Day's Market Close</div>
-                                    <div class="item-description">Review how major currency pairs closed and identify key levels</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="pre-market">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Check Asian Session Price Action</div>
-                                    <div class="item-description">Analyze overnight price movements and identify any significant breakouts or rejections</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="pre-market">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Review Market Sentiment</div>
-                                    <div class="item-description">Check news headlines, market sentiment indicators, and social media buzz</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Technical Analysis Section -->
-                    <div class="checklist-section">
-                        <div class="checklist-section-header">
-                            <div class="checklist-section-title">
-                                <span class="checklist-section-icon">📈</span>
-                                Technical Analysis Setup
-                            </div>
-                            <div class="checklist-section-description">Chart preparation and technical level identification</div>
-                        </div>
-                        <div class="checklist-items">
-                            <div class="checklist-item" data-category="technical">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Mark Key Support & Resistance Levels</div>
-                                    <div class="item-description">Identify and mark major support/resistance levels on all timeframes</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="technical">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Draw Relevant Trendlines</div>
-                                    <div class="item-description">Update trendlines on daily and 4-hour charts for trending pairs</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="technical">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Check Multiple Timeframe Alignment</div>
-                                    <div class="item-description">Ensure weekly, daily, and 4-hour trends are identified and aligned</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="technical">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Identify High-Probability Setups</div>
-                                    <div class="item-description">Scan charts for potential trade setups matching your strategy criteria</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Risk Management Section -->
-                    <div class="checklist-section">
-                        <div class="checklist-section-header">
-                            <div class="checklist-section-title">
-                                <span class="checklist-section-icon">🛡️</span>
-                                Risk Management
-                            </div>
-                            <div class="checklist-section-description">Capital protection and position sizing verification</div>
-                        </div>
-                        <div class="checklist-items">
-                            <div class="checklist-item" data-category="risk">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Calculate Daily Risk Allowance</div>
-                                    <div class="item-description">Determine maximum amount willing to risk today (1-2% of account)</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="risk">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Set Position Size Limits</div>
-                                    <div class="item-description">Pre-calculate position sizes for potential trades based on stop loss distances</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="risk">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Review Current Open Positions</div>
-                                    <div class="item-description">Check existing trades, adjust stops if needed, assess overall portfolio risk</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Psychology & Discipline Section -->
-                    <div class="checklist-section">
-                        <div class="checklist-section-header">
-                            <div class="checklist-section-title">
-                                <span class="checklist-section-icon">🧠</span>
-                                Psychology & Discipline
-                            </div>
-                            <div class="checklist-section-description">Mental preparation and emotional state check</div>
-                        </div>
-                        <div class="checklist-items">
-                            <div class="checklist-item" data-category="psychology">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Assess Emotional State</div>
-                                    <div class="item-description">Check if feeling calm, focused, and emotionally balanced for trading</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="psychology">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Review Trading Rules</div>
-                                    <div class="item-description">Mentally rehearse your trading plan and key rules to avoid impulsive decisions</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="psychology">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Set Realistic Daily Expectations</div>
-                                    <div class="item-description">Define realistic goals for the day, focusing on process over profits</div>
-                                </div>
-                            </div>
-                            <div class="checklist-item" data-category="psychology">
-                                <div class="item-checkbox" onclick="toggleChecklistItem(this)"></div>
-                                <div class="item-content">
-                                    <div class="item-title">Prepare Exit Strategy</div>
-                                    <div class="item-description">Plan when to step away if daily loss limit is reached or emotions become unstable</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Action Buttons -->
-                    <div class="checklist-action-buttons">
-                        <button class="checklist-action-btn secondary" onclick="printChecklist()">Print Checklist</button>
-                        <button class="checklist-action-btn" onclick="saveChecklistProgress()">Save Progress</button>
-                        <button class="checklist-action-btn checklist-reset-btn" onclick="resetDailyChecklist()">Reset All</button>
-                    </div>
-                </div>
-
-                <!-- Footer -->
-                <div class="checklist-footer">
-                    <p class="checklist-footer-text">
-                        <strong>Remember:</strong> Consistent preparation leads to consistent results. Complete this checklist daily before market open.
-                    </p>
-                    <p class="checklist-footer-note">
-                        © 2025 Trade With Sensei - Professional Trading Education
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Global Market Hours Modal -->
-    <div class="modal-overlay" id="globalMarketHoursModal">
-        <div class="modal-content" style="max-width: 95vw; width: 1200px;">
-            <button class="modal-close" onclick="closeGlobalMarketHoursModal()">&times;</button>
-            <div class="market-hours-container">
-                <!-- Header -->
-                <div class="checklist-header">
-                    <h1>Global Market Hours</h1>
-                    <p class="subtitle">Live Trading Sessions, Overlaps & Best Trading Times</p>
-                </div>
-
-                <!-- Current Time Section -->
-                <div class="market-current-time-section">
-                    <div class="market-current-time-display" id="marketCurrentTime">00:00:00</div>
-                    <div class="market-current-date" id="marketCurrentDate">Loading...</div>
-                    <div class="market-timezone-info">
-                        <strong>Your Timezone:</strong> <span id="marketUserTimezone">UTC</span>
-                    </div>
-                </div>
-
-                <!-- Main Content Grid -->
-                <div class="market-content-grid">
-                    <!-- Trading Sessions -->
-                    <div class="market-sessions-section">
-                        <div class="checklist-section-title">
-                            <span class="checklist-section-icon">🌍</span>
-                            Major Trading Sessions
-                        </div>
-
-                        <!-- Sydney Session -->
-                        <div class="market-session-card" id="marketSydneySession">
-                            <div class="market-session-header">
-                                <div class="market-session-name">Sydney Session</div>
-                                <div class="market-session-status market-status-closed" id="marketSydneyStatus">CLOSED</div>
-                            </div>
-                            <div class="market-session-times">
-                                <div class="market-time-info">
-                                    <div class="market-time-label">Opens</div>
-                                    <div class="market-time-value" id="marketSydneyOpen">22:00</div>
-                                </div>
-                                <div class="market-time-info">
-                                    <div class="market-time-label">Closes</div>
-                                    <div class="market-time-value" id="marketSydneyClose">07:00</div>
-                                </div>
-                            </div>
-                            <div class="market-session-description">
-                                AUD, NZD pairs most active. Lower volatility session with steady trends.
-                            </div>
-                        </div>
-
-                        <!-- Tokyo Session -->
-                        <div class="market-session-card" id="marketTokyoSession">
-                            <div class="market-session-header">
-                                <div class="market-session-name">Tokyo Session</div>
-                                <div class="market-session-status market-status-closed" id="marketTokyoStatus">CLOSED</div>
-                            </div>
-                            <div class="market-session-times">
-                                <div class="market-time-info">
-                                    <div class="market-time-label">Opens</div>
-                                    <div class="market-time-value" id="marketTokyoOpen">00:00</div>
-                                </div>
-                                <div class="market-time-info">
-                                    <div class="market-time-label">Closes</div>
-                                    <div class="market-time-value" id="marketTokyoClose">09:00</div>
-                                </div>
-                            </div>
-                            <div class="market-session-description">
-                                JPY pairs most active. Bank of Japan interventions possible during this session.
-                            </div>
-                        </div>
-
-                        <!-- London Session -->
-                        <div class="market-session-card" id="marketLondonSession">
-                            <div class="market-session-header">
-                                <div class="market-session-name">London Session</div>
-                                <div class="market-session-status market-status-closed" id="marketLondonStatus">CLOSED</div>
-                            </div>
-                            <div class="market-session-times">
-                                <div class="market-time-info">
-                                    <div class="market-time-label">Opens</div>
-                                    <div class="market-time-value" id="marketLondonOpen">08:00</div>
-                                </div>
-                                <div class="market-time-info">
-                                    <div class="market-time-label">Closes</div>
-                                    <div class="market-time-value" id="marketLondonClose">17:00</div>
-                                </div>
-                            </div>
-                            <div class="market-session-description">
-                                Highest volume session. EUR, GBP pairs most active. Major economic news releases.
-                            </div>
-                        </div>
-
-                        <!-- New York Session -->
-                        <div class="market-session-card" id="marketNewyorkSession">
-                            <div class="market-session-header">
-                                <div class="market-session-name">New York Session</div>
-                                <div class="market-session-status market-status-closed" id="marketNewyorkStatus">CLOSED</div>
-                            </div>
-                            <div class="market-session-times">
-                                <div class="market-time-info">
-                                    <div class="market-time-label">Opens</div>
-                                    <div class="market-time-value" id="marketNewyorkOpen">13:00</div>
-                                </div>
-                                <div class="market-time-info">
-                                    <div class="market-time-label">Closes</div>
-                                    <div class="market-time-value" id="marketNewyorkClose">22:00</div>
-                                </div>
-                            </div>
-                            <div class="market-session-description">
-                                USD pairs most active. Major US economic data releases and Fed announcements.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Session Overlaps -->
-                    <div class="market-overlaps-section">
-                        <div class="checklist-section-title">
-                            <span class="checklist-section-icon">⏰</span>
-                            Session Overlaps
-                        </div>
-
-                        <div class="market-overlap-card">
-                            <div class="market-overlap-title">Tokyo + London Overlap</div>
-                            <div class="market-overlap-time">08:00 - 09:00 UTC</div>
-                            <div class="market-overlap-pairs">Best for: EUR/JPY, GBP/JPY, USD/JPY</div>
-                        </div>
-
-                        <div class="market-overlap-card">
-                            <div class="market-overlap-title">London + New York Overlap</div>
-                            <div class="market-overlap-time">13:00 - 17:00 UTC</div>
-                            <div class="market-overlap-pairs">Best for: EUR/USD, GBP/USD, USD/CHF</div>
-                        </div>
-
-                        <div class="market-overlap-card">
-                            <div class="market-overlap-title">Sydney + Tokyo Overlap</div>
-                            <div class="market-overlap-time">00:00 - 07:00 UTC</div>
-                            <div class="market-overlap-pairs">Best for: AUD/JPY, NZD/JPY, AUD/USD</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Visual Timeline -->
-                <div class="market-visual-timeline">
-                    <div class="market-timeline-title">24-Hour Trading Sessions Timeline</div>
-                    <div class="market-timeline-container" id="marketTimelineContainer">
-                        <!-- Timeline hours will be generated by JavaScript -->
-                    </div>
-                    <div class="market-timeline-legend">
-                        <div class="market-legend-item">
-                            <div class="market-legend-color" style="background: linear-gradient(90deg, #ef4444, #dc2626);"></div>
-                            <span class="market-legend-text">Sydney</span>
-                        </div>
-                        <div class="market-legend-item">
-                            <div class="market-legend-color" style="background: linear-gradient(90deg, #f59e0b, #d97706);"></div>
-                            <span class="market-legend-text">Tokyo</span>
-                        </div>
-                        <div class="market-legend-item">
-                            <div class="market-legend-color" style="background: linear-gradient(90deg, #0072ff, #8e2de2);"></div>
-                            <span class="market-legend-text">London</span>
-                        </div>
-                        <div class="market-legend-item">
-                            <div class="market-legend-color" style="background: linear-gradient(90deg, #10b981, #059669);"></div>
-                            <span class="market-legend-text">New York</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Best Currency Pairs Section -->
-                <div class="market-best-pairs-section">
-                    <div class="market-best-pairs-title">Best Trading Times for Major Currency Pairs</div>
-                    <div class="market-pairs-grid">
-                        <div class="market-pair-card">
-                            <div class="market-pair-name">EUR/USD</div>
-                            <div class="market-pair-times">Best: 08:00-17:00 & 13:00-17:00 UTC</div>
-                            <div class="market-pair-description">Most active during London session and London-NY overlap. Highest volume and tightest spreads.</div>
-                        </div>
-                        <div class="market-pair-card">
-                            <div class="market-pair-name">GBP/USD</div>
-                            <div class="market-pair-times">Best: 08:00-17:00 & 13:00-17:00 UTC</div>
-                            <div class="market-pair-description">Peak activity during London session. Volatile with strong trending moves.</div>
-                        </div>
-                        <div class="market-pair-card">
-                            <div class="market-pair-name">USD/JPY</div>
-                            <div class="market-pair-times">Best: 00:00-09:00 & 13:00-17:00 UTC</div>
-                            <div class="market-pair-description">Active during Tokyo session and NY session. Watch for BoJ interventions.</div>
-                        </div>
-                        <div class="market-pair-card">
-                            <div class="market-pair-name">AUD/USD</div>
-                            <div class="market-pair-times">Best: 22:00-07:00 & 13:00-17:00 UTC</div>
-                            <div class="market-pair-description">Most active during Sydney session and NY session overlap.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Educational Section -->
-                <div class="market-educational-section">
-                    <div class="market-educational-title">Trading Session Tips</div>
-                    <p style="color: #cbd5e1; margin-bottom: 20px;">
-                        Understanding market hours helps you trade when liquidity is highest and spreads are tightest
-                    </p>
-                    
-                    <div class="market-tips-grid">
-                        <div class="market-tip-card">
-                            <div class="market-tip-title">Overlap Strategy</div>
-                            <div class="market-tip-description">
-                                Trade during session overlaps for maximum volatility and liquidity. London-NY overlap is the most active.
-                            </div>
-                        </div>
-                        <div class="market-tip-card">
-                            <div class="market-tip-title">News Releases</div>
-                            <div class="market-tip-description">
-                                Major economic news releases during London and NY sessions can cause significant price movements.
-                            </div>
-                        </div>
-                        <div class="market-tip-card">
-                            <div class="market-tip-title">Weekend Gaps</div>
-                            <div class="market-tip-description">
-                                Markets close Friday 22:00 UTC and reopen Sunday 22:00 UTC. Watch for weekend gap trading opportunities.
-                            </div>
-                        </div>
-                        <div class="market-tip-card">
-                            <div class="market-tip-title">Holiday Schedule</div>
-                            <div class="market-tip-description">
-                                Trading hours may change during holidays. Always check for holiday schedule adjustments.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="checklist-action-buttons">
-                    <button class="checklist-action-btn secondary" onclick="setMarketTradingAlerts()">Set Trading Alerts</button>
-                    <button class="checklist-action-btn" onclick="exportMarketSchedule()">Export Schedule</button>
-                    <button class="checklist-action-btn" onclick="showActiveMarketAlerts()">View Active Alerts</button>
-                </div>
-
-                <!-- Footer -->
-                <div class="checklist-footer">
-                    <p class="checklist-footer-text">
-                        <strong>Note:</strong> Times shown in UTC. Session times may vary during daylight saving transitions.
-                    </p>
-                    <p class="checklist-footer-note">
-                        © 2025 Trade With Sensei - Professional Trading Education
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Risk Calculator Modal -->
-    <div class="modal-overlay" id="riskCalculatorModal">
-        <div class="modal-content" style="max-width: 95vw; width: 1200px;">
-            <button class="modal-close" onclick="closeRiskCalculatorModal()">&times;</button>
-            <div class="risk-calculator-container">
-                <!-- Header -->
-                <div class="checklist-header">
-                    <h1>Professional Risk Calculator</h1>
-                    <p class="subtitle">Calculate Position Size, Risk & Reward for Optimal Trading</p>
-                </div>
-
-                <!-- Calculator Content -->
-                <div class="risk-calculator-content">
-                    <!-- Input Section -->
-                    <div class="risk-input-section">
-                        <div class="checklist-section-title">
-                            <span class="checklist-section-icon">⚙️</span>
-                            Trading Parameters
-                        </div>
-
-                        <!-- Account Balance -->
-                        <div class="risk-input-group">
-                            <label class="risk-input-label">
-                                Account Balance ($)
-                                <span class="risk-tooltip-icon" data-tooltip="Total amount in your trading account">?</span>
-                            </label>
-                            <input type="number" class="risk-input-field" id="accountBalance" placeholder="10000" min="1" step="0.01">
-                        </div>
-
-                        <!-- Risk Percentage -->
-                        <div class="risk-input-group">
-                            <label class="risk-input-label">
-                                Risk Percentage (%)
-                                <span class="risk-tooltip-icon" data-tooltip="How much of your account you're willing to risk per trade (recommended: 1-2%)">?</span>
-                            </label>
-                            <input type="number" class="risk-input-field" id="riskPercentage" placeholder="2" min="0.1" max="10" step="0.1">
-                        </div>
-
-                        <!-- Currency Pair -->
-                        <div class="risk-input-group">
-                            <label class="risk-input-label">
-                                Currency Pair
-                                <span class="risk-tooltip-icon" data-tooltip="Select the currency pair you want to trade">?</span>
-                            </label>
-                            <select class="risk-select-field" id="currencyPair">
-                                <option value="">Select Currency Pair</option>
-                                <option value="EURUSD">EUR/USD</option>
-                                <option value="GBPUSD">GBP/USD</option>
-                                <option value="USDJPY">USD/JPY</option>
-                                <option value="AUDUSD">AUD/USD</option>
-                                <option value="USDCAD">USD/CAD</option>
-                                <option value="NZDUSD">NZD/USD</option>
-                                <option value="EURGBP">EUR/GBP</option>
-                                <option value="EURJPY">EUR/JPY</option>
-                            </select>
-                            <div class="currency-pair-grid">
-                                <button class="currency-pair-btn" onclick="selectPair('EURUSD')">EUR/USD</button>
-                                <button class="currency-pair-btn" onclick="selectPair('GBPUSD')">GBP/USD</button>
-                                <button class="currency-pair-btn" onclick="selectPair('USDJPY')">USD/JPY</button>
-                                <button class="currency-pair-btn" onclick="selectPair('AUDUSD')">AUD/USD</button>
-                                <button class="currency-pair-btn" onclick="selectPair('USDCAD')">USD/CAD</button>
-                                <button class="currency-pair-btn" onclick="selectPair('NZDUSD')">NZD/USD</button>
-                            </div>
-                        </div>
-
-                        <!-- Entry Price -->
-                        <div class="risk-input-group">
-                            <label class="risk-input-label">
-                                Entry Price
-                                <span class="risk-tooltip-icon" data-tooltip="The price at which you plan to enter the trade">?</span>
-                            </label>
-                            <input type="number" class="risk-input-field" id="entryPrice" placeholder="1.0850" step="0.00001">
-                        </div>
-
-                        <!-- Stop Loss -->
-                        <div class="risk-input-group">
-                            <label class="risk-input-label">
-                                Stop Loss Price
-                                <span class="risk-tooltip-icon" data-tooltip="The price at which you will exit if the trade goes against you">?</span>
-                            </label>
-                            <input type="number" class="risk-input-field" id="stopLossPrice" placeholder="1.0800" step="0.00001">
-                        </div>
-
-                        <!-- Take Profit -->
-                        <div class="risk-input-group">
-                            <label class="risk-input-label">
-                                Take Profit Price (Optional)
-                                <span class="risk-tooltip-icon" data-tooltip="The price at which you will take profits">?</span>
-                            </label>
-                            <input type="number" class="risk-input-field" id="takeProfitPrice" placeholder="1.0950" step="0.00001">
-                        </div>
-                    </div>
-
-                    <!-- Results Section -->
-                    <div class="risk-results-section">
-                        <div class="checklist-section-title">
-                            <span class="checklist-section-icon">📊</span>
-                            Calculation Results
-                        </div>
-
-                        <!-- Risk Amount -->
-                        <div class="risk-calculation-card">
-                            <div class="risk-calc-label">Risk Amount</div>
-                            <div class="risk-calc-value" id="riskAmount">$0.00</div>
-                            <div id="riskLevel" class="risk-level risk-low">Low Risk</div>
-                        </div>
-
-                        <!-- Position Size -->
-                        <div class="risk-calculation-card">
-                            <div class="risk-calc-label">Position Size</div>
-                            <div class="risk-calc-value" id="positionSize">0<span class="risk-calc-unit">units</span></div>
-                        </div>
-
-                        <!-- Lot Size -->
-                        <div class="risk-calculation-card">
-                            <div class="risk-calc-label">Lot Size</div>
-                            <div class="risk-calc-value" id="lotSize">0.00<span class="risk-calc-unit">lots</span></div>
-                        </div>
-
-                        <!-- Pip Value -->
-                        <div class="risk-calculation-card">
-                            <div class="risk-calc-label">Pip Value</div>
-                            <div class="risk-calc-value" id="pipValue">$0.00<span class="risk-calc-unit">per pip</span></div>
-                        </div>
-
-                        <!-- Stop Loss Distance -->
-                        <div class="risk-calculation-card">
-                            <div class="risk-calc-label">Stop Loss Distance</div>
-                            <div class="risk-calc-value" id="stopLossDistance">0<span class="risk-calc-unit">pips</span></div>
-                        </div>
-
-                        <!-- Potential Profit -->
-                        <div class="risk-calculation-card">
-                            <div class="risk-calc-label">Potential Profit</div>
-                            <div class="risk-calc-value" id="potentialProfit">$0.00</div>
-                        </div>
-
-                        <!-- Risk Reward Ratio -->
-                        <div class="risk-calculation-card">
-                            <div class="risk-calc-label">Risk:Reward Ratio</div>
-                            <div class="risk-calc-value" id="riskRewardRatio">1:0.00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="checklist-action-buttons">
-                    <button class="checklist-action-btn" onclick="calculateRisk()">Calculate Risk</button>
-                    <button class="checklist-action-btn secondary" onclick="saveRiskCalculation()">Save Calculation</button>
-                    <button class="checklist-action-btn checklist-reset-btn" onclick="resetRiskCalculator()">Reset All</button>
-                </div>
-
-                <!-- Warning Box -->
-                <div class="risk-warning-box">
-                    <div class="risk-warning-title">⚠️ Important Risk Disclaimer</div>
-                    <div class="risk-warning-text">
-                        This calculator provides estimates based on your inputs. Always double-check calculations before placing trades. 
-                        Trading involves substantial risk and is not suitable for all investors.
-                    </div>
-                </div>
-
-                <!-- Educational Section -->
-                <div class="risk-educational-section">
-                    <div class="risk-educational-title">💡 Professional Trading Tips</div>
-                    <p style="color: #cbd5e1; margin-bottom: 20px;">
-                        Master these risk management principles to protect your capital and maximize long-term success
-                    </p>
-                    
-                    <div class="risk-tips-grid">
-                        <div class="risk-tip-card">
-                            <div class="risk-tip-title">1-2% Rule</div>
-                            <div class="risk-tip-description">
-                                Never risk more than 1-2% of your account on a single trade. This protects you from devastating losses.
-                            </div>
-                        </div>
-                        <div class="risk-tip-card">
-                            <div class="risk-tip-title">Position Sizing</div>
-                            <div class="risk-tip-description">
-                                Calculate position size based on your stop loss distance, not your desired profit. Risk comes first.
-                            </div>
-                        </div>
-                        <div class="risk-tip-card">
-                            <div class="risk-tip-title">Risk:Reward Ratio</div>
-                            <div class="risk-tip-description">
-                                Aim for at least 1:2 risk-reward ratio. This means your potential profit should be twice your risk.
-                            </div>
-                        </div>
-                        <div class="risk-tip-card">
-                            <div class="risk-tip-title">Stop Loss Placement</div>
-                            <div class="risk-tip-description">
-                                Place stop losses based on technical levels, not arbitrary percentages. Support/resistance levels work best.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Footer -->
-                <div class="checklist-footer">
-                    <p class="checklist-footer-text">
-                        <strong>Remember:</strong> Proper risk management is the foundation of successful trading. Use this calculator before every trade.
-                    </p>
-                    <p class="checklist-footer-note">
-                        © 2025 Trade With Sensei - Professional Trading Education
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Registration Modal -->
+    <!-- Registration Modal (Complete Registration Page Code) -->
     <div class="modal-overlay" id="registrationModal">
-        <div class="modal-content">
+        <div class="modal-content" style="max-width: 500px; width: 90vw;">
             <button class="modal-close" onclick="closeRegistrationModal()">&times;</button>
-            <h2 style="margin-bottom: 20px; color: #0072ff;">Registration Required</h2>
-            <p style="margin-bottom: 30px; opacity: 0.9;">Please register to access our professional trading tools including the Daily Checklist, Risk Calculator, Market Hours Guide, and Complete Course Curriculum.</p>
-            <div style="display: flex; gap: 15px; justify-content: center;">
-                <a href="register.html" class="nav-btn" style="text-decoration: none;">Complete Registration</a>
-                <button onclick="closeRegistrationModal()" class="toggle-btn">Maybe Later</button>
+            
+            <div class="reg-particles" id="regParticles">
+                <div class="reg-particle" style="left:10%;animation-duration:14s;"></div>
+                <div class="reg-particle" style="left:30%;animation-duration:18s;"></div>
+                <div class="reg-particle" style="left:50%;animation-duration:20s;"></div>
+                <div class="reg-particle" style="left:70%;animation-duration:16s;"></div>
+                <div class="reg-particle" style="left:90%;animation-duration:22s;"></div>
+            </div>
+            
+            <div class="reg-container" id="regFormContainer" role="main">
+                <button type="button" class="reg-prev-btn" id="regPrevBtn" onclick="prevStep()">← Previous</button>
+                <h2 style="text-align:center;background:linear-gradient(90deg,#0072ff,#8e2de2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;">Register</h2>
+                <div class="reg-progress"><div class="reg-progress-line" id="regProgressLine"></div></div>
+                <form id="regForm">
+                    <!-- Step 1 -->
+                    <div class="reg-form-step active">
+                        <div class="reg-field">
+                            <label for="regName">Full Name</label>
+                            <input type="text" id="regName" required oninput="validateName()" autocomplete="name">
+                        </div>
+                        <button type="button" class="reg-btn" id="regNameNextBtn" onclick="nextStep()" disabled>Next</button>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="reg-form-step">
+                        <div class="reg-field">
+                            <label for="regPhone">Phone Number</label>
+                            <div style="display:flex; gap:8px;">
+                                <select id="regCountryCode" onchange="saveProgress()"></select>
+                                <input type="tel" id="regPhone" inputmode="numeric" pattern="[0-9]*" required oninput="validatePhone()" autocomplete="tel">
+                            </div>
+                        </div>
+                        <button type="button" class="reg-btn" id="regPhoneNextBtn" onclick="nextStep()" disabled>Next</button>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="reg-form-step">
+                        <div class="reg-field">
+                            <label for="regEmail">Email Address</label>
+                            <input type="email" id="regEmail" required oninput="validateEmail()" autocomplete="email">
+                        </div>
+                        <button type="button" class="reg-btn" id="regEmailNextBtn" onclick="registerUser()" disabled>Send OTP</button>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="reg-form-step">
+                        <div class="reg-field">
+                            <label>Enter OTP</label>
+                            <div class="reg-otp-field">
+                                <input maxlength="1"><input maxlength="1"><input maxlength="1">
+                                <input maxlength="1"><input maxlength="1"><input maxlength="1">
+                            </div>
+                        </div>
+                        <div class="reg-otp-timer-circle">
+                            <svg width="70" height="70">
+                                <circle cx="35" cy="35" r="30" stroke="#333" stroke-width="5" fill="none"/>
+                                <circle id="regOtpCircle" cx="35" cy="35" r="30" stroke="#00d4ff" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="188.4" stroke-dashoffset="0"/>
+                            </svg>
+                            <div id="regOtpTimeText" class="reg-otp-timer-text">05:00</div>
+                        </div>
+                        <button type="submit" class="reg-btn">Verify & Complete</button>
+                        <button type="button" class="reg-resend-btn" id="regResendBtn" onclick="resendOTP()">↻ Resend OTP</button>
+                    </div>
+                </form>
+                <div class="reg-message" id="regMessageBox"></div>
+            </div>
+            
+            <div class="reg-container reg-final-screen" id="regFinalScreen">
+                <h3>🎉 Welcome to Trade With Sensei</h3>
+                <p>Your account has been <strong>verified successfully</strong>.</p>
+                <p>✅ Our team will contact you soon.<br>📩 Keep an eye on your inbox for updates.</p>
+                <button class="reg-btn" onclick="window.location.href='https://tradewithsensei.com';">🌐 Explore Trade With Sensei</button>
             </div>
         </div>
     </div>
@@ -2629,276 +1101,379 @@
 
     <script>
         // =========================
-        // Daily Trading Checklist Functions
+        // Registration Form Variables and Functions (Exact from registration page)
         // =========================
-        let checklistCheckedItems = new Set();
-        const checklistTotalItems = 15;
-
-        function openDailyChecklistModal() {
-            document.getElementById('dailyChecklistModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            loadChecklistProgress();
-        }
-
-        function closeDailyChecklistModal() {
-            document.getElementById('dailyChecklistModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function toggleChecklistItem(checkbox) {
-            const item = checkbox.closest('.checklist-item');
-            const isChecked = checkbox.classList.contains('checked');
-            
-            if (isChecked) {
-                checkbox.classList.remove('checked');
-                checklistCheckedItems.delete(item);
-            } else {
-                checkbox.classList.add('checked');
-                checklistCheckedItems.add(item);
-            }
-            
-            updateChecklistProgress();
-        }
-
-        function updateChecklistProgress() {
-            const completed = checklistCheckedItems.size;
-            const percentage = Math.round((completed / checklistTotalItems) * 100);
-            
-            document.getElementById('progressFill').style.width = percentage + '%';
-            document.getElementById('progressText').textContent = 
-                `${completed} of ${checklistTotalItems} items completed (${percentage}%)`;
-            
-            // Change color based on completion
-            const progressFill = document.getElementById('progressFill');
-            if (percentage === 100) {
-                progressFill.style.background = 'linear-gradient(90deg, #10b981, #059669)';
-            } else if (percentage >= 80) {
-                progressFill.style.background = 'linear-gradient(90deg, #f59e0b, #d97706)';
-            } else {
-                progressFill.style.background = 'linear-gradient(90deg, #0072ff, #8e2de2)';
-            }
-        }
-
-        function resetDailyChecklist() {
-            if (confirm('Are you sure you want to reset all items? This will clear your progress.')) {
-                document.querySelectorAll('.item-checkbox').forEach(checkbox => {
-                    checkbox.classList.remove('checked');
-                });
-                checklistCheckedItems.clear();
-                updateChecklistProgress();
-                localStorage.removeItem('dailyChecklistProgress');
-            }
-        }
-
-        function saveChecklistProgress() {
-            const progressData = {
-                date: new Date().toDateString(),
-                completedItems: Array.from(checklistCheckedItems).map(item => {
-                    return item.querySelector('.item-title').textContent;
-                })
-            };
-            
-            localStorage.setItem('dailyChecklistProgress', JSON.stringify(progressData));
-            alert('Progress saved! Your checklist will be remembered for today.');
-        }
-
-        function loadChecklistProgress() {
-            const saved = localStorage.getItem('dailyChecklistProgress');
-            if (saved) {
-                const data = JSON.parse(saved);
-                const today = new Date().toDateString();
-                
-                // Only load if it's the same day
-                if (data.date === today) {
-                    data.completedItems.forEach(title => {
-                        const items = document.querySelectorAll('.checklist-item');
-                        items.forEach(item => {
-                            if (item.querySelector('.item-title').textContent === title) {
-                                const checkbox = item.querySelector('.item-checkbox');
-                                checkbox.classList.add('checked');
-                                checklistCheckedItems.add(item);
-                            }
-                        });
-                    });
-                    updateChecklistProgress();
-                }
-            }
-        }
-
-        function printChecklist() {
-            try {
-                // Create printable version
-                const printContent = document.querySelector('.checklist-container').cloneNode(true);
-                
-                // Remove interactive elements for print
-                printContent.querySelectorAll('.checklist-action-buttons').forEach(el => el.remove());
-                printContent.querySelectorAll('.modal-close').forEach(el => el.remove());
-                printContent.querySelectorAll('.progress-section').forEach(el => el.remove());
-                
-                // Mark checked items for print
-                const checkedItems = document.querySelectorAll('.item-checkbox.checked');
-                checkedItems.forEach((checkbox, index) => {
-                    const printCheckbox = printContent.querySelectorAll('.item-checkbox')[index];
-                    if (printCheckbox) {
-                        printCheckbox.style.background = '#0072ff';
-                        printCheckbox.innerHTML = '✓';
-                        printCheckbox.style.color = 'white';
-                        printCheckbox.style.textAlign = 'center';
-                        printCheckbox.style.fontSize = '12px';
-                        printCheckbox.style.fontWeight = 'bold';
-                    }
-                });
-                
-                // Create print window
-                const printWindow = window.open('', '_blank');
-                if (!printWindow) {
-                    alert('Popup blocked! Please allow popups for this site to print the checklist.');
-                    return;
-                }
-                
-                printWindow.document.write(`
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>Daily Trading Checklist - Trade With Sensei</title>
-                        <style>
-                            body { 
-                                font-family: Arial, sans-serif; 
-                                margin: 20px; 
-                                color: #333;
-                                line-height: 1.6;
-                            }
-                            .checklist-header { 
-                                background: #0072ff; 
-                                color: white; 
-                                padding: 30px; 
-                                text-align: center; 
-                                border-radius: 10px;
-                                margin-bottom: 30px;
-                            }
-                            .checklist-header h1 {
-                                margin: 0 0 10px 0;
-                                font-size: 2rem;
-                            }
-                            .checklist-intro-section {
-                                background: #f8f9fa;
-                                padding: 20px;
-                                border-radius: 8px;
-                                margin-bottom: 25px;
-                                border-left: 4px solid #0072ff;
-                            }
-                            .checklist-section { 
-                                margin: 25px 0; 
-                                border: 1px solid #ddd; 
-                                border-radius: 8px;
-                                page-break-inside: avoid;
-                            }
-                            .checklist-section-header { 
-                                background: #f8f9fa; 
-                                padding: 15px 20px; 
-                                border-bottom: 1px solid #ddd;
-                                border-radius: 8px 8px 0 0;
-                            }
-                            .checklist-section-title {
-                                color: #0072ff;
-                                font-weight: bold;
-                                font-size: 1.1rem;
-                                margin: 0;
-                            }
-                            .checklist-items { 
-                                padding: 20px; 
-                            }
-                            .checklist-item { 
-                                margin: 15px 0; 
-                                display: flex; 
-                                gap: 15px; 
-                                align-items: flex-start;
-                                padding: 10px 0;
-                                border-bottom: 1px solid #eee;
-                            }
-                            .checklist-item:last-child {
-                                border-bottom: none;
-                            }
-                            .item-checkbox { 
-                                width: 18px; 
-                                height: 18px; 
-                                border: 2px solid #333; 
-                                border-radius: 3px;
-                                flex-shrink: 0;
-                                margin-top: 2px;
-                            }
-                            .item-content {
-                                flex: 1;
-                            }
-                            .item-title { 
-                                font-weight: bold; 
-                                margin-bottom: 5px;
-                                color: #333;
-                            }
-                            .item-description { 
-                                color: #666; 
-                                font-size: 0.9rem; 
-                                line-height: 1.4;
-                            }
-                            .checklist-footer {
-                                margin-top: 30px;
-                                padding: 20px;
-                                background: #f8f9fa;
-                                border-radius: 8px;
-                                text-align: center;
-                                border-top: 3px solid #0072ff;
-                            }
-                            @media print {
-                                body { margin: 15px; }
-                                .checklist-section { 
-                                    page-break-inside: avoid; 
-                                }
-                            }
-                        </style>
-                    </head>
-                    <body>${printContent.innerHTML}</body>
-                    </html>
-                `);
-                printWindow.document.close();
-                
-                // Wait a moment for content to load, then print
-                setTimeout(() => {
-                    printWindow.print();
-                }, 500);
-                
-                console.log('Print function executed successfully');
-                
-            } catch (error) {
-                console.error('Error in print function:', error);
-                alert('There was an error preparing the checklist for printing. Please try again.');
-            }
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('dailyChecklistModal').onclick = function(e) {
-            if (e.target === this) {
-                closeDailyChecklistModal();
+        let currentStep = 0, registeredUserId=null, userEmail=null, userPhone=null, otpTimer=null, otpTimeLeft=0;
+        const steps=document.querySelectorAll(".reg-form-step"),
+              progressLine=document.getElementById("regProgressLine"),
+              messageBox=document.getElementById("regMessageBox"),
+              resendBtn=document.getElementById("regResendBtn"),
+              prevBtn=document.getElementById("regPrevBtn"),
+              otpCircle=document.getElementById("regOtpCircle"),
+              otpText=document.getElementById("regOtpTimeText");
+        const circleLength=2*Math.PI*30; 
+        
+        // Analytics tracking
+        const analytics = {
+            sessionId: 'reg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+            startTime: Date.now(),
+            events: [],
+            trackEvent(event, data = {}) {
+                this.events.push({ event, timestamp: Date.now(), step: currentStep, ...data });
+                console.log('Analytics:', event, data);
             }
         };
 
-        // Auto-save checklist progress every 30 seconds
-        setInterval(() => {
-            if (checklistCheckedItems.size > 0) {
-                saveChecklistProgress();
+        // Progress save/load functions
+        function saveProgress() {
+            try {
+                const progressData = {
+                    currentStep,
+                    formData: {
+                        name: document.getElementById("regName").value,
+                        phone: document.getElementById("regPhone").value,
+                        countryCode: document.getElementById("regCountryCode").value,
+                        email: document.getElementById("regEmail").value
+                    },
+                    timestamp: Date.now()
+                };
+                localStorage.setItem('tws_registration_progress', JSON.stringify(progressData));
+                analytics.trackEvent('progress_saved');
+            } catch(e) {}
+        }
+
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('tws_registration_progress');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    if (Date.now() - data.timestamp < 24 * 60 * 60 * 1000) {
+                        document.getElementById("regName").value = data.formData.name || '';
+                        document.getElementById("regPhone").value = data.formData.phone || '';
+                        if (data.formData.countryCode) document.getElementById("regCountryCode").value = data.formData.countryCode;
+                        document.getElementById("regEmail").value = data.formData.email || '';
+                        analytics.trackEvent('progress_loaded');
+                    }
+                }
+            } catch(e) {}
+        }
+
+        function updateProgress(){ 
+            progressLine.style.width=((currentStep+1)/steps.length)*100+"%";
+            saveProgress();
+        }
+        function togglePrev(){ prevBtn.style.display=currentStep>0?"inline-block":"none"; }
+        function nextStep(){ 
+            analytics.trackEvent('step_completed', {step: currentStep});
+            steps[currentStep].classList.remove("active"); 
+            currentStep++; 
+            steps[currentStep].classList.add("active"); 
+            updateProgress(); 
+            togglePrev(); 
+        }
+        function prevStep(){ 
+            steps[currentStep].classList.remove("active"); 
+            currentStep--; 
+            steps[currentStep].classList.add("active"); 
+            updateProgress(); 
+            togglePrev();
+        }
+
+        // === Validation ===
+        function validateName() {
+            const val = document.getElementById("regName").value.trim();
+            const isValid = val.length >= 2;
+            document.getElementById("regNameNextBtn").disabled = !isValid;
+            saveProgress();
+        }
+        function validatePhone() {
+            const val = document.getElementById("regPhone").value.replace(/[^0-9]/g, '');
+            const countryCode = document.getElementById("regCountryCode").value;
+            document.getElementById("regPhone").value = val;
+            let isValid = false;
+            let minLength = 6;
+            switch(countryCode) {
+                case "+91": isValid = val.length === 10 && /^[6-9]/.test(val); minLength = 10; break;
+                case "+1":  isValid = val.length === 10; minLength = 10; break;
+                case "+44": isValid = val.length >= 10 && val.length <= 11; minLength = 10; break;
+                case "+971": isValid = val.length === 9 && /^5/.test(val); minLength = 9; break;
+                case "+65": isValid = val.length === 8 && /^[689]/.test(val); minLength = 8; break;
+                case "+86": isValid = val.length === 11 && /^1[3-9]/.test(val); minLength = 11; break;
+                case "+82": isValid = val.length >= 9 && val.length <= 11; minLength = 9; break;
+                case "+966": isValid = val.length === 9 && /^5/.test(val); minLength = 9; break;
+                case "+81": isValid = val.length >= 10 && val.length <= 11; minLength = 10; break;
+                default: isValid = val.length >= 6; minLength = 6;
             }
-        }, 30000);
+            document.getElementById("regPhoneNextBtn").disabled = !isValid;
+
+            if (val.length > 0 && val.length < minLength) {
+                messageBox.innerHTML = `<span class='reg-error'>Phone number too short for selected country</span>`;
+            } else if (val.length > 0 && !isValid) {
+                messageBox.innerHTML = `<span class='reg-error'>Invalid phone number format for selected country</span>`;
+            } else if (isValid) {
+                messageBox.innerHTML = `<span class='reg-success'>Valid phone number</span>`;
+            } else {
+                messageBox.innerHTML = "";
+            }
+            saveProgress();
+        }
+        function validateEmail() {
+            const email = document.getElementById("regEmail").value.trim();
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const btn = document.getElementById("regEmailNextBtn");
+            const isValid = regex.test(email);
+            if(isValid) {
+                btn.disabled = false;
+                messageBox.innerHTML = "<span class='reg-success'>✅ Valid Email</span>";
+            } else {
+                btn.disabled = true;
+                messageBox.innerHTML = "<span class='reg-error'>⚠️ Enter valid email</span>";
+            }
+            saveProgress();
+        }
+
+        function startOTPTimer(){
+            otpTimeLeft=300;
+            resendBtn.classList.remove("show");
+            clearInterval(otpTimer);
+            otpTimer=setInterval(()=>{
+                if(otpTimeLeft<=0){
+                    clearInterval(otpTimer);
+                    otpText.innerHTML="00:00";
+                    otpCircle.setAttribute("stroke-dashoffset",circleLength);
+                    resendBtn.classList.add("show");
+                    return;
+                }
+                const min=Math.floor(otpTimeLeft/60), sec=otpTimeLeft%60;
+                otpText.innerHTML=`${min}:${sec.toString().padStart(2,"0")}`;
+                const progress=((300-otpTimeLeft)/300)*circleLength;
+                otpCircle.setAttribute("stroke-dashoffset",progress);
+                otpTimeLeft--;
+            },1000);
+        }
+
+        async function registerUser(){
+            analytics.trackEvent('registration_attempt');
+            if (!navigator.onLine) {
+                messageBox.innerHTML = "<span class='reg-error'>🌐 Check internet connection</span>";
+                return;
+            }
+            const payload={ 
+                name:document.getElementById("regName").value, 
+                phone:document.getElementById("regPhone").value,
+                country_code:document.getElementById("regCountryCode").value, 
+                email:document.getElementById("regEmail").value 
+            };
+            try{
+                const res=await fetch("https://n8n.srv1003405.hstgr.cloud/webhook/register-user",{ 
+                    method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload)
+                });
+                const data=await res.json();
+                if(data.success){ 
+                    registeredUserId=data.data.id; userEmail=data.data.email; userPhone=data.data.phone;
+                    messageBox.innerHTML="<span class='reg-success'>📩 OTP sent to your email</span>";
+                    analytics.trackEvent('registration_success');
+                    await requestOTP(userEmail,userPhone); 
+                    nextStep(); 
+                    startOTPTimer();
+                    localStorage.removeItem('tws_registration_progress');
+                } else { 
+                    messageBox.innerHTML=`<span class='reg-error'>${data.message}</span>`;
+                }
+            }catch(error){ 
+                messageBox.innerHTML="<span class='reg-error'>Server error. Please try again.</span>";
+                analytics.trackEvent('registration_error');
+            }
+        }
+
+        async function requestOTP(email,phone){
+            try{
+                const res=await fetch("https://n8n.srv1003405.hstgr.cloud/webhook/request-otp",{ 
+                    method:"POST", headers:{"Content-Type":"application/json"}, 
+                    body:JSON.stringify({user_id:registeredUserId,email,phone})
+                });
+                const data=await res.json();
+                if(data.success) {
+                    messageBox.innerHTML="<span class='reg-success'>📩 New OTP sent</span>";
+                } else {
+                    messageBox.innerHTML=`<span class='reg-error'>${data.message}</span>`;
+                }
+            }catch(error){ 
+                messageBox.innerHTML="<span class='reg-error'>OTP error</span>";
+            }
+        }
+
+        async function resendOTP(){ 
+            analytics.trackEvent('otp_resend');
+            await requestOTP(userEmail,userPhone); 
+            startOTPTimer(); 
+        }
+
+        // Country code detection
+        function setCountryCodeValue(code, source){
+            const countrySelect = document.getElementById("regCountryCode");
+            let option = Array.from(countrySelect.options).find(o => o.value === code);
+            if (!option) {
+                const opt = document.createElement('option');
+                opt.value = code;
+                opt.textContent = `Auto (${code})`;
+                countrySelect.prepend(opt);
+            }
+            countrySelect.value = code;
+            analytics.trackEvent('country_detected', { service: source, code });
+            saveProgress();
+        }
+
+        async function detectCountryAdvanced(){
+            try{
+                const res = await fetch("https://ipapi.co/json/", { headers: { 'Accept': 'application/json' } });
+                if(res.ok){
+                    const data = await res.json();
+                    if(data && data.country_calling_code){
+                        setCountryCodeValue(data.country_calling_code, 'ipapi.co');
+                        return true;
+                    }
+                }
+            }catch(e){ console.log('ipapi.co failed:', e?.message); }
+
+            try{
+                const res = await fetch("https://ipwho.is/", { headers: { 'Accept': 'application/json' } });
+                if(res.ok){
+                    const data = await res.json();
+                    let code = null;
+                    if (data && data.calling_code) {
+                        code = data.calling_code.toString().startsWith('+') ? data.calling_code.toString() : ('+' + data.calling_code.toString());
+                    }
+                    if (code){
+                        setCountryCodeValue(code, 'ipwho.is');
+                        return true;
+                    }
+                }
+            }catch(e){ console.log('ipwho.is failed:', e?.message); }
+
+            try{
+                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                const tzMap = {
+                    'Asia/Kolkata': '+91','Asia/Dubai': '+971','Asia/Singapore': '+65','Asia/Tokyo': '+81',
+                    'Asia/Shanghai': '+86','Asia/Seoul': '+82','America/New_York': '+1','America/Los_Angeles': '+1',
+                    'Europe/London': '+44','Europe/Berlin': '+49','Australia/Sydney': '+61'
+                };
+                if(tzMap[timezone]){ setCountryCodeValue(tzMap[timezone], 'timezone'); return true; }
+            }catch(e){}
+
+            setCountryCodeValue('+91', 'default');
+            return false;
+        }
+
+        // Initialize registration modal
+        function openRegistrationModal() {
+            document.getElementById('registrationModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Initialize if not done already
+            if (!document.getElementById("regCountryCode").hasChildNodes()) {
+                initializeRegistration();
+            }
+        }
+
+        function closeRegistrationModal() {
+            document.getElementById('registrationModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function initializeRegistration() {
+            // Set circle length
+            if (otpCircle) {
+                otpCircle.setAttribute("stroke-dasharray", circleLength);
+            }
+
+            // Initialize country list
+            const countrySelect=document.getElementById("regCountryCode"); 
+            const countries=[
+                {name:"India",code:"+91"},{name:"US",code:"+1"},{name:"UK",code:"+44"},{name:"Canada",code:"+1"},{name:"Australia",code:"+61"},{name:"Singapore",code:"+65"},{name:"UAE",code:"+971"},{name:"Germany",code:"+49"},{name:"France",code:"+33"},{name:"Japan",code:"+81"},
+                {name:"China",code:"+86"},{name:"South Korea",code:"+82"},{name:"Thailand",code:"+66"},{name:"Malaysia",code:"+60"},{name:"Indonesia",code:"+62"},{name:"Philippines",code:"+63"},{name:"Vietnam",code:"+84"},{name:"Bangladesh",code:"+880"},{name:"Pakistan",code:"+92"},{name:"Sri Lanka",code:"+94"},{name:"Nepal",code:"+977"},{name:"Myanmar",code:"+95"},{name:"Cambodia",code:"+855"},{name:"Laos",code:"+856"},{name:"Taiwan",code:"+886"},{name:"Hong Kong",code:"+852"},{name:"Macau",code:"+853"},
+                {name:"Saudi Arabia",code:"+966"},{name:"Qatar",code:"+974"},{name:"Kuwait",code:"+965"},{name:"Bahrain",code:"+973"},{name:"Oman",code:"+968"},{name:"Jordan",code:"+962"},{name:"Lebanon",code:"+961"},{name:"Iraq",code:"+964"},{name:"Iran",code:"+98"},{name:"Turkey",code:"+90"},{name:"Israel",code:"+972"},{name:"Yemen",code:"+967"},{name:"Syria",code:"+963"}
+            ];
+            countries.forEach(c=>{
+                const opt=document.createElement("option"); 
+                opt.value=c.code; 
+                opt.textContent=`${c.name} (${c.code})`; 
+                countrySelect.appendChild(opt);
+            });
+
+            // Form submission
+            document.getElementById("regForm").addEventListener("submit",async e=>{
+                e.preventDefault(); 
+                const otp=Array.from(document.querySelectorAll(".reg-otp-field input")).map(i=>i.value).join("");
+                if(otp.length!==6){ 
+                    messageBox.innerHTML="<span class='reg-error'>⚠️ Enter 6-digit OTP</span>"; 
+                    return; 
+                }
+                analytics.trackEvent('otp_verification_attempt');
+                try{
+                    const res=await fetch("https://n8n.srv1003405.hstgr.cloud/webhook/verify-otp",{ 
+                        method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({email:userEmail,otp})
+                    });
+                    const data=await res.json();
+                    if(data.success){ 
+                        analytics.trackEvent('registration_completed');
+                        document.getElementById("regFormContainer").style.display="none"; 
+                        document.getElementById("regFinalScreen").style.display="block";
+                    } else {
+                        messageBox.innerHTML=`<span class='reg-error'>${data.message}</span>`;
+                    }
+                }catch(error){ 
+                    messageBox.innerHTML="<span class='reg-error'>Verification failed</span>";
+                }
+            });
+
+            // OTP inputs
+            const otpInputs=document.querySelectorAll(".reg-otp-field input");
+            otpInputs.forEach((input,idx,arr)=>{
+                input.addEventListener("input",()=>{
+                    input.value = input.value.replace(/[^0-9]/g, '');
+                    if(input.value&&idx<arr.length-1) arr[idx+1].focus();
+                    if(idx===arr.length-1 && input.value){ document.getElementById("regForm").requestSubmit(); }
+                });
+                input.addEventListener("keydown",e=>{ 
+                    if(e.key==="Backspace"&&!input.value&&idx>0) arr[idx-1].focus(); 
+                });
+            });
+
+            // Auto-save on inputs
+            document.getElementById("regName").addEventListener('input', saveProgress);
+            document.getElementById("regPhone").addEventListener('input', saveProgress);
+            document.getElementById("regEmail").addEventListener('input', saveProgress);
+
+            // Auto-detect country then load any saved progress
+            (async()=>{
+                await detectCountryAdvanced();
+                loadProgress();
+            })();
+
+            analytics.trackEvent('page_loaded');
+            updateProgress(); 
+            togglePrev();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('registrationModal').onclick = function(e) {
+            if (e.target === this) {
+                closeRegistrationModal();
+            }
+        };
 
         // =========================
-        // Curriculum PDF Download (Fixed Syntax Error)
+        // Original Landing Page Functions
         // =========================
+
+        // Curriculum PDF Download
         function openCurriculumPDF() {
             try {
-                // Create curriculum URL with data
                 const curriculumHTML = generateCurriculumHTML();
                 const blob = new Blob([curriculumHTML], { type: 'text/html' });
                 const url = URL.createObjectURL(blob);
                 
-                // Open in new window
                 const curriculumWindow = window.open(url, '_blank', 'width=1000,height=800,scrollbars=yes,resizable=yes');
                 
                 if (!curriculumWindow) {
@@ -2906,14 +1481,12 @@
                     return;
                 }
                 
-                // Clean up URL after window loads
                 curriculumWindow.onload = function() {
                     URL.revokeObjectURL(url);
                 };
                 
             } catch (error) {
                 console.error('Error opening curriculum PDF:', error);
-                // Fallback: simple alert with curriculum info
                 showCurriculumInfo();
             }
         }
@@ -3034,95 +1607,6 @@
             </div>
         </div>
 
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 3: Paper Trading Mastery (Notebook Based)</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Professional Notebook Setup – Paper Trading System</div>
-                <div class="lesson-item">• Paper Trading Methodology – Pen & Paper Approach</div>
-                <div class="lesson-item">• Trade Journal Format – Entry/Exit/SL/TP Logic</div>
-                <div class="lesson-item">• Price Movement Visualization Practice</div>
-                <div class="lesson-item">• Stop Loss & Take Profit Logic – Chart-Based Setting</div>
-                <div class="lesson-item">• Daily Review & Self-Feedback System</div>
-                <div class="lesson-item">• Paper Trading Psychology – Discipline Building</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 4: Platform Awareness & Discipline Control</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• TradingView + MT4/MT5 Platform Tour – Observation Only</div>
-                <div class="lesson-item">• Order Types Understanding – Market, Limit, SL, TP</div>
-                <div class="lesson-item">• Demo vs Paper vs Real Trading Psychology</div>
-                <div class="lesson-item">• Platform Addiction Awareness</div>
-                <div class="lesson-item">• Watchlist Setup & Timeframe Filtering</div>
-                <div class="lesson-item">• Login-Observe-Draw Protocol – No Execution</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 5: Chart Patterns & Entry Confirmation</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Fibonacci Levels – Drawing, Zones, Reaction Areas</div>
-                <div class="lesson-item">• Advanced Chart Patterns (Triangle, Flag, Wedge, Double Top)</div>
-                <div class="lesson-item">• Bull Trap & Bear Trap – Market Manipulation</div>
-                <div class="lesson-item">• Breakout Logic – Confirmation Candle & Volume</div>
-                <div class="lesson-item">• Entry Candle Behavior – Wick Logic, Reaction</div>
-                <div class="lesson-item">• SL/TP Based on Structure – Not Fixed Points</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 6: Strategy Implementation & Smart Filtering</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Bollinger Band Super Setup – Complete Framework</div>
-                <div class="lesson-item">• 30-Minute EMA Pullback Strategy</div>
-                <div class="lesson-item">• 15-Minute Intraday Setup – Structure Based</div>
-                <div class="lesson-item">• 5-Minute Golden Crossover Strategy</div>
-                <div class="lesson-item">• Smart Money Concepts – Liquidity Grab Analysis</div>
-                <div class="lesson-item">• Entry Rule Design – Candle + Zone + Confirmation</div>
-                <div class="lesson-item">• Risk-Reward Filtering – Minimum 1:2 Ratio</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 7: Trading Psychology & Self-Control System</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Root Causes of Trading Failure – Emotional Loops</div>
-                <div class="lesson-item">• Emotional Control – Greed, Fear, FOMO, Revenge Trading</div>
-                <div class="lesson-item">• Personal Discipline Framework Creation</div>
-                <div class="lesson-item">• Weekly Mental Reset Protocol</div>
-                <div class="lesson-item">• Emotional Journaling – Self-Feedback System</div>
-                <div class="lesson-item">• "Market as Mirror" Concept – Personal Growth</div>
-                <div class="lesson-item">• Response Templates for Loss Management</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 8: Risk Management Mastery & Growth Planning</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Understanding Real Risk – Capital Protection Mindset</div>
-                <div class="lesson-item">• Position Size Planning – Manual Calculation</div>
-                <div class="lesson-item">• SL/TP Structure – Based on Candle/Zone Analysis</div>
-                <div class="lesson-item">• Weekly Equity Curve Tracking</div>
-                <div class="lesson-item">• Realistic Expectation Setting</div>
-                <div class="lesson-item">• Monthly Target Mapping Framework</div>
-                <div class="lesson-item">• Trading Business Plan Creation</div>
-                <div class="lesson-item">• Complete System Integration</div>
-            </div>
-        </div>
-
         <div class="footer">
             <h3 style="color: #0072ff; margin-bottom: 15px;">Ready to Start Your Trading Journey?</h3>
             <p style="margin-bottom: 20px;">This comprehensive curriculum transforms beginners into confident traders.</p>
@@ -3146,32 +1630,10 @@ Module 6: Strategy Implementation & Smart Filtering
 Module 7: Trading Psychology & Self-Control System
 Module 8: Risk Management Mastery & Growth Planning
 
-Complete course with 55+ lessons designed for practical trading success.
-
-For full details, please allow popups and try again.`);
+Complete course with 55+ lessons designed for practical trading success.`);
         }
 
-        // =========================
-        // Registration Modal Functions
-        // =========================
-        function openRegistrationModal() {
-            document.getElementById('registrationModal').style.display = 'flex';
-        }
-
-        function closeRegistrationModal() {
-            document.getElementById('registrationModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('registrationModal').onclick = function(e) {
-            if (e.target === this) {
-                closeRegistrationModal();
-            }
-        };
-
-        // =========================
-        // Hero Candlestick Chart (Your Original Working Code)
-        // =========================
+        // Hero Candlestick Chart
         const canvas = document.getElementById("chart");
         const ctx = canvas.getContext("2d");
 
@@ -3221,9 +1683,7 @@ For full details, please allow popups and try again.`);
         }
         loop();
 
-        // =========================
         // Market Ticker Price Updates
-        // =========================
         function updateTickerPrices() {
             const priceElements = document.querySelectorAll('.ticker-price');
             const changeElements = document.querySelectorAll('.ticker-change');
@@ -3245,18 +1705,14 @@ For full details, please allow popups and try again.`);
 
         setInterval(updateTickerPrices, 8000);
 
-        // =========================
         // Navbar Scroll Effect
-        // =========================
         const navbar = document.getElementById("navbar");
         window.addEventListener("scroll", () => {
             if (window.scrollY > 50) navbar.classList.add("scrolled");
             else navbar.classList.remove("scrolled");
         });
 
-        // =========================
         // Section Reveal
-        // =========================
         const sections = document.querySelectorAll("section");
         function reveal() {
             sections.forEach((sec) => {
@@ -3267,9 +1723,7 @@ For full details, please allow popups and try again.`);
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // =========================
         // Scroll Progress Bar
-        // =========================
         const progressBar = document.getElementById("progress-bar");
         window.addEventListener("scroll", () => {
             const scrollTop = window.scrollY;
@@ -3278,24 +1732,18 @@ For full details, please allow popups and try again.`);
             progressBar.style.height = progress + "%";
         });
 
-        // =========================
         // Mouse Parallax
-        // =========================
         document.addEventListener("mousemove", (e) => {
             let x = (e.clientX / window.innerWidth - 0.5) * 20;
             let y = (e.clientY / window.innerHeight - 0.5) * 20;
             canvas.style.transform = `translate(${x}px,${y}px)`;
         });
 
-        // =========================
         // Theme Toggle
-        // =========================
         document.getElementById("toggleTheme").onclick = () =>
             document.body.classList.toggle("light");
 
-        // =========================
         // Back to Top Button
-        // =========================
         const backToTop = document.getElementById("backToTop");
         window.addEventListener("scroll", () => {
             backToTop.style.display = window.scrollY > 200 ? "block" : "none";
@@ -3306,9 +1754,7 @@ For full details, please allow popups and try again.`);
                 behavior: "smooth",
             });
 
-        // =========================
-        // Typing Animation (Hero)
-        // =========================
+        // Typing Animation
         const words = ["Forex", "Stocks", "Crypto"];
         let wordIndex = 0;
         let charIndex = 0;
@@ -3338,9 +1784,7 @@ For full details, please allow popups and try again.`);
         }
         typeEffect();
 
-        // =========================
         // FAQ Toggle
-        // =========================
         document.querySelectorAll(".faq-question").forEach((q) => {
             q.addEventListener("click", () => {
                 const item = q.parentElement;
@@ -3366,694 +1810,6 @@ For full details, please allow popups and try again.`);
                 }
             });
         });
-
-        // =========================
-        // Risk Calculator Functions
-        // =========================
-        let currentRiskCalculation = {};
-
-        function openRiskCalculatorModal() {
-            document.getElementById('riskCalculatorModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeRiskCalculatorModal() {
-            document.getElementById('riskCalculatorModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Currency pair selection
-        function selectPair(pair) {
-            document.getElementById('currencyPair').value = pair;
-            
-            // Update button states
-            document.querySelectorAll('.currency-pair-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Auto-calculate if other fields are filled
-            if (hasRiskRequiredFields()) {
-                calculateRisk();
-            }
-        }
-
-        // Check if required fields are filled
-        function hasRiskRequiredFields() {
-            const accountBalance = document.getElementById('accountBalance').value;
-            const riskPercentage = document.getElementById('riskPercentage').value;
-            const entryPrice = document.getElementById('entryPrice').value;
-            const stopLossPrice = document.getElementById('stopLossPrice').value;
-            const currencyPair = document.getElementById('currencyPair').value;
-            
-            return accountBalance && riskPercentage && entryPrice && stopLossPrice && currencyPair;
-        }
-
-        // Calculate pip value based on currency pair
-        function calculatePipValue(pair, lotSize = 1) {
-            const pipValues = {
-                'EURUSD': 10,
-                'GBPUSD': 10,
-                'AUDUSD': 10,
-                'NZDUSD': 10,
-                'USDJPY': 9.09, // Approximate for 110 rate
-                'USDCAD': 7.69, // Approximate for 1.30 rate
-                'EURGBP': 12.50, // Approximate
-                'EURJPY': 9.09   // Approximate
-            };
-            
-            return (pipValues[pair] || 10) * lotSize;
-        }
-
-        // Calculate pip distance
-        function calculatePipDistance(entryPrice, exitPrice, currencyPair) {
-            const difference = Math.abs(entryPrice - exitPrice);
-            
-            // For JPY pairs, pips are 0.01, for others 0.0001
-            if (currencyPair.includes('JPY')) {
-                return Math.round(difference * 100);
-            } else {
-                return Math.round(difference * 10000);
-            }
-        }
-
-        // Main calculation function
-        function calculateRisk() {
-            try {
-                // Get input values
-                const accountBalance = parseFloat(document.getElementById('accountBalance').value);
-                const riskPercentage = parseFloat(document.getElementById('riskPercentage').value);
-                const entryPrice = parseFloat(document.getElementById('entryPrice').value);
-                const stopLossPrice = parseFloat(document.getElementById('stopLossPrice').value);
-                const takeProfitPrice = parseFloat(document.getElementById('takeProfitPrice').value) || 0;
-                const currencyPair = document.getElementById('currencyPair').value;
-
-                // Validation
-                if (!hasRiskRequiredFields()) {
-                    alert('⚠️ Please fill in all required fields (Account Balance, Risk %, Currency Pair, Entry Price, Stop Loss)');
-                    return;
-                }
-
-                if (accountBalance <= 0) {
-                    alert('⚠️ Account balance must be greater than 0');
-                    return;
-                }
-
-                if (riskPercentage <= 0 || riskPercentage > 10) {
-                    alert('⚠️ Risk percentage should be between 0.1% and 10%');
-                    return;
-                }
-
-                if (entryPrice === stopLossPrice) {
-                    alert('⚠️ Entry price and stop loss price cannot be the same');
-                    return;
-                }
-
-                // Calculate risk amount
-                const riskAmount = (accountBalance * riskPercentage) / 100;
-
-                // Calculate pip distance to stop loss
-                const stopLossDistance = calculatePipDistance(entryPrice, stopLossPrice, currencyPair);
-
-                // Calculate pip value (for 1 lot)
-                const pipValuePerLot = calculatePipValue(currencyPair, 1);
-
-                // Calculate position size
-                const positionSize = Math.floor(riskAmount / (stopLossDistance * (pipValuePerLot / 100000)));
-
-                // Calculate lot size
-                const lotSize = positionSize / 100000;
-
-                // Calculate actual pip value for this position
-                const actualPipValue = pipValuePerLot * lotSize;
-
-                // Calculate potential profit if take profit is set
-                let potentialProfit = 0;
-                let takeProfitDistance = 0;
-                if (takeProfitPrice > 0) {
-                    takeProfitDistance = calculatePipDistance(entryPrice, takeProfitPrice, currencyPair);
-                    potentialProfit = takeProfitDistance * actualPipValue;
-                }
-
-                // Calculate risk:reward ratio
-                const riskRewardRatio = potentialProfit > 0 ? (potentialProfit / riskAmount).toFixed(2) : '0.00';
-
-                // Store calculation
-                currentRiskCalculation = {
-                    accountBalance,
-                    riskPercentage,
-                    riskAmount,
-                    currencyPair,
-                    entryPrice,
-                    stopLossPrice,
-                    takeProfitPrice,
-                    positionSize,
-                    lotSize,
-                    pipValue: actualPipValue,
-                    stopLossDistance,
-                    potentialProfit,
-                    riskRewardRatio,
-                    timestamp: new Date().toISOString()
-                };
-
-                // Update display
-                updateRiskResults();
-
-                console.log('Risk calculation completed:', currentRiskCalculation);
-
-            } catch (error) {
-                console.error('Error in calculation:', error);
-                alert('❌ Error in calculation. Please check your inputs and try again.');
-            }
-        }
-
-        // Update results display
-        function updateRiskResults() {
-            document.getElementById('riskAmount').textContent = `${currentRiskCalculation.riskAmount.toFixed(2)}`;
-            document.getElementById('positionSize').textContent = `${currentRiskCalculation.positionSize.toLocaleString()}`;
-            document.getElementById('lotSize').textContent = currentRiskCalculation.lotSize.toFixed(2);
-            document.getElementById('pipValue').textContent = `${currentRiskCalculation.pipValue.toFixed(2)}`;
-            document.getElementById('stopLossDistance').textContent = currentRiskCalculation.stopLossDistance;
-            document.getElementById('potentialProfit').textContent = `${currentRiskCalculation.potentialProfit.toFixed(2)}`;
-            document.getElementById('riskRewardRatio').textContent = `1:${currentRiskCalculation.riskRewardRatio}`;
-
-            // Update risk level
-            updateRiskLevelDisplay(currentRiskCalculation.riskPercentage);
-        }
-
-        // Update risk level indicator
-        function updateRiskLevelDisplay(riskPercentage) {
-            const riskLevelElement = document.getElementById('riskLevel');
-            
-            if (riskPercentage <= 1) {
-                riskLevelElement.className = 'risk-level risk-low';
-                riskLevelElement.textContent = 'Low Risk';
-            } else if (riskPercentage <= 3) {
-                riskLevelElement.className = 'risk-level risk-medium';
-                riskLevelElement.textContent = 'Medium Risk';
-            } else {
-                riskLevelElement.className = 'risk-level risk-high';
-                riskLevelElement.textContent = 'High Risk';
-            }
-        }
-
-        // Save calculation
-        function saveRiskCalculation() {
-            if (!currentRiskCalculation.accountBalance) {
-                alert('⚠️ Please calculate risk first before saving');
-                return;
-            }
-
-            try {
-                // Get existing calculations
-                const savedCalculations = JSON.parse(localStorage.getItem('riskCalculations') || '[]');
-                
-                // Add current calculation
-                savedCalculations.push(currentRiskCalculation);
-                
-                // Keep only last 10 calculations
-                if (savedCalculations.length > 10) {
-                    savedCalculations.splice(0, savedCalculations.length - 10);
-                }
-                
-                // Save to localStorage
-                localStorage.setItem('riskCalculations', JSON.stringify(savedCalculations));
-                
-                alert(`✅ Calculation Saved Successfully!\n\nPair: ${currentRiskCalculation.currencyPair}\nRisk: ${currentRiskCalculation.riskAmount.toFixed(2)}\nLot Size: ${currentRiskCalculation.lotSize.toFixed(2)}\nR:R Ratio: 1:${currentRiskCalculation.riskRewardRatio}\n\nSaved calculations: ${savedCalculations.length}/10`);
-                
-                console.log('Calculation saved:', currentRiskCalculation);
-                
-            } catch (error) {
-                console.error('Error saving calculation:', error);
-                alert('❌ Error saving calculation. Please try again.');
-            }
-        }
-
-        // Reset calculator
-        function resetRiskCalculator() {
-            const hasData = document.getElementById('accountBalance').value || 
-                           document.getElementById('riskPercentage').value ||
-                           document.getElementById('entryPrice').value ||
-                           document.getElementById('stopLossPrice').value;
-
-            if (!hasData) {
-                alert('ℹ️ Calculator is already empty. No data to reset.');
-                return;
-            }
-
-            const confirmReset = confirm('🔄 Reset Confirmation\n\nThis will clear all input fields and calculations.\n\nAre you sure you want to reset the calculator?');
-            
-            if (confirmReset) {
-                // Reset all input fields
-                document.getElementById('accountBalance').value = '';
-                document.getElementById('riskPercentage').value = '';
-                document.getElementById('currencyPair').value = '';
-                document.getElementById('entryPrice').value = '';
-                document.getElementById('stopLossPrice').value = '';
-                document.getElementById('takeProfitPrice').value = '';
-
-                // Reset currency pair buttons
-                document.querySelectorAll('.currency-pair-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-
-                // Reset results
-                document.getElementById('riskAmount').textContent = '$0.00';
-                document.getElementById('positionSize').textContent = '0';
-                document.getElementById('lotSize').textContent = '0.00';
-                document.getElementById('pipValue').textContent = '$0.00';
-                document.getElementById('stopLossDistance').textContent = '0';
-                document.getElementById('potentialProfit').textContent = '$0.00';
-                document.getElementById('riskRewardRatio').textContent = '1:0.00';
-
-                // Reset risk level
-                const riskLevelElement = document.getElementById('riskLevel');
-                riskLevelElement.className = 'risk-level risk-low';
-                riskLevelElement.textContent = 'Low Risk';
-
-                // Clear current calculation
-                currentRiskCalculation = {};
-
-                alert('✅ Calculator Reset Successfully!\n\nAll fields and calculations have been cleared.');
-                
-                console.log('Risk calculator reset completed');
-            }
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('riskCalculatorModal').onclick = function(e) {
-            if (e.target === this) {
-                closeRiskCalculatorModal();
-            }
-        };
-
-        // Auto-calculate on input change for Risk Calculator
-        function setupRiskCalculatorAutoCalculate() {
-            const riskInputs = ['accountBalance', 'riskPercentage', 'entryPrice', 'stopLossPrice', 'takeProfitPrice'];
-            
-            riskInputs.forEach(inputId => {
-                const element = document.getElementById(inputId);
-                if (element) {
-                    element.addEventListener('input', function() {
-                        if (hasRiskRequiredFields()) {
-                            setTimeout(calculateRisk, 500); // Debounce
-                        }
-                    });
-                }
-            });
-
-            const currencyPairElement = document.getElementById('currencyPair');
-            if (currencyPairElement) {
-                currencyPairElement.addEventListener('change', function() {
-                    if (hasRiskRequiredFields()) {
-                        calculateRisk();
-                    }
-                });
-            }
-        }
-
-        // =========================
-        // Global Market Hours Functions
-        // =========================
-        
-        // Trading session times in UTC
-        const marketSessions = {
-            sydney: { open: 22, close: 7 },
-            tokyo: { open: 0, close: 9 },
-            london: { open: 8, close: 17 },
-            newyork: { open: 13, close: 22 }
-        };
-
-        // Trading alerts system
-        let marketActiveAlerts = [];
-        let marketAlertTimers = [];
-
-        function openGlobalMarketHoursModal() {
-            document.getElementById('globalMarketHoursModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            initializeMarketHours();
-        }
-
-        function closeGlobalMarketHoursModal() {
-            document.getElementById('globalMarketHoursModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('globalMarketHoursModal').onclick = function(e) {
-            if (e.target === this) {
-                closeGlobalMarketHoursModal();
-            }
-        };
-
-        // Initialize the market hours tool
-        function initializeMarketHours() {
-            updateMarketCurrentTime();
-            updateMarketSessionStatuses();
-            createMarketTimeline();
-            checkAndRestoreMarketAlerts();
-            
-            // Update every second
-            setInterval(() => {
-                updateMarketCurrentTime();
-                updateMarketSessionStatuses();
-            }, 1000);
-
-            console.log('Global Market Hours tool initialized successfully!');
-        }
-
-        // Update current time display
-        function updateMarketCurrentTime() {
-            const now = new Date();
-            const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
-            
-            // Format time
-            const timeString = utcTime.toLocaleTimeString('en-US', {
-                hour12: false,
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            });
-            
-            // Format date
-            const dateString = utcTime.toLocaleDateString('en-US', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            
-            // Get user timezone
-            const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            
-            document.getElementById('marketCurrentTime').textContent = timeString + ' UTC';
-            document.getElementById('marketCurrentDate').textContent = dateString;
-            document.getElementById('marketUserTimezone').textContent = userTimezone;
-        }
-
-        // Check if a session is currently open
-        function isMarketSessionOpen(session) {
-            const now = new Date();
-            const utcHour = now.getUTCHours();
-            
-            if (session.open < session.close) {
-                // Normal session (doesn't cross midnight)
-                return utcHour >= session.open && utcHour < session.close;
-            } else {
-                // Session crosses midnight
-                return utcHour >= session.open || utcHour < session.close;
-            }
-        }
-
-        // Update session statuses
-        function updateMarketSessionStatuses() {
-            Object.keys(marketSessions).forEach(sessionName => {
-                const session = marketSessions[sessionName];
-                const isOpen = isMarketSessionOpen(session);
-                
-                const sessionCard = document.getElementById('market' + sessionName.charAt(0).toUpperCase() + sessionName.slice(1) + 'Session');
-                const statusElement = document.getElementById('market' + sessionName.charAt(0).toUpperCase() + sessionName.slice(1) + 'Status');
-                
-                if (isOpen) {
-                    sessionCard.classList.add('active');
-                    statusElement.textContent = 'OPEN';
-                    statusElement.className = 'market-session-status market-status-open';
-                } else {
-                    sessionCard.classList.remove('active');
-                    statusElement.textContent = 'CLOSED';
-                    statusElement.className = 'market-session-status market-status-closed';
-                }
-            });
-
-            // Update session times display
-            updateMarketSessionTimes();
-        }
-
-        // Update session times based on user timezone
-        function updateMarketSessionTimes() {
-            const now = new Date();
-            const timezoneOffset = now.getTimezoneOffset() / 60;
-            
-            Object.keys(marketSessions).forEach(sessionName => {
-                const session = marketSessions[sessionName];
-                
-                // Convert UTC times to user's timezone
-                let openHour = session.open - timezoneOffset;
-                let closeHour = session.close - timezoneOffset;
-                
-                // Handle day changes
-                if (openHour < 0) openHour += 24;
-                if (openHour >= 24) openHour -= 24;
-                if (closeHour < 0) closeHour += 24;
-                if (closeHour >= 24) closeHour -= 24;
-                
-                const openTime = String(openHour).padStart(2, '0') + ':00';
-                const closeTime = String(closeHour).padStart(2, '0') + ':00';
-                
-                document.getElementById('market' + sessionName.charAt(0).toUpperCase() + sessionName.slice(1) + 'Open').textContent = openTime;
-                document.getElementById('market' + sessionName.charAt(0).toUpperCase() + sessionName.slice(1) + 'Close').textContent = closeTime;
-            });
-        }
-
-        // Create visual timeline
-        function createMarketTimeline() {
-            const container = document.getElementById('marketTimelineContainer');
-            
-            // Clear existing content
-            container.innerHTML = '';
-            
-            // Create hour markers
-            for (let hour = 0; hour < 24; hour += 4) {
-                const hourElement = document.createElement('div');
-                hourElement.className = 'market-timeline-hour';
-                hourElement.style.left = (hour / 24 * 100) + '%';
-                hourElement.textContent = String(hour).padStart(2, '0') + ':00';
-                container.appendChild(hourElement);
-            }
-            
-            // Create session bars
-            const sessionBars = [
-                { name: 'sydney', class: 'market-sydney-bar', start: 22, end: 7 },
-                { name: 'tokyo', class: 'market-tokyo-bar', start: 0, end: 9 },
-                { name: 'london', class: 'market-london-bar', start: 8, end: 17 },
-                { name: 'newyork', class: 'market-newyork-bar', start: 13, end: 22 }
-            ];
-            
-            sessionBars.forEach((session, index) => {
-                const barElement = document.createElement('div');
-                barElement.className = `market-session-bar ${session.class}`;
-                
-                let startPercent, widthPercent;
-                
-                if (session.start < session.end) {
-                    // Normal session
-                    startPercent = (session.start / 24) * 100;
-                    widthPercent = ((session.end - session.start) / 24) * 100;
-                } else {
-                    // Session crosses midnight - show as two bars
-                    startPercent = (session.start / 24) * 100;
-                    widthPercent = ((24 - session.start + session.end) / 24) * 100;
-                }
-                
-                barElement.style.left = startPercent + '%';
-                barElement.style.width = widthPercent + '%';
-                barElement.style.top = (12 + index * 6) + 'px';
-                barElement.textContent = session.name.charAt(0).toUpperCase() + session.name.slice(1);
-                
-                container.appendChild(barElement);
-            });
-        }
-
-        // Set trading alerts with real functionality
-        function setMarketTradingAlerts() {
-            if ('Notification' in window) {
-                if (Notification.permission === 'granted') {
-                    showMarketAlertOptions();
-                } else if (Notification.permission !== 'denied') {
-                    Notification.requestPermission().then(permission => {
-                        if (permission === 'granted') {
-                            showMarketAlertOptions();
-                        } else {
-                            alert('Enable notifications to receive trading session alerts.');
-                        }
-                    });
-                } else {
-                    alert('Notifications are blocked. Please enable them in your browser settings.');
-                }
-            } else {
-                alert('Your browser does not support notifications.');
-            }
-        }
-
-        function showMarketAlertOptions() {
-            const sessionOptions = [
-                { name: 'Sydney Session', key: 'sydney', time: 22 },
-                { name: 'Tokyo Session', key: 'tokyo', time: 0 },
-                { name: 'London Session', key: 'london', time: 8 },
-                { name: 'New York Session', key: 'newyork', time: 13 }
-            ];
-            
-            const selectedSessions = [];
-            
-            sessionOptions.forEach(session => {
-                if (confirm(`🔔 Set alert for ${session.name} open?\n\nOpens at ${String(session.time).padStart(2, '0')}:00 UTC daily`)) {
-                    selectedSessions.push(session);
-                }
-            });
-            
-            if (selectedSessions.length > 0) {
-                setupMarketTradingAlerts(selectedSessions);
-                
-                const alertList = selectedSessions.map(s => `• ${s.name} at ${String(s.time).padStart(2, '0')}:00 UTC`).join('\n');
-                alert(`✅ Trading Alerts Set Successfully!\n\n${alertList}\n\nAlerts will repeat daily. Keep this tab open to receive notifications.`);
-                
-                // Save to localStorage
-                localStorage.setItem('marketTradingAlerts', JSON.stringify(selectedSessions));
-            } else {
-                alert('No alerts selected.');
-            }
-        }
-
-        function setupMarketTradingAlerts(selectedSessions) {
-            // Clear existing timers
-            clearAllMarketAlerts();
-            
-            selectedSessions.forEach(session => {
-                scheduleMarketSessionAlert(session);
-            });
-            
-            console.log(`Set up ${selectedSessions.length} market trading alerts`);
-        }
-
-        function scheduleMarketSessionAlert(session) {
-            const now = new Date();
-            const currentUTCHour = now.getUTCHours();
-            const currentUTCMinute = now.getUTCMinutes();
-            
-            // Calculate milliseconds until next session open
-            let targetHour = session.time;
-            let msUntilAlert;
-            
-            // If session time has passed today, schedule for tomorrow
-            if (currentUTCHour > targetHour || (currentUTCHour === targetHour && currentUTCMinute > 0)) {
-                // Schedule for tomorrow
-                const tomorrow = new Date(now);
-                tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
-                tomorrow.setUTCHours(targetHour, 0, 0, 0);
-                msUntilAlert = tomorrow.getTime() - now.getTime();
-            } else {
-                // Schedule for today
-                const today = new Date(now);
-                today.setUTCHours(targetHour, 0, 0, 0);
-                msUntilAlert = today.getTime() - now.getTime();
-            }
-            
-            // Set the alert
-            const alertTimer = setTimeout(() => {
-                showMarketTradingNotification(session);
-                // Schedule next day's alert
-                scheduleMarketSessionAlert(session);
-            }, msUntilAlert);
-            
-            marketAlertTimers.push(alertTimer);
-            marketActiveAlerts.push({
-                session: session.name,
-                nextAlert: new Date(now.getTime() + msUntilAlert),
-                timer: alertTimer
-            });
-            
-            console.log(`Market alert set for ${session.name} in ${Math.round(msUntilAlert / 1000 / 60)} minutes`);
-        }
-
-        function showMarketTradingNotification(session) {
-            // Browser notification
-            if (Notification.permission === 'granted') {
-                const notification = new Notification(`🔔 ${session.name} Opening Now!`, {
-                    body: `The ${session.name.toLowerCase()} just opened at ${String(session.time).padStart(2, '0')}:00 UTC. High liquidity period starting.`,
-                    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%230072ff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>',
-                    tag: `trading-session-${session.key}`,
-                    requireInteraction: false
-                });
-                
-                // Auto-close notification after 10 seconds
-                setTimeout(() => notification.close(), 10000);
-            }
-            
-            // Console notification (for debugging)
-            console.log(`🔔 MARKET ALERT: ${session.name} is now OPEN!`);
-        }
-
-        function clearAllMarketAlerts() {
-            marketAlertTimers.forEach(timer => clearTimeout(timer));
-            marketAlertTimers = [];
-            marketActiveAlerts = [];
-        }
-
-        function checkAndRestoreMarketAlerts() {
-            try {
-                const saved = localStorage.getItem('marketTradingAlerts');
-                if (saved) {
-                    const savedAlerts = JSON.parse(saved);
-                    if (savedAlerts.length > 0) {
-                        setupMarketTradingAlerts(savedAlerts);
-                        console.log(`Restored ${savedAlerts.length} market trading alerts from previous session`);
-                    }
-                }
-            } catch (error) {
-                console.error('Error restoring market alerts:', error);
-            }
-        }
-
-        // Show current active alerts
-        function showActiveMarketAlerts() {
-            if (marketActiveAlerts.length === 0) {
-                alert('No trading alerts currently set.\n\nClick "Set Trading Alerts" to set up notifications for session opens.');
-                return;
-            }
-            
-            const now = new Date();
-            const alertsList = marketActiveAlerts.map(alert => {
-                const timeUntil = alert.nextAlert.getTime() - now.getTime();
-                const hoursUntil = Math.floor(timeUntil / (1000 * 60 * 60));
-                const minutesUntil = Math.floor((timeUntil % (1000 * 60 * 60)) / (1000 * 60));
-                
-                return `• ${alert.session}\n  Next: ${alert.nextAlert.toLocaleString()}\n  In: ${hoursUntil}h ${minutesUntil}m`;
-            }).join('\n\n');
-            
-            alert(`🔔 Active Trading Alerts (${marketActiveAlerts.length})\n\n${alertsList}\n\nKeep this tab open to receive notifications.`);
-        }
-
-        // Export market schedule
-        function exportMarketSchedule() {
-            const scheduleData = {
-                generatedAt: new Date().toISOString(),
-                userTimezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-                sessions: {
-                    sydney: { open: '22:00 UTC', close: '07:00 UTC', description: 'AUD, NZD pairs most active' },
-                    tokyo: { open: '00:00 UTC', close: '09:00 UTC', description: 'JPY pairs most active' },
-                    london: { open: '08:00 UTC', close: '17:00 UTC', description: 'Highest volume session' },
-                    newyork: { open: '13:00 UTC', close: '22:00 UTC', description: 'USD pairs most active' }
-                },
-                bestOverlaps: [
-                    'Tokyo + London: 08:00-09:00 UTC',
-                    'London + New York: 13:00-17:00 UTC',
-                    'Sydney + Tokyo: 00:00-07:00 UTC'
-                ]
-            };
-            
-            const dataStr = JSON.stringify(scheduleData, null, 2);
-            const dataBlob = new Blob([dataStr], { type: 'application/json' });
-            const url = URL.createObjectURL(dataBlob);
-            
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'forex-market-hours-schedule.json';
-            link.click();
-            
-            URL.revokeObjectURL(url);
-            
-            alert('✅ Market Hours Schedule Exported!\n\nSchedule saved as JSON file with all session times and best trading hours.');
-        }
     </script>
 </body>
 </html>
