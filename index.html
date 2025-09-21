@@ -19,6 +19,187 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* Course Pricing Section Styles */
+        .pricing-section {
+            text-align: center;
+            padding: 80px 30px;
+            margin: 50px auto;
+            max-width: 1300px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0, 114, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .pricing-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(142, 45, 226, 0.5), transparent);
+        }
+
+        .pricing-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #0072ff, #8e2de2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .tw-card {
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+            background: rgba(17, 24, 39, 0.95);
+            border-radius: 14px;
+            padding: 28px 24px;
+            box-shadow: 0 10px 24px rgba(0,0,0,.6);
+            text-align: center;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 114, 255, 0.3);
+        }
+
+        .tw-title {
+            margin: 0 0 6px;
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #60a5fa, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        .tw-sub {
+            margin: 0 0 18px;
+            color: #cbd5e1;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        .tw-prices {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .tw-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 15px;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        .tw-price-row span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tw-price-row strong {
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .tw-trial strong { color: #d97706; }
+        .tw-remaining strong { color: #9ca3af; }
+        .tw-total strong { color: #2563eb; }
+        .tw-discount strong {
+            color: #16a34a;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 4px #16a34a; }
+            to { text-shadow: 0 0 12px #16a34a; }
+        }
+
+        .tw-divider {
+            height: 1px;
+            background: #475569;
+            margin: 12px 0;
+        }
+
+        .tw-note {
+            margin: 8px 0 0;
+            color: #94a3b8;
+            font-size: 12px;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        .tw-refund {
+            margin: 14px 0 0;
+            color: #facc15;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        .tw-btn {
+            margin-top: 14px;
+            background: linear-gradient(90deg, #0072ff, #8e2de2);
+            color: #fff;
+            border: 0;
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .15s, box-shadow .15s;
+            width: 100%;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        .tw-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 18px rgba(0, 114, 255, .35);
+        }
+
+        .tw-badges {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 14px;
+            font-size: 12px;
+            color: #9ca3af;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        .tw-referral {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 12px;
+            background: rgba(22, 163, 74, 0.1);
+            border: 1px solid #16a34a;
+            color: #bbf7d0;
+            text-align: left;
+            font-size: 14px;
+            font-family: Inter, system-ui, sans-serif;
+        }
+
+        .tw-referral h3 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #22c55e;
+        }
+
+        .tw-referral li { 
+            margin-bottom: 6px; 
+        }
+
+        .tw-referral p {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #4ade80;
+        }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1959,6 +2140,7 @@
         <!-- Navigation Menu -->
         <div class="navbar-menu" id="navbarMenu">
             <button class="toggle-btn" id="toggleTheme">Toggle Mode</button>
+            <a href="#" class="nav-btn" onclick="scrollToPricing()">View Pricing</a>
             <a href="#" class="nav-btn" onclick="openRegistrationModal()">Register</a>
         </div>
     </div>
@@ -1976,7 +2158,10 @@
                 <span class="typing-text" id="typingText"></span>
             </h1>
             <p class="hero-subtitle">Trade smarter with strategies designed for real market conditions.</p>
-            <a href="#" class="nav-btn" onclick="openRegistrationModal()" style="font-size: 1.1rem; padding: 15px 30px;">Register Now</a>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="nav-btn" onclick="scrollToPricing()" style="font-size: 1.1rem; padding: 15px 30px;">View Pricing</a>
+                <a href="#" class="nav-btn" onclick="openRegistrationModal()" style="font-size: 1.1rem; padding: 15px 30px;">Register Now</a>
+            </div>
         </div>
     </header>
 
@@ -2090,6 +2275,60 @@
             <div class="journey-card">
                 <h3>Week 8</h3>
                 <p><strong>Risk Management</strong><br>Capital protection</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <h2>Course Pricing & Benefits</h2>
+        <div class="tw-card">
+            <h3 class="tw-title">Professional Forex Masterclass</h3>
+            <p class="tw-sub">Join the first 2 lectures, risk-free.</p>
+
+            <div class="tw-prices">
+                <div class="tw-price-row tw-trial">
+                    <span>⚡ Trial (2 lectures):</span>
+                    <strong id="trialPrice">₹2,499</strong>
+                </div>
+                <div class="tw-price-row tw-remaining">
+                    <span>📘 Remaining (after trial):</span>
+                    <strong id="remainingPrice">₹17,500</strong>
+                </div>
+                <div class="tw-divider"></div>
+                <div class="tw-price-row tw-total">
+                    <span>💰 Total Course Price:</span>
+                    <strong id="totalPrice">₹19,999</strong>
+                </div>
+                <div class="tw-price-row tw-discount">
+                    <span>🎁 With Referral (5% off):</span>
+                    <strong id="discountPrice">₹18,999</strong>
+                </div>
+                <p class="tw-note" id="inrNote">
+                    Shown in your local currency. Base price is ₹19,999 INR.
+                </p>
+            </div>
+
+            <button class="tw-btn" type="button" onclick="openRegistrationModal()">🚀 Claim Trial Access</button>
+            <div class="tw-badges">
+                <span>🔒 Secure Payment</span>
+                <span>✅ Refund Guarantee</span>
+            </div>
+
+            <p class="tw-refund">
+                Don't like it after 2 lectures? 
+                <b>Get a full refund of the <span id="refundPrice">₹2,499</span> trial fee.</b>
+            </p>
+
+            <!-- Referral Info -->
+            <div class="tw-referral">
+                <h3>Referral Benefits 🎉</h3>
+                <ul>
+                    <li><b>Earn 10% commission</b> for every friend you refer.</li>
+                    <li>Your friend gets an instant <b>5% discount</b> on the course fee.</li>
+                    <li>Win-win: Learn together & save together.</li>
+                </ul>
+                <p>💡 Bring 5 friends = Your full course fee back!</p>
             </div>
         </div>
     </section>
@@ -3793,7 +4032,98 @@
         const HERO_BG_URL = 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2400&auto=format&fit=crop';
         document.getElementById('hero').style.setProperty('--hero-image', `url('${HERO_BG_URL}')`);
 
-        // Curriculum PDF Download
+        // Smooth scroll to pricing section
+        function scrollToPricing() {
+            const pricingSection = document.getElementById('pricing');
+            if (pricingSection) {
+                pricingSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }
+
+        // =========================
+        // Pricing Section Logic (Original - Unchanged)
+        // =========================
+        (function(){
+            const INR = "INR";
+            const base = { trial: 2499, total: 19999 }; 
+            base.remaining = base.total - base.trial;
+            base.discount = Math.round(base.total * 0.95); // 5% off
+
+            const els = {
+                trial: document.getElementById("trialPrice"),
+                remaining: document.getElementById("remainingPrice"),
+                total: document.getElementById("totalPrice"),
+                discount: document.getElementById("discountPrice"),
+                refund: document.getElementById("refundPrice"),
+                inrNote: document.getElementById("inrNote")
+            };
+
+            const API_KEY = "6ebb115710ce3d8fe3f9aadc"; // Original API key
+
+            async function detectCurrency(){
+                try{
+                    const r = await fetch("https://ipapi.co/json/");
+                    const j = await r.json();
+                    return j && j.currency ? j.currency : INR;
+                }catch(e){
+                    return INR;
+                }
+            }
+
+            async function getRate(baseCurrency, targetCurrency){
+                if (targetCurrency === baseCurrency) return 1;
+                try{
+                    const r = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${baseCurrency}`);
+                    const j = await r.json();
+                    if (j && j.conversion_rates && j.conversion_rates[targetCurrency]) {
+                        return j.conversion_rates[targetCurrency];
+                    }
+                    return 1;
+                }catch(e){
+                    return 1;
+                }
+            }
+
+            function format(amount, currency){
+                try {
+                    return new Intl.NumberFormat(undefined, { style: "currency", currency }).format(amount);
+                } catch(e){
+                    return currency + " " + amount.toFixed(0);
+                }
+            }
+
+            function toPsychological(amount) {
+                if (amount <= 0) return amount;
+                return Math.max(9, Math.floor(amount / 10) * 10 - 1);
+            }
+
+            async function render(){
+                const userCurr = await detectCurrency();
+                const rate = await getRate(INR, userCurr);
+
+                const trialConv = toPsychological(Math.round(base.trial * rate));
+                const remConv   = Math.round(base.remaining * rate);
+                const totalConv = Math.round(base.total * rate);
+                const discConv  = Math.round(base.discount * rate);
+
+                if (els.trial) els.trial.textContent = format(trialConv, userCurr);
+                if (els.remaining) els.remaining.textContent = format(remConv, userCurr);
+                if (els.total) els.total.textContent = format(totalConv, userCurr);
+                if (els.discount) els.discount.textContent = format(discConv, userCurr);
+                if (els.refund) els.refund.textContent = format(trialConv, userCurr);
+                if (els.inrNote) els.inrNote.textContent = `Shown in your local currency (${userCurr}). Base price is ₹${base.total.toLocaleString()} INR.`;
+            }
+
+            // Wait for DOM to be ready before initializing pricing
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', render);
+            } else {
+                render();
+            }
+        })();
         function openCurriculumPDF() {
             try {
                 const curriculumHTML = generateCurriculumHTML();
