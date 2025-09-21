@@ -3857,7 +3857,6 @@
             border-radius: 15px;
             border: 1px solid rgba(255,255,255,0.1);
             overflow: hidden;
-            page-break-inside: avoid;
         }
         .module-header {
             background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(142, 45, 226, 0.1));
@@ -3879,9 +3878,6 @@
             border-bottom: 1px solid rgba(255,255,255,0.05);
             font-size: 0.95rem;
         }
-        .lesson-item:last-child {
-            border-bottom: none;
-        }
         .download-btn {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
@@ -3897,11 +3893,6 @@
             background: rgba(0,0,0,0.8);
             padding: 30px;
             text-align: center;
-        }
-        @media print {
-            body { background: white; color: black; }
-            .container { background: white; }
-            .module { page-break-inside: avoid; }
         }
     </style>
 </head>
@@ -3942,99 +3933,9 @@
             </div>
         </div>
 
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 3: Paper Trading Mastery (Notebook Based)</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Setting Up Your Trading Journal – Professional Format</div>
-                <div class="lesson-item">• Mock Trading Sessions – Real Market Simulation</div>
-                <div class="lesson-item">• Entry & Exit Documentation – Detailed Record Keeping</div>
-                <div class="lesson-item">• Risk vs Reward Calculations – Mathematical Approach</div>
-                <div class="lesson-item">• Trade Review Process – Learning from Mistakes</div>
-                <div class="lesson-item">• Performance Tracking Methods – Progress Measurement</div>
-                <div class="lesson-item">• Discipline Building Exercises – Mental Conditioning</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 4: Platform Awareness & Discipline Control</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• MetaTrader 4/5 Complete Navigation – Interface Mastery</div>
-                <div class="lesson-item">• Order Types & Execution – Market vs Pending Orders</div>
-                <div class="lesson-item">• Risk Management Tools – Stop Loss & Take Profit Setup</div>
-                <div class="lesson-item">• Chart Customization – Professional Workspace Setup</div>
-                <div class="lesson-item">• Emotional Control Techniques – Psychological Discipline</div>
-                <div class="lesson-item">• Trading Hours & Schedule – Optimal Market Sessions</div>
-                <div class="lesson-item">• Account Management Basics – Capital Allocation</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 5: Chart Patterns & Entry Confirmation</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Classic Chart Patterns – Head & Shoulders, Triangles, Flags</div>
-                <div class="lesson-item">• Reversal Patterns – Double Top/Bottom, Wedges</div>
-                <div class="lesson-item">• Continuation Patterns – Rectangles, Pennants</div>
-                <div class="lesson-item">• Volume Analysis – Confirming Pattern Validity</div>
-                <div class="lesson-item">• Entry Timing Strategies – High-Probability Zones</div>
-                <div class="lesson-item">• False Breakout Identification – Avoiding Traps</div>
-                <div class="lesson-item">• Multi-Timeframe Confirmation – Complete Analysis</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 6: Strategy Implementation & Smart Filtering</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Trend Following Strategies – Moving Average Systems</div>
-                <div class="lesson-item">• Counter-Trend Trading – Mean Reversion Techniques</div>
-                <div class="lesson-item">• Breakout Trading Systems – Momentum Strategies</div>
-                <div class="lesson-item">• News Trading Approach – Economic Event Strategies</div>
-                <div class="lesson-item">• Trade Filtering Methods – Quality over Quantity</div>
-                <div class="lesson-item">• Session-Based Trading – London, New York, Asian</div>
-                <div class="lesson-item">• Strategy Backtesting – Historical Performance Analysis</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 7: Trading Psychology & Self-Control System</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Fear & Greed Management – Emotional Balance</div>
-                <div class="lesson-item">• Overtrading Prevention – Impulse Control</div>
-                <div class="lesson-item">• Loss Acceptance Psychology – Healthy Mindset</div>
-                <div class="lesson-item">• Winning Streak Management – Avoiding Overconfidence</div>
-                <div class="lesson-item">• Stress Management Techniques – Mental Health</div>
-                <div class="lesson-item">• Goal Setting Framework – Realistic Expectations</div>
-                <div class="lesson-item">• Daily Mental Preparation – Pre-Market Routine</div>
-            </div>
-        </div>
-
-        <div class="module">
-            <div class="module-header">
-                <div class="module-title">Module 8: Risk Management Mastery & Growth Planning</div>
-            </div>
-            <div class="lesson-list">
-                <div class="lesson-item">• Position Sizing Formulas – Mathematical Risk Control</div>
-                <div class="lesson-item">• Portfolio Diversification – Currency Pair Selection</div>
-                <div class="lesson-item">• Drawdown Management – Recovery Strategies</div>
-                <div class="lesson-item">• Capital Growth Models – Compounding Techniques</div>
-                <div class="lesson-item">• Advanced Risk Metrics – Sharpe Ratio, Max DD</div>
-                <div class="lesson-item">• Account Scaling Methods – Progressive Growth</div>
-                <div class="lesson-item">• Long-term Success Planning – Career Development</div>
-            </div>
-        </div>
-
         <div class="footer">
             <h3 style="color: #0072ff; margin-bottom: 15px;">Ready to Start Your Trading Journey?</h3>
-            <p style="margin-bottom: 20px;">This comprehensive curriculum transforms beginners into confident traders with 55+ lessons across 8 intensive weeks.</p>
+            <p style="margin-bottom: 20px;">This comprehensive curriculum transforms beginners into confident traders.</p>
             <button class="download-btn" onclick="window.print()">Save as PDF</button>
             <p style="margin-top: 20px; opacity: 0.8;">© 2025 Trade With Sensei - Professional Forex Education</p>
         </div>
