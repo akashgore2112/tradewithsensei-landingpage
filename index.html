@@ -1671,7 +1671,7 @@
             }
         }
 
-        /* Registration Modal Styles (Exact from registration page) */
+        /* Registration Modal Styles (Updated from new registration page) */
         .reg-particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;}
         .reg-particle{position:absolute;width:6px;height:6px;background:radial-gradient(circle,#8e2de2,#0072ff);border-radius:50%;opacity:0.7;animation:regFloat 12s linear infinite;}
         @keyframes regFloat{from{transform:translateY(100vh) scale(0.5);opacity:0;}20%{opacity:1;}to{transform:translateY(-10vh) scale(1.2);opacity:0;}}
@@ -1686,6 +1686,7 @@
         @keyframes regSlideIn{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
         .reg-field{margin-bottom:20px;}
         .reg-field label{display:block;margin-bottom:8px;font-weight:600;font-size:0.9rem;}
+        .reg-field .optional{font-size:0.8rem;color:#aaa;font-weight:normal;}
         .reg-field input,.reg-field select{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:white;font-size:1rem;outline:none;transition:all 0.3s;}
         .reg-field input:focus,.reg-field select:focus{border-color:#00d4ff;box-shadow:0 0 12px rgba(0,114,255,0.6);transform:scale(1.02);}
         .reg-field input[type="tel"]{width:calc(100% - 8px);}
@@ -1925,11 +1926,10 @@
 
         /* Responsive Design - Enhanced Mobile UI */
         @media (max-width: 768px) {
+            /* Navbar Mobile Styles */
             .navbar { 
-                padding: 12px 20px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
+                padding: 12px 20px !important;
+                flex-wrap: wrap;
             }
 
             .navbar-logo {
@@ -1937,113 +1937,128 @@
             }
 
             .navbar-logo img {
-                height: 32px;
+                height: 32px !important;
             }
 
             .brand-text {
-                font-size: 1.1rem;
+                font-size: 1.1rem !important;
             }
 
-            .navbar > div:last-child {
-                display: flex;
+            /* Show hamburger on mobile */
+            .hamburger {
+                display: flex !important;
+                order: 3;
+            }
+
+            /* Hide menu items on mobile by default */
+            .navbar-menu {
+                display: none !important;
+                width: 100%;
                 flex-direction: column;
-                width: 100%;
-                gap: 10px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: rgba(10,15,30,0.98);
+                backdrop-filter: blur(15px);
+                border-top: 1px solid rgba(255,255,255,0.1);
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             }
 
-            .navbar .toggle-btn,
-            .navbar .nav-btn {
-                width: 100%;
+            /* Show menu when active */
+            .navbar-menu.active {
+                display: flex !important;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Stack menu items vertically on mobile */
+            .navbar-menu .toggle-btn,
+            .navbar-menu .nav-btn {
+                width: 100% !important;
                 text-align: center;
-                margin-left: 0;
-                font-size: 1rem;
+                margin: 0 !important;
                 padding: 12px 16px;
+                font-size: 1rem;
+                margin-left: 0 !important;
             }
 
-            .market-ticker { display: none; }
-            .hero { margin-top: 0; height: 100vh; }
-            .hero-title { 
-                font-size: 2.2rem; 
-                color: #f0f9ff;
-                text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            /* Mobile Hero Optimization */
+            .hero {
+                margin-top: 60px !important;
+                min-height: 100vh;
             }
+            
+            .hero::before {
+                background-position: center center !important;
+                background-size: cover !important;
+                transform: scale(1.1) !important;
+            }
+            
+            .hero-inner {
+                padding: 80px 15px 60px !important;
+                max-width: 100%;
+            }
+            
+            .hero-title {
+                font-size: clamp(2.2rem, 10vw, 3.8rem) !important;
+                line-height: 1.1 !important;
+                margin-bottom: 16px !important;
+            }
+            
             .hero-subtitle {
-                font-size: 1.1rem;
-                color: #cbd5e1;
-                opacity: 1;
+                font-size: 1.1rem !important;
+                margin-bottom: 24px !important;
+                padding: 0 10px;
             }
-            .hero-overlay {
-                padding: 30px 20px;
-                margin: 0 10px;
-                background: rgba(0, 15, 30, 0.85);
+            
+            /* Aurora effect on mobile */
+            .aurora {
+                filter: blur(15px) !important;
+                opacity: 0.8 !important;
             }
-            section { 
-                padding: 60px 20px; 
-                margin: 30px 15px; 
-                background: rgba(15,23,42,0.9);
-                color: #e2e8f0;
+
+            /* Market ticker hidden on mobile */
+            .market-ticker { 
+                display: none !important; 
             }
-            section h2 {
-                font-size: 1.8rem;
-                color: #f0f9ff;
+        }
+
+        /* Very small screens */
+        @media screen and (max-width: 480px) {
+            .hero-inner {
+                padding: 60px 10px 40px !important;
             }
-            section p {
-                color: #cbd5e1;
-                font-size: 1rem;
+            
+            .hero-title {
+                font-size: clamp(1.8rem, 12vw, 3.2rem) !important;
             }
-            .cards { grid-template-columns: 1fr; gap: 20px; }
-            .card {
-                background: rgba(15,23,42,0.95);
-                color: #e2e8f0;
-                border: 1px solid rgba(0, 114, 255, 0.3);
+            
+            .hero-subtitle {
+                font-size: 1rem !important;
             }
-            .card h3 {
-                color: #3b82f6;
+
+            .navbar {
+                padding: 10px 15px !important;
             }
-            .card p {
-                color: #cbd5e1;
+
+            .brand-text {
+                font-size: 1rem !important;
             }
-            .resources-grid { grid-template-columns: 1fr; gap: 20px; }
-            .resource-card {
-                background: rgba(15,23,42,0.95);
-                color: #e2e8f0;
-            }
-            .resource-card h3 {
-                color: #10b981;
-            }
-            .resource-card p {
-                color: #cbd5e1;
-            }
-            .journey { 
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 15px; 
-            }
-            .journey-card {
-                background: rgba(15,23,42,0.9);
-                color: #e2e8f0;
-                border: 1px solid rgba(0, 114, 255, 0.3);
-            }
-            .journey-card h3 {
-                color: #3b82f6;
-            }
-            .journey-card p {
-                color: #cbd5e1;
-            }
-            .badges { flex-direction: column; align-items: center; }
-            .badge {
-                background: rgba(15,23,42,0.9);
-                color: #e2e8f0;
-                border: 1px solid rgba(0, 114, 255, 0.3);
-            }
-            .modal-content { 
-                width: 95vw;
-                max-height: 95vh; 
-                background: rgba(10, 15, 30, 0.95);
-                color: #e2e8f0;
-            }
-            .reg-container {
-                padding: 20px 15px;
-                margin: 40px auto;
+
+            .navbar-logo img {
+                height: 28px !important;
             }
         }
     
@@ -2967,7 +2982,7 @@
         </div>
     </div>
 
-    <!-- Registration Modal -->
+    <!-- Registration Modal (Updated with new registration functionality) -->
     <div class="modal-overlay" id="registrationModal">
         <div class="modal-content" style="max-width: 500px; width: 90vw;">
             <button class="modal-close" onclick="closeRegistrationModal()">&times;</button>
@@ -3009,6 +3024,10 @@
                         <div class="reg-field">
                             <label for="regEmail">Email Address</label>
                             <input type="email" id="regEmail" required oninput="validateEmail()" autocomplete="email">
+                        </div>
+                        <div class="reg-field">
+                            <label for="regReferralCode">Referral Code <span class="optional">(Optional)</span></label>
+                            <input type="text" id="regReferralCode" placeholder="Enter referral code if you have one" oninput="validateReferralCode()" style="text-transform: uppercase;">
                         </div>
                         <button type="button" class="reg-btn" id="regEmailNextBtn" onclick="registerUser()" disabled>Send OTP</button>
                     </div>
@@ -3661,7 +3680,7 @@
         };
 
         // =========================
-        // Registration Functions
+        // Registration Functions (Updated from new registration page)
         // =========================
         let currentStep = 0, registeredUserId=null, userEmail=null, userPhone=null, otpTimer=null, otpTimeLeft=0;
         const steps=document.querySelectorAll(".reg-form-step"),
@@ -3693,7 +3712,8 @@
                         name: document.getElementById("regName").value,
                         phone: document.getElementById("regPhone").value,
                         countryCode: document.getElementById("regCountryCode").value,
-                        email: document.getElementById("regEmail").value
+                        email: document.getElementById("regEmail").value,
+                        referralCode: document.getElementById("regReferralCode").value
                     },
                     timestamp: Date.now()
                 };
@@ -3712,6 +3732,7 @@
                         document.getElementById("regPhone").value = data.formData.phone || '';
                         if (data.formData.countryCode) document.getElementById("regCountryCode").value = data.formData.countryCode;
                         document.getElementById("regEmail").value = data.formData.email || '';
+                        document.getElementById("regReferralCode").value = data.formData.referralCode || '';
                         analytics.trackEvent('progress_loaded');
                     }
                 }
@@ -3789,6 +3810,12 @@
                 btn.disabled = true;
                 messageBox.innerHTML = "<span class='reg-error'>⚠️ Enter valid email</span>";
             }
+            saveProgress();
+        }
+
+        function validateReferralCode() {
+            const referralCode = document.getElementById("regReferralCode").value.trim().toUpperCase();
+            document.getElementById("regReferralCode").value = referralCode;
             saveProgress();
         }
 
@@ -3970,9 +3997,17 @@
                     return; 
                 }
                 analytics.trackEvent('otp_verification_attempt');
+                
+                // Updated payload with referral code
+                const payload = {
+                    email: userEmail,
+                    otp: otp,
+                    referral_code: document.getElementById("regReferralCode").value.trim() || ""
+                };
+                
                 try{
                     const res=await fetch("https://n8n.srv1003405.hstgr.cloud/webhook/verify-otp",{ 
-                        method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({email:userEmail,otp})
+                        method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload)
                     });
                     const data=await res.json();
                     if(data.success){ 
@@ -4005,6 +4040,7 @@
             document.getElementById("regName").addEventListener('input', saveProgress);
             document.getElementById("regPhone").addEventListener('input', saveProgress);
             document.getElementById("regEmail").addEventListener('input', saveProgress);
+            document.getElementById("regReferralCode").addEventListener('input', saveProgress);
 
             // Auto-detect country then load any saved progress
             (async()=>{
@@ -4441,7 +4477,10 @@ Complete course with 55+ lessons designed for practical trading success.`);
         document.addEventListener("mousemove", (e) => {
             let x = (e.clientX / window.innerWidth - 0.5) * 20;
             let y = (e.clientY / window.innerHeight - 0.5) * 20;
-            canvas.style.transform = `translate(${x}px,${y}px)`;
+            const canvas = document.querySelector('.particles');
+            if (canvas) {
+                canvas.style.transform = `translate(${x}px,${y}px)`;
+            }
         });
 
         // Theme Toggle
