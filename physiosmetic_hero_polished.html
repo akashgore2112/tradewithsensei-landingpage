@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYSIOSMETIC - Physiotherapy & Aesthetic Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #000000;
+            color: #fff;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: visible;
+            background: radial-gradient(ellipse at 50% 50%, #0a1420 0%, #000000 70%);
+        }
+
+        #bgCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 60% 45%, rgba(67, 133, 245, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 60%, rgba(243, 112, 33, 0.12) 0%, transparent 50%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        nav {
+            position: relative;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 6%;
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #F37021;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.8rem 1.8rem;
+            background: rgba(243, 112, 33, 0.12);
+            border: 1.5px solid rgba(243, 112, 33, 0.4);
+            color: #F37021;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-cta:hover {
+            background: #F37021;
+            color: #fff;
+            border-color: #F37021;
+            box-shadow: 0 0 30px rgba(243, 112, 33, 0.4);
+        }
+
+        .mobile-menu {
+            display: none;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(40px);
+            z-index: 99;
+            padding: 6rem 3rem;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 2rem;
+        }
+
+        .mobile-nav ul li a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .mobile-nav ul li a:hover {
+            color: #F37021;
+            transform: translateX(10px);
+        }
+
+        .mobile-nav .nav-cta {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 98;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            height: calc(100vh - 120px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 6%;
+        }
+
+        .content-wrapper {
+            max-width: 1500px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6rem;
+            position: relative;
+        }
+
+        .text-content {
+            flex: 0 0 48%;
+            z-index: 10;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: #F37021;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .main-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3.5rem, 5.5vw, 6rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .main-heading .highlight {
+            color: #F37021;
+            background: linear-gradient(135deg, #F37021 0%, #ff9d5c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.3rem 3.2rem;
+            background: linear-gradient(135deg, #F37021 0%, #ff8c42 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            box-shadow: 0 12px 40px rgba(243, 112, 33, 0.35);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 50px rgba(243, 112, 33, 0.5);
+        }
+
+        .trust-badges {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .trust-icon {
+            width: 24px;
+            height: 24px;
+            color: #F37021;
+            font-size: 1.3rem;
+        }
+
+        .trust-text {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 500;
+        }
+
+        .trust-number {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-text {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .scroll-arrow {
+            width: 30px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .scroll-arrow::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: #F37021;
+            border-radius: 50%;
+            animation: scrollDot 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        @keyframes scrollDot {
+            0% { top: 8px; opacity: 1; }
+            100% { top: 30px; opacity: 0; }
+        }
+
+        .spine-visual-scene {
+            flex: 0 0 50%;
+            position: relative;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: visible;
+        }
+
+        .spine-image-container {
+            position: relative;
+            width: 600px;
+            height: 720px;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spine-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 520px;
+            height: 700px;
+            object-fit: contain;
+            filter: brightness(1.08) contrast(1.12) saturate(1.18) drop-shadow(0 0 60px rgba(243, 112, 33, 0.5));
+            animation: imageFloat 8s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .spine-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 680px;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(243, 112, 33, 0.2) 20%,
+                rgba(243, 112, 33, 0.35) 50%,
+                rgba(243, 112, 33, 0.2) 80%,
+                transparent 100%);
+            filter: blur(100px);
+            animation: glowPulse 5s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .accent-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            animation: accentFloat 10s ease-in-out infinite;
+        }
+
+        .glow-orange {
+            top: 30%;
+            right: 15%;
+            width: 300px;
+            height: 300px;
+            background: rgba(243, 112, 33, 0.25);
+            animation-delay: 0s;
+        }
+
+        .glow-blue {
+            bottom: 20%;
+            left: 10%;
+            width: 280px;
+            height: 280px;
+            background: rgba(67, 133, 245, 0.2);
+            animation-delay: 5s;
+        }
+
+        .energy-ring {
+            position: absolute;
+            border: 2px solid rgba(243, 112, 33, 0.35);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ringExpand 6s ease-out infinite;
+            box-shadow: 0 0 50px rgba(243, 112, 33, 0.25);
+        }
+
+        .ring-1 { width: 520px; height: 620px; animation-delay: 0s; }
+        .ring-2 { width: 640px; height: 740px; animation-delay: 2.5s; }
+        .ring-3 { width: 760px; height: 860px; animation-delay: 5s; }
+
+        /* CLEAN SIMPLE CARDS - DEBUG VERSION */
+        .medical-card {
+            position: absolute !important;
+            padding: 1.3rem 1.6rem !important;
+            background: rgba(243, 112, 33, 0.15) !important;
+            backdrop-filter: blur(20px) !important;
+            border: 2px solid rgba(243, 112, 33, 0.6) !important;
+            border-radius: 18px !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(243, 112, 33, 0.4) !important;
+            z-index: 9999 !important;
+            width: 240px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .medical-card:hover {
+            background: rgba(243, 112, 33, 0.25) !important;
+            border-color: rgba(243, 112, 33, 0.8) !important;
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), 0 0 50px rgba(243, 112, 33, 0.6) !important;
+        }
+
+        /* FIXED PIXEL POSITIONS - GUARANTEED WORKING */
+        .card-1 { 
+            top: 80px !important;
+            left: -260px !important;
+        }
+        
+        .card-2 { 
+            top: 80px !important;
+            right: -260px !important;
+        }
+        
+        .card-3 { 
+            bottom: 120px !important;
+            left: -260px !important;
+        }
+        
+        .card-4 { 
+            bottom: 120px !important;
+            right: -260px !important;
+        }
+        
+        .card-5, .card-6 { 
+            display: none !important;
+        }
+
+        /* Remove shimmer and complex effects temporarily */
+        .medical-card::before {
+            display: none !important;
+        }
+
+        .medical-card::after {
+            display: none !important;
+        }
+
+        .card-title {
+            font-size: 1.15rem !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+            margin-bottom: 0.7rem !important;
+            line-height: 1.3 !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        .card-title .orange {
+            color: #F37021 !important;
+            text-shadow: 0 0 15px rgba(243, 112, 33, 0.5) !important;
+            animation: numberGlow 2s ease-in-out infinite !important;
+        }
+
+        @keyframes numberGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(243, 112, 33, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(243, 112, 33, 0.8), 0 0 30px rgba(243, 112, 33, 0.4); }
+        }
+
+        .card-label {
+            font-size: 0.85rem !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            font-weight: 400 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        .status-dot {
+            display: inline-block !important;
+            width: 8px !important;
+            height: 8px !important;
+            background: #F37021 !important;
+            border-radius: 50% !important;
+            flex-shrink: 0 !important;
+            box-shadow: 0 0 10px rgba(243, 112, 33, 0.8) !important;
+        }
+
+        @keyframes imageFloat {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0) scale(1); }
+            50% { transform: translate(-50%, -50%) translateY(-30px) scale(1.02); }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        @keyframes accentFloat {
+            0%, 100% { transform: translate(0, 0); opacity: 0.6; }
+            50% { transform: translate(30px, -30px); opacity: 0.9; }
+        }
+
+        @keyframes ringExpand {
+            0% { transform: translate(-50%, -50%) scale(0.75); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+        }
+
+        @keyframes cardFloat {
+            0%, 100% { 
+                transform: translateY(0);
+            }
+            50% { 
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.5;
+                transform: scale(1.3);
+            }
+        }
+
+        /* Disable float for parallax cards - KEEP STATIC */
+        .medical-card {
+            animation: none !important;
+        }
+
+        .status-dot {
+            animation: dotPulse 2s ease-in-out infinite !important;
+        }
+
+        /* Progress Bar - ENHANCED */
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 0.8rem;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F37021, #ff9d5c, #F37021);
+            background-size: 200% 100%;
+            border-radius: 3px;
+            width: var(--progress);
+            animation: fillProgress 2s ease-out forwards, progressShine 2s ease-in-out infinite;
+            transform-origin: left;
+            box-shadow: 0 0 10px rgba(243, 112, 33, 0.6);
+        }
+
+        @keyframes fillProgress {
+            from { width: 0%; }
+            to { width: var(--progress); }
+        }
+
+        @keyframes progressShine {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
+
+        /* Circular Progress - ENHANCED */
+        .circular-progress {
+            width: 70px;
+            height: 70px;
+            margin: 0.8rem auto 0;
+            position: relative;
+            filter: drop-shadow(0 0 10px rgba(243, 112, 33, 0.4));
+        }
+
+        .circular-progress svg {
+            transform: rotate(-90deg);
+        }
+
+        .progress-circle {
+            transition: stroke-dashoffset 2s ease-out;
+            animation: drawCircle 2s ease-out forwards, glowPulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 5px #F37021);
+        }
+
+        @keyframes drawCircle {
+            to {
+                stroke-dashoffset: calc(188 - (188 * var(--progress) / 100));
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            font-weight: 700;
+            color: #F37021;
+            text-shadow: 0 0 10px rgba(243, 112, 33, 0.5);
+        }
+
+        /* Wave Indicator - ENHANCED */
+        .wave-indicator {
+            margin-top: 0.8rem;
+            opacity: 0.9;
+            height: 35px;
+            filter: drop-shadow(0 0 5px rgba(243, 112, 33, 0.3));
+        }
+
+        .wave-indicator path {
+            filter: drop-shadow(0 0 3px #F37021);
+        }
+
+        /* Strength Bars - COMPACT VERSION */
+        .strength-bars {
+            display: flex;
+            gap: 4px;
+            align-items: flex-end;
+            height: 28px;
+            margin-top: 0.8rem;
+        }
+
+        .strength-bars .bar {
+            flex: 1;
+            background: linear-gradient(to top, #F37021, #ff9d5c);
+            border-radius: 2px;
+            height: var(--height);
+            animation: growBar 1.5s ease-out forwards;
+            animation-delay: var(--delay);
+            transform-origin: bottom;
+            transform: scaleY(0);
+            box-shadow: 0 0 8px rgba(243, 112, 33, 0.5);
+        }
+
+        @keyframes growBar {
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.5); }
+        }
+
+        @media (max-width: 1400px) {
+            .content-wrapper {
+                gap: 4rem;
+            }
+            .medical-card {
+                min-width: 200px !important;
+                max-width: 240px !important;
+                padding: 1.2rem 1.5rem !important;
+            }
+            .card-1, .card-3 { 
+                left: -100px !important;
+            }
+            .card-2, .card-4 { 
+                right: -100px !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .spine-image-container {
+                width: 500px;
+                height: 640px;
+            }
+            .spine-image {
+                width: 450px;
+                height: 620px;
+            }
+            .medical-card {
+                padding: 1.1rem 1.3rem !important;
+                min-width: 180px !important;
+                max-width: 220px !important;
+            }
+            .card-title {
+                font-size: 1rem !important;
+            }
+            .card-1, .card-3 { 
+                left: -80px !important;
+            }
+            .card-2, .card-4 { 
+                right: -80px !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 3rem;
+            }
+            .text-content {
+                flex: 1 1 auto;
+            }
+            .spine-visual-scene {
+                height: 550px;
+            }
+            /* Hide cards on tablets and mobile for clean layout */
+            .medical-card {
+                display: none !important;
+            }
+            .trust-badges {
+                justify-content: center;
+            }
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.8rem 5%;
+            }
+            .logo img {
+                height: 40px;
+            }
+            .nav-links, .nav-cta {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .main-heading {
+                font-size: clamp(2.5rem, 10vw, 3.5rem);
+            }
+            .spine-visual-scene {
+                height: 450px;
+            }
+            .spine-image-container {
+                width: 360px;
+                height: 520px;
+            }
+            .spine-image {
+                width: 340px;
+                height: 500px;
+            }
+            .trust-badges {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <canvas id="bgCanvas"></canvas>
+        <div class="gradient-overlay"></div>
+        
+        <nav>
+            <div class="logo">
+                <img src="https://i.postimg.cc/3RHFbkbr/Physiosmetic-logo-2.png" alt="Physiosmetic Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-cta">Get in touch</button>
+            <div class="mobile-menu" id="mobileMenuBtn">☰</div>
+        </nav>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-cta">Get in touch</button>
+        </div>
+
+        <div class="hero-content">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <div class="subtitle">Advanced Physiotherapy</div>
+                    <h1 class="main-heading">
+                        Move Better.<br>
+                        Heal Faster.<br>
+                        <span class="highlight">Live Stronger</span>
+                    </h1>
+                    <p class="description">
+                        Advanced physiotherapy care that restores your body's natural motion and strength. 
+                        Experience healing through cutting-edge techniques and personalized treatment.
+                    </p>
+                    <a href="#consultation" class="cta-button">Book Consultation</a>
+
+                    <div class="trust-badges">
+                        <div class="trust-item">
+                            <span class="trust-icon">✓</span>
+                            <span class="trust-text"><span class="trust-number">500+</span> Patients</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">★</span>
+                            <span class="trust-text"><span class="trust-number">4.9/5</span> Rating</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">⚡</span>
+                            <span class="trust-text"><span class="trust-number">15+</span> Years</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spine-visual-scene">
+                    <div class="accent-glow glow-orange"></div>
+                    <div class="accent-glow glow-blue"></div>
+                    <div class="energy-ring ring-1"></div>
+                    <div class="energy-ring ring-2"></div>
+                    <div class="energy-ring ring-3"></div>
+
+                    <div class="spine-image-container">
+                        <div class="spine-glow"></div>
+                        <img src="https://i.postimg.cc/NFSYhY8y/Adobe-Express-file.png" 
+                             alt="3D Spine Visualization" 
+                             class="spine-image">
+
+                        <!-- Medical Cards - SIMPLIFIED -->
+                        <div class="medical-card card-1">
+                            <div class="card-title">Pain Reduction: <span class="orange counter" data-target="42">0</span><span class="orange">%</span></div>
+                            <div class="card-label"><span class="status-dot"></span>after 6 sessions</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="--progress: 42%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="medical-card card-2">
+                            <div class="card-title">Mobility Score: <span class="orange">+</span><span class="orange counter" data-target="18">0</span><span class="orange">%</span></div>
+                            <div class="card-label"><span class="status-dot"></span>4-week improvement</div>
+                            <div class="circular-progress">
+                                <svg width="70" height="70" viewBox="0 0 70 70">
+                                    <circle cx="35" cy="35" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="5"/>
+                                    <circle cx="35" cy="35" r="30" fill="none" stroke="#F37021" stroke-width="5" 
+                                            stroke-dasharray="188" stroke-dashoffset="188" 
+                                            class="progress-circle" style="--progress: 18%;"/>
+                                </svg>
+                                <div class="progress-text"><span class="counter" data-target="18">0</span>%</div>
+                            </div>
+                        </div>
+
+                        <div class="medical-card card-3">
+                            <div class="card-title">Range of Motion: <span class="orange">+</span><span class="orange counter" data-target="26">0</span><span class="orange">°</span></div>
+                            <div class="card-label"><span class="status-dot"></span>shoulder abduction</div>
+                            <div class="wave-indicator">
+                                <svg width="100%" height="30" viewBox="0 0 100 30">
+                                    <path d="M0,15 Q25,5 50,15 T100,15" fill="none" stroke="#F37021" stroke-width="2">
+                                        <animate attributeName="d" dur="2s" repeatCount="indefinite"
+                                                 values="M0,15 Q25,5 50,15 T100,15;
+                                                         M0,15 Q25,25 50,15 T100,15;
+                                                         M0,15 Q25,5 50,15 T100,15"/>
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="medical-card card-4">
+                            <div class="card-title">Strength Gain: <span class="orange">+</span><span class="orange counter" data-target="15">0</span><span class="orange">%</span></div>
+                            <div class="card-label"><span class="status-dot"></span>isometric test</div>
+                            <div class="strength-bars">
+                                <div class="bar" style="--height: 50%; --delay: 0s;"></div>
+                                <div class="bar" style="--height: 70%; --delay: 0.1s;"></div>
+                                <div class="bar" style="--height: 85%; --delay: 0.2s;"></div>
+                                <div class="bar" style="--height: 95%; --delay: 0.3s;"></div>
+                            </div>
+                        </div>
+
+                        <div class="medical-card card-5">
+                            <div class="card-label">Spine Health</div>
+                            <div class="card-value"><span class="accent">A+</span></div>
+                            <div class="card-subtitle">Optimal</div>
+                        </div>
+
+                        <div class="medical-card card-6">
+                            <div class="card-label"><span class="status-dot"></span>Sessions</div>
+                            <div class="card-value">12<span class="accent">K+</span></div>
+                            <div class="card-subtitle">This Year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMobileMenu() {
+            mobileNav.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            mobileMenuBtn.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        const bgCanvas = document.getElementById('bgCanvas');
+        const bgScene = new THREE.Scene();
+        const bgCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const bgRenderer = new THREE.WebGLRenderer({ canvas: bgCanvas, alpha: true, antialias: true });
+        
+        bgRenderer.setSize(window.innerWidth, window.innerHeight);
+        bgRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        bgCamera.position.z = 50;
+
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particleCount = window.innerWidth < 768 ? 400 : 800;
+        const posArray = new Float32Array(particleCount * 3);
+        const colorArray = new Float32Array(particleCount * 3);
+
+        for(let i = 0; i < particleCount * 3; i += 3) {
+            posArray[i] = (Math.random() - 0.5) * 100;
+            posArray[i + 1] = (Math.random() - 0.5) * 100;
+            posArray[i + 2] = (Math.random() - 0.5) * 100;
+            if (Math.random() > 0.65) {
+                colorArray[i] = 0.95; colorArray[i + 1] = 0.44; colorArray[i + 2] = 0.13;
+            } else {
+                colorArray[i] = 0.26; colorArray[i + 1] = 0.52; colorArray[i + 2] = 0.96;
+            }
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.3,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.5,
+            blending: THREE.AdditiveBlending
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        bgScene.add(particlesMesh);
+
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.004;
+            particlesMesh.rotation.y = time * 0.1;
+            particlesMesh.position.x = mouseX * 2.5;
+            particlesMesh.position.y = mouseY * 2.5;
+            const positions = particlesGeometry.attributes.position.array;
+            for(let i = 0; i < positions.length; i += 3) {
+                positions[i + 2] = Math.sin(positions[i] * 0.05 + time) * 2;
+            }
+            particlesGeometry.attributes.position.needsUpdate = true;
+            bgRenderer.render(bgScene, bgCamera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            bgCamera.aspect = window.innerWidth / window.innerHeight;
+            bgCamera.updateProjectionMatrix();
+            bgRenderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        gsap.from('.text-content', { opacity: 0, x: -80, duration: 1.2, delay: 0.4, ease: 'power3.out' });
+        gsap.from('.spine-image', { opacity: 0, scale: 0.8, duration: 1.8, delay: 0.7, ease: 'back.out(1.3)' });
+        
+        // Safe GSAP animation for cards - only fade in, no movement
+        gsap.from('.medical-card', { 
+            opacity: 0, 
+            scale: 0.9,
+            duration: 0.8, 
+            stagger: 0.15, 
+            delay: 1.3, 
+            ease: 'power2.out',
+            clearProps: 'all' // Important: clears all GSAP properties after animation
+        });
+        
+        gsap.from('.trust-badges', { opacity: 0, y: 30, duration: 1, delay: 1.1, ease: 'power3.out' });
+        gsap.from('.scroll-indicator', { opacity: 0, y: -20, duration: 1, delay: 2.2, ease: 'power3.out' });
+    </script>
+</body>
+</html>
